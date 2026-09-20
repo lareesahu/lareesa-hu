@@ -601,12 +601,15 @@
       btns[i].classList.toggle('on', on);
       btns[i].setAttribute('aria-pressed', on ? 'true' : 'false');
     }
-    try { localStorage.setItem(KEY, lang); } catch (e) {}
   }
   var btns = document.querySelectorAll('[data-lang-btn]');
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function () {
-      apply(this.getAttribute('data-lang-btn'));
+      var chosen = this.getAttribute('data-lang-btn');
+      apply(chosen);
+      /* Only an explicit choice is remembered; an auto-detected one is not, so
+         a visitor who switches to a new system language picks it up next visit. */
+      try { localStorage.setItem(KEY, chosen); } catch (e) {}
     });
   }
   function systemPrefers() {
