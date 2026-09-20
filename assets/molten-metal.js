@@ -176,7 +176,9 @@ window.createBackground = function (canvas, opts) {
   return gl;
 }
 
-/* Page background: React Bits MoltenMetal (free library, MIT + Commons Clause).
+/* Page background: React Bits MoltenMetal — Copyright (c) David Haz,
+   MIT + Commons Clause License Condition v1.0 (github.com/DavidHDev/react-bits);
+   used in a website/product, not resold or redistributed as a component.
    Shader pair taken from the component source; the uniform values are Lareesa's
    own props: color1 #4c27ff, color2 #ff9cfc, color3 #FFFFFF, colorMode molten,
    speed 0.15, scale 2, detail 4, glow 0.6, coreSize 0.13, swirl 0.9, fold -0.22,
