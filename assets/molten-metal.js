@@ -14,7 +14,9 @@ window.createBackground = function (canvas, opts) {
   const ctxOpts = {
     antialias: false,
     alpha: true,
-    premultipliedAlpha: false,
+    /* the shaders output premultiplied colour (rgb * alpha); declaring that here stops
+       the browser multiplying by alpha a second time, which crushes the whole field. */
+    premultipliedAlpha: true,
     powerPreference: 'low-power'
   };
   const gl = (es3 ? canvas.getContext('webgl2', ctxOpts) : null) || canvas.getContext('webgl', ctxOpts)
@@ -174,8 +176,13 @@ window.createBackground = function (canvas, opts) {
   return gl;
 }
 
-/* Full-page background: React Bits MoltenMetal (free library, MIT + Commons Clause) —
-   shader pair and uniform names taken from the free component source. */
+/* Page background: React Bits MoltenMetal (free library, MIT + Commons Clause).
+   Shader pair taken from the component source; the uniform values are Lareesa's
+   own props: color1 #4c27ff, color2 #ff9cfc, color3 #FFFFFF, colorMode molten,
+   speed 0.15, scale 2, detail 4, glow 0.6, coreSize 0.13, swirl 0.9, fold -0.22,
+   blackPoint 0, brightness 1.9, opacity 1, grain + grainIntensity 0.09,
+   mouseInteraction with mouseStrength 0.1 — its natural dark form, not a pale tint.
+   colourMode 'molten' maps to uColorMode 0 (ember 1, frost 2). */
 var VERT = `#version 300 es
 in vec2 position;
 void main() {
@@ -284,29 +291,6 @@ void main() {
 createBackground(document.getElementById('bg'), {
   vert: VERT,
   frag: FRAG,
-  uniforms: {
-      iTime: 0.0,
-      iResolution: [1.0, 1.0],
-      uSpeed: 0.26,
-      uScale: 3.0,
-      uDetail: 3.0,
-      uGlow: 1.5,
-      uCoreSize: 0.14,
-      uSwirl: 1.1,
-      uFold: -0.2,
-      uBlackPoint: 0.0,
-      uBrightness: 1.5,
-      uColorMode: 0.0,
-      uGrain: 1.0,
-      uGrainIntensity: 0.03,
-      uOpacity: 0.72,
-      uMouse: [0.5, 0.5],
-      uMouseStrength: 0.25,
-      uColor1: [0.8431, 0.6039, 0.7137],
-      uColor2: [0.5765, 0.702, 0.8706],
-      uColor3: [1.0, 1.0, 1.0],
-      uBackgroundColor: [0.9725, 0.9451, 0.9373],
-      uLightMode: 1
-  },
+  uniforms: {"iTime": 0.0, "iResolution": [1.0, 1.0], "uSpeed": 0.15, "uScale": 2.0, "uDetail": 4.0, "uGlow": 0.8, "uCoreSize": 0.13, "uSwirl": 0.9, "uFold": -0.22, "uBlackPoint": 0.0, "uBrightness": 2.1, "uColorMode": 0.0, "uGrain": 1.0, "uGrainIntensity": 0.09, "uOpacity": 1.0, "uMouseStrength": 0.1, "uEnableMouse": 1.0, "uColor1": [0.298, 0.1529, 1.0], "uColor2": [1.0, 0.6118, 0.9882], "uColor3": [1.0, 1.0, 1.0], "uBackgroundColor": [0.9725, 0.9451, 0.9373], "uLightMode": 0.0},
   scale: 0.75
 });
