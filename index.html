@@ -69,10 +69,8 @@
 
   .hero{padding:clamp(38px,7vw,104px) 0 clamp(30px,4.6vw,68px);position:relative;isolation:isolate}
   canvas.ridges{
-    position:absolute;left:-4%;top:0;width:108%;height:106%;
-    z-index:-1;pointer-events:none;display:block;
-    -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 52%,rgba(0,0,0,0) 100%);
-    mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 52%,rgba(0,0,0,0) 100%);
+    position:fixed;inset:0;width:100vw;height:100vh;z-index:0;
+    pointer-events:none;display:block;
   }
   .hero::before{
     content:'';position:absolute;left:-4%;top:0;width:108%;height:106%;
@@ -97,8 +95,6 @@
     .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,196px);gap:clamp(16px,3vw,26px)}
   }
   @media (max-width:600px){
-    .meta{flex-direction:column;align-items:flex-start;gap:3px}
-    .meta > * + *::before{display:none}
     .hero-grid{grid-template-columns:1fr;gap:0}
     figure.portrait{max-width:min(100%,330px);margin-top:clamp(24px,7vw,36px)}
   }
@@ -121,8 +117,12 @@
     display:flex;flex-wrap:wrap;align-items:baseline;
   }
   .meta > *{white-space:nowrap}
-  .meta > * + *::before{content:'·';display:inline-block;padding:0 11px;color:#bdb5ae}
+  .meta > *:not(:last-child)::after{content:'·';display:inline-block;padding:0 11px;color:#bdb5ae}
   .meta a{text-decoration:none;border-bottom:1px solid var(--line)}
+  @media (max-width:900px){
+    .meta{flex-direction:column;align-items:flex-start;gap:3px}
+    .meta > *::after{display:none}
+  }
 
   section{padding:clamp(44px,5.6vw,78px) 0;border-top:1px solid var(--line-soft)}
   .label{
@@ -245,9 +245,16 @@
     .shot img,.lang button,.card{transition:none}
     .rise,.js-reveal{opacity:1;transform:none;animation:none}
   }
+
+  /* Full-page background: the canvas is pinned to the viewport behind all content,
+     so the shader runs edge to edge instead of sitting in the hero block. */
+  .wrap{position:relative;z-index:1}
+  .hero{isolation:auto}
+  .hero::before{display:none}
 </style>
 </head>
 <body>
+<canvas class="ridges" id="bg" aria-hidden="true"></canvas>
 
 <div class="wrap">
   <header class="top">
@@ -268,8 +275,6 @@
 <main>
 <div class="wrap">
   <div class="hero">
-    <canvas class="ridges" aria-hidden="true"
-      data-ridges='{"colorA":"#42a8ff","colorB":"#22d3ee","colorC":"#ffb4cf","base":"#f8f1ef","gain":0.42,"boost":2.2,"zoom":1.6,"rotation":-28,"density":6,"flowSpeed":0.1,"swirl":12,"grain":0.22}'></canvas>
     <div class="hero-grid">
     <div class="hero-copy">
     <p class="kicker rise" data-en="Product · AI · Brand" data-zh="产品·AI·品牌">Product · AI · Brand</p>
@@ -567,7 +572,7 @@
   </div>
 </footer>
 
-<script src="assets/ridges.js" defer></script>
+<script src="assets/molten-metal.js" defer></script>
 <script>
 (function () {
   var KEY = 'lareesa-portfolio-lang';
