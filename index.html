@@ -218,8 +218,27 @@
     .card h3{margin-top:14px}
     html[lang="zh"] body{font-size:16px}
   }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .card{transition:transform .3s cubic-bezier(.22,.8,.24,1)}
+  @media (hover:hover) and (pointer:fine){
+    .card:hover{transform:translateY(-3px)}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .rise{opacity:0;transform:translateY(14px);animation:riseIn .72s cubic-bezier(.22,.8,.24,1) forwards}
+    .hero-copy > .rise:nth-child(2){animation-delay:.10s}
+    .hero-copy > .rise:nth-child(3){animation-delay:.20s}
+    .hero-copy > .rise:nth-child(4){animation-delay:.30s}
+    .hero-grid > figure.rise{animation-delay:.24s}
+    .js-reveal{
+      opacity:0;transform:translateY(16px);
+      transition:opacity .64s cubic-bezier(.22,.8,.24,1),transform .64s cubic-bezier(.22,.8,.24,1);
+    }
+    .js-reveal.in{opacity:1;transform:none}
+  }
+  @keyframes riseIn{to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){
-    .shot img,.lang button{transition:none}
+    .shot img,.lang button,.card{transition:none}
+    .rise,.js-reveal{opacity:1;transform:none;animation:none}
   }
 </style>
 </head>
@@ -245,20 +264,20 @@
 <div class="wrap">
   <div class="hero">
     <canvas class="ridges" aria-hidden="true"
-      data-ridges='{"colorA":"#42a8ff","colorB":"#22d3ee","colorC":"#ffb4cf","base":"#f8f1ef","gain":0.5,"zoom":1.6,"rotation":-28,"density":6,"flowSpeed":0.1,"swirl":12,"grain":0.4}'></canvas>
+      data-ridges='{"colorA":"#42a8ff","colorB":"#22d3ee","colorC":"#ffb4cf","base":"#f8f1ef","gain":0.42,"boost":2.2,"zoom":1.6,"rotation":-28,"density":6,"flowSpeed":0.1,"swirl":12,"grain":0.22}'></canvas>
     <div class="hero-grid">
     <div class="hero-copy">
-    <p class="kicker" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
-    <h1 data-en="I ship products&lt;br&gt;with AI agents."
+    <p class="kicker rise" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
+    <h1 class="rise" data-en="I ship products&lt;br&gt;with AI agents."
         data-zh="我带着 AI Agent，&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
-    <p class="lede"
+    <p class="lede rise"
        data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
        data-zh="十四年品牌、营销与产品经验，如今跑在能构建、验证、部署的 Agent 流水线上。下面每一个项目都在线上真实运行，不是效果图。">
       Fourteen years of brand, marketing and product work — now run through
       agent pipelines that build, verify and deploy. Everything below is live in
       production, not a mockup.
     </p>
-    <div class="meta">
+    <div class="meta rise">
       <span data-en="Hangzhou, China" data-zh="中国 · 杭州">Hangzhou, China</span>
       <span aria-hidden="true">·</span>
       <span data-en="Founder, Pulse Branding" data-zh="Pulse Branding 创始人">Founder, Pulse Branding</span>
@@ -266,7 +285,7 @@
       <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
     </div>
     </div>
-    <figure class="portrait">
+    <figure class="portrait rise">
       <img src="assets/portrait.jpg" alt="Lareesa Hu, Hangzhou"
            data-en-alt="Lareesa Hu, Hangzhou" data-zh-alt="Lareesa Hu，杭州">
     </figure>
@@ -590,9 +609,57 @@
       apply(this.getAttribute('data-lang-btn'));
     });
   }
+  function systemPrefers() {
+    var list = (navigator.languages && navigator.languages.length)
+      ? navigator.languages : [navigator.language || ''];
+    var sawAny = false;
+    for (var i = 0; i < list.length; i++) {
+      var l = String(list[i] || '');
+      if (l) sawAny = true;
+      if (/^zh(-|$)/i.test(l)) return 'zh';
+    }
+    if (sawAny) return 'en';
+    /* Only when the browser reports no language at all do we fall back to the
+       machine's time zone. */
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (/^Asia\/(Shanghai|Chongqing|Harbin|Urumqi|Taipei|Hong_Kong|Macau)$/.test(tz)) return 'zh';
+    } catch (e) {}
+    return 'en';
+  }
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  apply(saved === 'zh' ? 'zh' : 'en');
+  apply(saved || systemPrefers());
+})();
+</script>
+<script>
+/* Motion — one restrained gesture per view; skipped entirely when the visitor
+   has asked for reduced motion, or when the browser can't observe scrolling. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var SEL = '#work > .label, #work > h2, #work > .section-intro,'
+          + ' #method > .label, #method > h2, #method > .section-intro,'
+          + ' .grid > .card, .setup > article, footer .foot';
+  var els = [].slice.call(document.querySelectorAll(SEL));
+  if (!els.length) return;
+  els.forEach(function (el) { el.classList.add('js-reveal'); });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      var group = [].slice.call(el.parentNode.children).filter(function (n) {
+        return n.classList && n.classList.contains('js-reveal');
+      });
+      var i = Math.max(0, group.indexOf(el));
+      el.style.transitionDelay = (Math.min(i, 5) * 55) + 'ms';
+      el.classList.add('in');
+      io.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.15 });
+  requestAnimationFrame(function () {
+    els.forEach(function (el) { io.observe(el); });
+  });
 })();
 </script>
 </body>
