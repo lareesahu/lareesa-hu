@@ -29,6 +29,23 @@
   if ('outputColorSpace' in renderer && THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setClearAlpha(0);
 
+  /* Art-direction switch, so the same character can be previewed as different looks
+     (?style=faceted, ?style=clay). Default is the shipped toy look. */
+  var STYLE = 'toy';
+  try { STYLE = new URLSearchParams(window.location.search).get('style') || 'toy'; } catch (e) {}
+  var STYLES = {
+    toy:     { seg: [40, 28], headScale: 1.00, flat: false, key: 1.15, rim: 0.85, hemi: 0.38,
+               skin: '#f0c6a6', hair: '#241a18', hairHi: '#2b1f1c', top: '#c96a3a', topDark: '#8f4520',
+               rough: { skin: 0.92, hair: 0.86, top: 0.62 } },
+    faceted: { seg: [12, 9], headScale: 1.00, flat: true, key: 1.3, rim: 1.15, hemi: 0.34,
+               skin: '#eec4a6', hair: '#1d1720', hairHi: '#241a24', top: '#bd6440', topDark: '#84442a',
+               rough: { skin: 0.72, hair: 0.68, top: 0.6 } },
+    clay:    { seg: [28, 20], headScale: 1.12, flat: false, key: 1.05, rim: 0.7, hemi: 0.46,
+               skin: '#ecc7ad', hair: '#2a1d1a', hairHi: '#33231f', top: '#d07a4a', topDark: '#9c5530',
+               rough: { skin: 0.98, hair: 0.95, top: 0.88 } }
+  };
+  var S = STYLES[STYLE] || STYLES.toy;
+
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
@@ -36,14 +53,16 @@
 
   /* ---------- materials: matte, so no specular hotspot blows out her face ---------- */
   function mat(color, roughness, metalness) {
-    return new THREE.MeshStandardMaterial({ color: new THREE.Color(color), roughness: roughness, metalness: metalness || 0 });
+    return new THREE.MeshStandardMaterial({
+      color: new THREE.Color(color), roughness: roughness, metalness: metalness || 0, flatShading: !!S.flat
+    });
   }
   var M = {
-    skin: mat('#f0c6a6', 0.92),
-    hair: mat('#241a18', 0.86),
-    hairHi: mat('#2b1f1c', 0.9),
-    top: mat('#c96a3a', 0.62, 0.03),
-    topDark: mat('#8f4520', 0.68),
+    skin: mat(S.skin, S.rough.skin),
+    hair: mat(S.hair, S.rough.hair),
+    hairHi: mat(S.hairHi, S.rough.hair + 0.04),
+    top: mat(S.top, S.rough.top, 0.03),
+    topDark: mat(S.topDark, S.rough.top + 0.06),
     dark: mat('#2a2430', 0.78),
     shoe: mat('#1b1720', 0.7),
     eye: mat('#2a160e', 0.42),
@@ -61,7 +80,7 @@
     parent.add(m);
     return m;
   }
-  var SPH = function (r, w, h) { return new THREE.SphereGeometry(r, w || 32, h || 24); };
+  var SPH = function (r, w, h) { return new THREE.SphereGeometry(r, w || S.seg[0], h || S.seg[1]); };
 
   /* soft radial alpha maps, drawn once — a flat disc reads as a sticker, a gradient reads as light */
   function radialTexture(stops) {
@@ -121,6 +140,7 @@
   /* ---------- head (its own pivot so it can follow the cursor) ---------- */
   var head = new THREE.Group();
   head.position.set(0, 1.14, 0);
+  head.scale.setScalar(S.headScale);
   char.add(head);
   function hy(worldY) { return worldY - 1.14; }   /* authored at body heights, stored head-local */
 
@@ -171,9 +191,9 @@
   scene.add(char);
 
   /* ---------- light: warm key, soft violet rim, warm front fill so the skin stays skin ---------- */
-  scene.add(new THREE.HemisphereLight(new THREE.Color('#a9b2ff'), new THREE.Color('#241d2c'), 0.38));
-  var key = new THREE.DirectionalLight(new THREE.Color('#fff3e8'), 1.15); key.position.set(1.5, 2.4, 2.9); scene.add(key);
-  var rim = new THREE.DirectionalLight(new THREE.Color('#ff9cfc'), 0.85); rim.position.set(-1.7, 1.3, -2.1); scene.add(rim);
+  scene.add(new THREE.HemisphereLight(new THREE.Color('#a9b2ff'), new THREE.Color('#241d2c'), S.hemi));
+  var key = new THREE.DirectionalLight(new THREE.Color('#fff3e8'), S.key); key.position.set(1.5, 2.4, 2.9); scene.add(key);
+  var rim = new THREE.DirectionalLight(new THREE.Color('#ff9cfc'), S.rim); rim.position.set(-1.7, 1.3, -2.1); scene.add(rim);
   var fill = new THREE.DirectionalLight(new THREE.Color('#ffd9c2'), 0.42); fill.position.set(0.5, 0.9, 2.4); scene.add(fill);
 
   /* ---------- pointer + scroll ---------- */
