@@ -91,10 +91,18 @@
     grid-template-columns:minmax(0,1fr) minmax(0,clamp(240px,30vw,420px));
   }
   figure.portrait{margin:0}
-  figure.portrait img{
-    width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:63% 6%;
-    border:1px solid var(--line);border-radius:3px;background:#15121c;
+  figure.portrait{
+    margin:0;position:relative;aspect-ratio:1/1;
+    border:1px solid var(--line);border-radius:3px;
+    background:
+      radial-gradient(70% 34% at 50% 97%, rgba(255,255,255,.075), rgba(255,255,255,0) 72%),
+      radial-gradient(120% 90% at 50% 6%, rgba(255,255,255,.05), rgba(255,255,255,.012) 62%),
+      #0d0b12;
   }
+  figure.portrait.avatar-fallback{background-image:url('assets/portrait.jpg');background-size:cover;background-position:63% 6%}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  /* the character is drawn on its own fixed layer and positioned inside the scene */
+  #avatar{position:fixed;inset:0;width:100vw;height:100vh;z-index:3;pointer-events:none;display:block}
   @media (max-width:900px){
     .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,196px);gap:clamp(16px,3vw,26px)}
   }
@@ -264,6 +272,7 @@
 </head>
 <body>
 <canvas class="ridges" id="bg" aria-hidden="true"></canvas>
+<canvas id="avatar" aria-hidden="true"></canvas>
 
 <div class="wrap">
   <header class="top">
@@ -302,9 +311,8 @@
       <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
     </div>
     </div>
-    <figure class="portrait rise">
-      <img src="assets/portrait.jpg" alt="Lareesa Hu, Hangzhou"
-           data-en-alt="Lareesa Hu, Hangzhou" data-zh-alt="Lareesa Hu，杭州">
+    <figure class="portrait rise" id="avatar-slot" aria-label="Lareesa Hu, in 3D">
+      <span class="sr-only" data-en="Lareesa Hu, Hangzhou" data-zh="Lareesa Hu，杭州">Lareesa Hu, Hangzhou</span>
     </figure>
     </div>
   </div>
@@ -581,6 +589,8 @@
   </div>
 </footer>
 
+<script src="assets/vendor/three.min.js" defer></script>
+<script src="assets/avatar.js" defer></script>
 <script src="assets/molten-metal.js" defer></script>
 <script>
 (function () {
