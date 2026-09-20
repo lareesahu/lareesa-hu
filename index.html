@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lareesa Hu — Product, AI and brand work, shipped</title>
-<meta name="description" content="Lareesa Hu — product, AI and brand operator. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct.">
+<meta name="description" content="Lareesa Hu — product, AI and brand operator. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct, Robotist.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23231b18'/%3E%3Ctext x='12' y='29' font-size='26' font-family='Georgia,serif' fill='%23f7f5f2'%3EL%3C/text%3E%3C/svg%3E">
 <style>
   @font-face{
@@ -26,6 +26,7 @@
     --line-soft:rgba(27,22,20,.07);
     --serif:'Tenor Sans','Times New Roman',Georgia,serif;
     --sans:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --cjk:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC','Source Han Sans SC','Heiti SC',sans-serif;
     --pad:clamp(20px,5vw,72px);
     --gap:clamp(20px,3vw,40px);
   }
@@ -41,15 +42,28 @@
   a{color:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
   header.top{
-    display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;justify-content:space-between;
-    padding:clamp(22px,3vw,38px) 0;
+    display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between;
+    padding:clamp(20px,3vw,34px) 0;
   }
-  header.top .sig{font-family:var(--serif);font-size:1rem;letter-spacing:.06em;text-transform:none}
-  header.top nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);font-size:.82rem}
+  header.top .sig{font-family:var(--serif);font-size:1rem;letter-spacing:.06em}
+  header.top nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,26px);font-size:.82rem;align-items:center}
   header.top nav a{
     color:var(--muted);text-decoration:none;letter-spacing:.09em;text-transform:uppercase;
   }
   header.top nav a:hover{color:var(--accent)}
+
+  .lang{
+    display:inline-flex;gap:2px;padding:2px;border:1px solid var(--line);
+    border-radius:999px;background:transparent;
+  }
+  .lang button{
+    font:inherit;font-size:.75rem;line-height:1;letter-spacing:.06em;
+    padding:7px 13px;border:0;border-radius:999px;cursor:pointer;
+    background:transparent;color:var(--muted);transition:background .25s,color .25s;
+  }
+  .lang button:hover{color:var(--ink)}
+  .lang button.on{background:var(--ink);color:var(--paper)}
+  .lang button.on:hover{color:var(--paper)}
   hr.rule{border:0;border-top:1px solid var(--line-soft);margin:0}
 
   .hero{padding:clamp(38px,7vw,104px) 0 clamp(34px,6vw,86px)}
@@ -60,14 +74,16 @@
   h1{
     font-family:var(--serif);font-weight:400;margin:0;
     font-size:clamp(2.5rem,8.4vw,6.1rem);line-height:.98;letter-spacing:-.01em;
+    text-wrap:balance;
   }
   .lede{
     margin:clamp(20px,3vw,34px) 0 0;max-width:46ch;
     font-size:clamp(1.02rem,1.6vw,1.28rem);line-height:1.55;color:#2a2320;
+    text-wrap:pretty;
   }
   .meta{
     margin:clamp(20px,3vw,30px) 0 0;color:var(--muted);font-size:.87rem;
-    display:flex;flex-wrap:wrap;gap:8px 18px;
+    display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;
   }
   .meta a{text-decoration:none;border-bottom:1px solid var(--line)}
 
@@ -122,6 +138,7 @@
   .setup h4{
     font-family:var(--serif);font-weight:400;font-size:1.06rem;margin:0 0 8px;text-wrap:balance;
   }
+  .setup h4 b{font-weight:400}
   .setup h4 span{color:var(--accent);font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;margin-right:9px;vertical-align:2px}
 
   footer{border-top:1px solid var(--line);padding:clamp(34px,5vw,64px) 0 clamp(40px,6vw,80px)}
@@ -132,12 +149,38 @@
   footer .name{font-family:var(--serif);color:var(--ink);font-size:1.05rem}
   footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 
+  /* Chinese typography — clear and contemporary, never decorative */
+  html[lang="zh"] body{
+    font-family:var(--cjk);
+    line-height:1.82;letter-spacing:.012em;font-size:16.5px;
+  }
+  html[lang="zh"] h1,
+  html[lang="zh"] h2,
+  html[lang="zh"] .sig,
+  html[lang="zh"] .card h3,
+  html[lang="zh"] .setup h4,
+  html[lang="zh"] footer .name{
+    font-family:var(--cjk);font-weight:500;letter-spacing:.02em;
+  }
+  html[lang="zh"] h1{font-size:clamp(2rem,6.2vw,4.4rem);line-height:1.16}
+  html[lang="zh"] h2{line-height:1.3;font-size:clamp(1.5rem,3.2vw,2.1rem)}
+  html[lang="zh"] .kicker{letter-spacing:.2em}
+  html[lang="zh"] .label{letter-spacing:.24em}
+  html[lang="zh"] .card .where{letter-spacing:.12em}
+  html[lang="zh"] .lede{line-height:1.8;max-width:34ch}
+  html[lang="zh"] .card p,
+  html[lang="zh"] .setup article p,
+  html[lang="zh"] .section-intro{line-height:1.85}
+  html[lang="zh"] .card p{font-size:.95rem}
+  html[lang="zh"] header.top nav a{letter-spacing:.14em}
+
   @media (max-width:560px){
     body{font-size:16px}
     .card h3{margin-top:14px}
+    html[lang="zh"] body{font-size:16px}
   }
   @media (prefers-reduced-motion:reduce){
-    .shot img{transition:none}
+    .shot img,.lang button{transition:none}
   }
 </style>
 </head>
@@ -147,9 +190,13 @@
   <header class="top">
     <div class="sig">Lareesa Hu</div>
     <nav>
-      <a href="#work">Work</a>
-      <a href="#method">Method</a>
-      <a href="#contact">Contact</a>
+      <a href="#work" data-en="Work" data-zh="作品">Work</a>
+      <a href="#method" data-en="Method" data-zh="方法">Method</a>
+      <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
+      <span class="lang" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang-btn="en" class="on" aria-pressed="true">EN</button>
+        <button type="button" data-lang-btn="zh" aria-pressed="false">中文</button>
+      </span>
     </nav>
   </header>
 </div>
@@ -158,17 +205,20 @@
 <main>
 <div class="wrap">
   <div class="hero">
-    <p class="kicker">Product · AI · Brand</p>
-    <h1>I ship products<br>with AI agents.</h1>
-    <p class="lede">
-      Fourteen years of brand, marketing and product work — now run through agent
-      pipelines that build, verify and deploy. Everything below is live in
+    <p class="kicker" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
+    <h1 data-en="I ship products&lt;br&gt;with AI agents."
+        data-zh="我带着 AI Agent&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
+    <p class="lede"
+       data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
+       data-zh="十四年品牌、营销与产品经验，如今跑在能构建、验证、部署的 Agent 流水线上。下面每一个项目都在线上真实运行，不是效果图。">
+      Fourteen years of brand, marketing and product work — now run through
+      agent pipelines that build, verify and deploy. Everything below is live in
       production, not a mockup.
     </p>
     <div class="meta">
-      <span>Hangzhou, China</span>
+      <span data-en="Hangzhou, China" data-zh="中国 · 杭州">Hangzhou, China</span>
       <span aria-hidden="true">·</span>
-      <span>Founder, Pulse Branding</span>
+      <span data-en="Founder, Pulse Branding" data-zh="Pulse Branding 创始人">Founder, Pulse Branding</span>
       <span aria-hidden="true">·</span>
       <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
     </div>
@@ -177,9 +227,12 @@
 
 <div class="wrap">
   <section id="work">
-    <p class="label">Live products</p>
-    <h2>Built end to end, shipped, still running.</h2>
-    <p class="section-intro">
+    <p class="label" data-en="Live products" data-zh="线上作品">Live products</p>
+    <h2 data-en="Built end to end, shipped, still running."
+        data-zh="从零到一，已经上线，仍在运行。">Built end to end, shipped, still running.</h2>
+    <p class="section-intro"
+       data-en="Each of these was taken from blank page to a live URL by me directing AI agents — briefing, art direction, code review, deployment and verification. The screenshots are the real sites."
+       data-zh="这些项目都是我从一张白纸开始，通过指挥 AI Agent 完成——需求拆解、美术方向、代码评审、部署与验证。截图都来自真实站点。">
       Each of these was taken from blank page to a live URL by me directing AI
       agents — briefing, art direction, code review, deployment and verification.
       The screenshots are the real sites.
@@ -189,11 +242,16 @@
 
       <article class="card">
         <a class="shot" href="https://fireflyglobal.org/" target="_blank" rel="noopener">
-          <img src="assets/shots/firefly-booking.jpg" alt="Firefly Global website with the live Tebra booking widget showing open appointment times" loading="lazy">
+          <img src="assets/shots/firefly-booking.jpg"
+               alt="Firefly Global website with the live Tebra booking widget showing open appointment times"
+               data-en-alt="Firefly Global website with the live Tebra booking widget showing open appointment times"
+               data-zh-alt="Firefly Global 官网，页面上真实加载的 Tebra 预约组件与可预约时段"
+               loading="lazy">
         </a>
         <h3>Firefly Global</h3>
-        <p class="where">Telehealth · site + booking</p>
-        <p>
+        <p class="where" data-en="Telehealth · site + booking" data-zh="远程医疗 · 官网 + 预约">Telehealth · site + booking</p>
+        <p data-en="A psychiatric telehealth practice's public site, rewritten and published live: the care journey, conditions we treat, provider bio, insurance and FAQ. The booking embed is the real widget loaded on the page, not a stand-in."
+           data-zh="一家精神科远程诊疗机构的官网，整站重写并直接发布上线：就诊流程、可处理的状况、医师简介、保险与常见问题。页面上的预约模块是真实加载的组件，不是占位图。">
           A psychiatric telehealth practice's public site, rewritten and published
           live: the care journey, conditions we treat, provider bio, insurance and
           FAQ. The booking embed is the real widget loaded on the page, not a
@@ -204,11 +262,13 @@
 
       <article class="card">
         <a class="shot" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-branding.jpg" alt="Pulse Branding agency homepage" loading="lazy">
+          <img src="assets/shots/pulse-branding.jpg" alt="Pulse Branding agency homepage"
+               data-en-alt="Pulse Branding agency homepage" data-zh-alt="Pulse Branding 品牌机构官网首页" loading="lazy">
         </a>
         <h3>Pulse Branding</h3>
-        <p class="where">Agency · 23 pages + CMS</p>
-        <p>
+        <p class="where" data-en="Agency · 23 pages + CMS" data-zh="品牌机构 · 23 个页面 + CMS">Agency · 23 pages + CMS</p>
+        <p data-en="My agency's site and case archive. Twenty-six portfolio entries in the CMS, and a design system built from the original shader and interface components rather than lookalike copies."
+           data-zh="我的品牌机构官网与案例库。CMS 中 26 个作品条目，设计系统直接取自原始着色器与界面组件，而不是照猫画虎的仿制品。">
           My agency's site and case archive. Twenty-six portfolio entries in the
           CMS, and a design system built from the original shader and interface
           components rather than lookalike copies.
@@ -218,11 +278,13 @@
 
       <article class="card">
         <a class="shot" href="https://gramlingo.online/" target="_blank" rel="noopener">
-          <img src="assets/shots/gramlingo.jpg" alt="GramLingo language learning site" loading="lazy">
+          <img src="assets/shots/gramlingo.jpg" alt="GramLingo language learning site"
+               data-en-alt="GramLingo language learning site" data-zh-alt="GramLingo 英语学习产品页面" loading="lazy">
         </a>
         <h3>GramLingo</h3>
-        <p class="where">Edtech · trilingual app</p>
-        <p>
+        <p class="where" data-en="Edtech · trilingual app" data-zh="教育科技 · 三语产品">Edtech · trilingual app</p>
+        <p data-en="An English-learning product in English, Chinese and Spanish. 282 questions, no placement tests — the app is the test. Locked art direction, a custom mascot, and a lessons pipeline that publishes rendered pages automatically."
+           data-zh="英、中、西三语的英语学习产品。282 道题，没有分级测试——App 本身就是测试。固定的美术方向、原创吉祥物，以及自动发布渲染页面的课程流水线。">
           An English-learning product in English, Chinese and Spanish. 282
           questions, no placement tests — the app is the test. Locked art
           direction, a custom mascot, and a lessons pipeline that publishes
@@ -233,11 +295,13 @@
 
       <article class="card">
         <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/neolabcare.jpg" alt="NeoLabCare skincare storefront" loading="lazy">
+          <img src="assets/shots/neolabcare.jpg" alt="NeoLabCare skincare storefront"
+               data-en-alt="NeoLabCare skincare storefront" data-zh-alt="NeoLabCare 护肤品牌预售页面" loading="lazy">
         </a>
         <h3>NeoLabCare</h3>
-        <p class="where">Commerce · pre-order DTC</p>
-        <p>
+        <p class="where" data-en="Commerce · pre-order DTC" data-zh="电商 · 预售 DTC">Commerce · pre-order DTC</p>
+        <p data-en="A pre-order skincare brand running zero inventory with seven-day dispatch. Brand system, evidence-anchored science content, a creator programme and a weekly outreach pipeline."
+           data-zh="预售制护肤品牌，零库存、七天发货。品牌体系、有文献支撑的成分内容、达人合作计划，以及每周自动运行的邀约流程。">
           A pre-order skincare brand running zero inventory with seven-day
           dispatch. Brand system, evidence-anchored science content, a creator
           programme and a weekly outreach pipeline.
@@ -247,11 +311,13 @@
 
       <article class="card">
         <a class="shot" href="https://brainybaobei.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/brainybaobei.jpg" alt="BrainyBaobei chart reading site" loading="lazy">
+          <img src="assets/shots/brainybaobei.jpg" alt="BrainyBaobei chart reading site"
+               data-en-alt="BrainyBaobei chart reading site" data-zh-alt="BrainyBaobei 八字推演产品页面" loading="lazy">
         </a>
         <h3>BrainyBaobei</h3>
-        <p class="where">Product · engine + checkout</p>
-        <p>
+        <p class="where" data-en="Product · engine + checkout" data-zh="产品 · 推演引擎 + 支付">Product · engine + checkout</p>
+        <p data-en="A Chinese four-pillars (BaZi) reading engine for parents, computed from real astronomy rather than lookup tables, with its own payment flow and a deploy pipeline that ships on push."
+           data-zh="面向父母的八字（四柱）推演引擎，基于真实天文计算而非查表，自带支付流程，并有一套 push 即上线的部署流水线。">
           A Chinese four-pillars (BaZi) reading engine for parents, computed from
           real astronomy rather than lookup tables, with its own payment flow and
           a deploy pipeline that ships on push.
@@ -261,25 +327,29 @@
 
       <article class="card">
         <a class="shot" href="https://edenne.life/" target="_blank" rel="noopener">
-          <img src="assets/shots/edenne.jpg" alt="Edenne brand landing page" loading="lazy">
+          <img src="assets/shots/edenne.jpg" alt="Edenne brand landing page"
+               data-en-alt="Edenne brand landing page" data-zh-alt="Edenne 品牌落地页" loading="lazy">
         </a>
         <h3>Edenne</h3>
-        <p class="where">Brand + app prototype</p>
-        <p>
-          A presence-first brand and a phone-only companion prototype. The
-          domain name is wired at the registrar, apex and app subdomain both
-          TLS-verified, each served as its own deployment.
+        <p class="where" data-en="Brand + app prototype" data-zh="品牌 + App 原型">Brand + app prototype</p>
+        <p data-en="A presence-first brand and a phone-only companion prototype. The domain is wired at the registrar, apex and app subdomain both TLS-verified, each served as its own deployment."
+           data-zh="以「存在感」为核心的品牌，以及只在手机上运行的陪伴类原型。域名在注册商处逐条配置，主域与 app 子域均通过 TLS 验证，各自独立部署。">
+          A presence-first brand and a phone-only companion prototype. The domain
+          is wired at the registrar, apex and app subdomain both TLS-verified,
+          each served as its own deployment.
         </p>
         <a class="live" href="https://app.edenne.life/" target="_blank" rel="noopener">app.edenne.life →</a>
       </article>
 
       <article class="card">
         <a class="shot" href="https://ancientscienceofchina.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/asoc.jpg" alt="Ancient Science of China catalogue site" loading="lazy">
+          <img src="assets/shots/asoc.jpg" alt="Ancient Science of China catalogue site"
+               data-en-alt="Ancient Science of China catalogue site" data-zh-alt="中国古代科技与思想目录站页面" loading="lazy">
         </a>
         <h3>Ancient Science of China</h3>
-        <p class="where">Publishing · research archive</p>
-        <p>
+        <p class="where" data-en="Publishing · research archive" data-zh="出版 · 研究档案">Publishing · research archive</p>
+        <p data-en="A catalogue of Chinese intellectual heritage — long-form, source-tagged research built to be read by people and by AI answer engines alike."
+           data-zh="中国思想与科技遗产的目录站——长篇、逐条标注出处的研究内容，同时面向人类读者与 AI 问答引擎阅读。">
           A catalogue of Chinese intellectual heritage — long-form, source-tagged
           research built to be read by people and by AI answer engines alike.
         </p>
@@ -288,11 +358,13 @@
 
       <article class="card">
         <a class="shot" href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-instinct.jpg" alt="Pulse Instinct preference testing app" loading="lazy">
+          <img src="assets/shots/pulse-instinct.jpg" alt="Pulse Instinct preference testing app"
+               data-en-alt="Pulse Instinct preference testing app" data-zh-alt="Pulse Instinct 潜意识偏好测试应用" loading="lazy">
         </a>
         <h3>Pulse Instinct</h3>
-        <p class="where">Product · preference testing</p>
-        <p>
+        <p class="where" data-en="Product · preference testing" data-zh="产品 · 潜意识偏好测试">Product · preference testing</p>
+        <p data-en="People choose without being able to explain why — and that pattern is what they actually want. A web app that reads subconscious preference instead of asking people to self-report."
+           data-zh="人们做出选择时往往说不清原因，而那个模式才是他们真正想要的。一个读取潜意识偏好的 Web 应用，而不是让人自我陈述。">
           People choose without being able to explain why — and that pattern is
           what they actually want. A web app that reads subconscious preference
           instead of asking people to self-report.
@@ -301,26 +373,16 @@
       </article>
 
       <article class="card">
-        <a class="shot" href="https://www.pulse-branding.com/portfolio/robotist" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-case-robotist.jpg" alt="A Pulse Branding case study page" loading="lazy">
-        </a>
-        <h3>Case archive</h3>
-        <p class="where">Agency work · 26 projects</p>
-        <p>
-          The published case studies — robotics, biotech, wellness, hospitality
-          and cultural work, each written up as a CMS-driven page with its own
-          art direction.
-        </p>
-        <a class="live" href="https://www.pulse-branding.com/portfolio/robotist" target="_blank" rel="noopener">See a case study →</a>
-      </article>
-
-      <article class="card">
         <a class="shot" href="https://robotist.com.au/" target="_blank" rel="noopener">
-          <img src="assets/shots/robotist.jpg" alt="Robotist robotics platform site — 'Intelligent machines. Safely Tested.'" loading="lazy">
+          <img src="assets/shots/robotist.jpg"
+               alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
+               data-en-alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
+               data-zh-alt="Robotist 全球机器人平台官网首页" loading="lazy">
         </a>
         <h3>Robotist</h3>
-        <p class="where">Robotics · global platform</p>
-        <p>
+        <p class="where" data-en="Robotics · global platform" data-zh="机器人 · 全球平台">Robotics · global platform</p>
+        <p data-en="A robotics platform positioned globally — hardware, an on-device assistant and a subscription layer, with Shanghai, Hangzhou and Sydney operations and worldwide shipping."
+           data-zh="面向全球的机器人平台——硬件、端上助手与订阅层，运营覆盖上海、杭州与悉尼，全球发货。">
           A robotics platform positioned globally — hardware, an on-device
           assistant and a subscription layer, with Shanghai, Hangzhou and Sydney
           operations and worldwide shipping.
@@ -330,14 +392,16 @@
 
       <article class="card">
         <a class="shot" href="#method">
-          <img src="assets/agent-work/pulse-growth-engine.webp" alt="Pulse Growth Engine desktop application" loading="lazy">
+          <img src="assets/agent-work/pulse-growth-engine.webp" alt="Pulse Growth Engine desktop application"
+               data-en-alt="Pulse Growth Engine desktop application" data-zh-alt="Pulse Growth Engine 桌面应用界面" loading="lazy">
         </a>
         <h3>Pulse Growth Engine</h3>
-        <p class="where">Tooling · desktop app</p>
-        <p>
-          An internal desktop application for content and lead generation,
-          wired to language and image models, built to run the agency's own
-          growth work rather than buy it in.
+        <p class="where" data-en="Tooling · desktop app" data-zh="工具 · 桌面应用">Tooling · desktop app</p>
+        <p data-en="An internal desktop application for content and lead generation, wired to language and image models, built to run the agency's own growth work rather than buy it in."
+           data-zh="内部使用的桌面应用，用于内容生产与线索获取，接入语言与图像模型，让机构自己的增长工作由自己完成，而不是外包购买。">
+          An internal desktop application for content and lead generation, wired
+          to language and image models, built to run the agency's own growth work
+          rather than buy it in.
         </p>
       </article>
 
@@ -347,9 +411,11 @@
 
 <div class="wrap">
   <section id="method">
-    <p class="label">Method</p>
-    <h2>What we actually set up.</h2>
-    <p class="section-intro">
+    <p class="label" data-en="Method" data-zh="方法">Method</p>
+    <h2 data-en="What we actually set up." data-zh="真正搭起来的东西。">What we actually set up.</h2>
+    <p class="section-intro"
+       data-en="The products above are the visible half. The other half is the operating system underneath them — the reason a one-person team ships at this rate without shipping junk."
+       data-zh="上面的作品是可见的一半。另一半是支撑它们的作业系统——一个人能保持这样的交付速度而不出垃圾，靠的就是这套东西。">
       The products above are the visible half. The other half is the operating
       system underneath them — the reason a one-person team ships at this rate
       without shipping junk.
@@ -357,46 +423,52 @@
 
     <div class="setup">
       <article>
-        <h4><span>01</span>Agent build pipelines</h4>
-        <p>
+        <h4><span>01</span><b data-en="Agent build pipelines" data-zh="Agent 构建流水线">Agent build pipelines</b></h4>
+        <p data-en="Briefs go in, working builds come out. Agents write the code, run it, fix their own failures and hand back something I can inspect in a browser before it goes anywhere near a domain."
+           data-zh="需求进去，可运行的成品出来。Agent 写代码、跑起来、自己修错，最后交回一个我能在浏览器里亲自看过的东西，才允许它接近域名。">
           Briefs go in, working builds come out. Agents write the code, run it,
           fix their own failures and hand back something I can inspect in a
           browser before it goes anywhere near a domain.
         </p>
       </article>
       <article>
-        <h4><span>02</span>Deploy and publish automation</h4>
-        <p>
+        <h4><span>02</span><b data-en="Deploy and publish automation" data-zh="部署与发布自动化">Deploy and publish automation</b></h4>
+        <p data-en="Builds are committed, pushed and published without me clicking through dashboards, then re-read from the live URL to prove the change landed."
+           data-zh="构建结果自动提交、推送、发布，不需要我逐个后台点击；然后从线上地址重新读取一遍，证明改动真的生效了。">
           Builds are committed, pushed and published without me clicking through
           dashboards, then re-read from the live URL to prove the change landed.
         </p>
       </article>
       <article>
-        <h4><span>03</span>Verification before claims</h4>
-        <p>
+        <h4><span>03</span><b data-en="Verification before claims" data-zh="先验证，再下结论">Verification before claims</b></h4>
+        <p data-en="Nothing is called finished on a green log. Every delivery passes an independent check against the original brief — one gate representing the client, one acting as a human visiting the page."
+           data-zh="日志变绿不等于完成。每一次交付都要对照最初的需求做独立检查——一道关卡代表客户，一道关卡模拟真人访问页面。">
           Nothing is called finished on a green log. Every delivery passes an
           independent check against the original brief — one gate representing
           the client, one acting as a human visiting the page.
         </p>
       </article>
       <article>
-        <h4><span>04</span>Whole-site visual sweeps</h4>
-        <p>
+        <h4><span>04</span><b data-en="Whole-site visual sweeps" data-zh="全站视觉巡检">Whole-site visual sweeps</b></h4>
+        <p data-en="Sites get swept page by page at real widths for broken images, dead links, overflow and illegible text — the defects that quietly sit on live sites for months."
+           data-zh="按真实屏宽逐页巡检站点：坏图、死链、溢出、看不清的文字——这些缺陷常常在线上站点静静躺上好几个月。">
           Sites get swept page by page at real widths for broken images, dead
           links, overflow and illegible text — the defects that quietly sit on
           live sites for months.
         </p>
       </article>
       <article>
-        <h4><span>05</span>Scheduled operations</h4>
-        <p>
-          Monitoring, content checks and delivery gates run on timers, so
-          problems surface as alerts instead of as surprises.
+        <h4><span>05</span><b data-en="Scheduled operations" data-zh="定时运营">Scheduled operations</b></h4>
+        <p data-en="Monitoring, content checks and delivery gates run on timers, so problems surface as alerts instead of as surprises."
+           data-zh="监控、内容检查与交付关卡按定时任务运行，让问题以告警的形式出现，而不是以惊吓的形式出现。">
+          Monitoring, content checks and delivery gates run on timers, so problems
+          surface as alerts instead of as surprises.
         </p>
       </article>
       <article>
-        <h4><span>06</span>Continuity that survives the session</h4>
-        <p>
+        <h4><span>06</span><b data-en="Continuity that survives the session" data-zh="能跨会话延续的上下文">Continuity that survives the session</b></h4>
+        <p data-en="State, decisions and gotchas are written down where the next session reads them first — so context compounds instead of resetting."
+           data-zh="状态、决策与踩过的坑都会记录下来，下一个会话第一眼就能读到——上下文因此是累积的，而不是每次清零。">
           State, decisions and gotchas are written down where the next session
           reads them first — so context compounds instead of resetting.
         </p>
@@ -411,7 +483,9 @@
     <div class="foot">
       <div>
         <div class="name">Lareesa Hu</div>
-        <div style="margin-top:6px">Product, AI and brand — Hangzhou, China</div>
+        <div style="margin-top:6px"
+             data-en="Product, AI and brand — Hangzhou, China"
+             data-zh="产品 · AI · 品牌 — 中国，杭州">Product, AI and brand — Hangzhou, China</div>
       </div>
       <div>
         <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
@@ -422,5 +496,54 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var KEY = 'lareesa-portfolio-lang';
+  var TITLE = {
+    en: 'Lareesa Hu — Product, AI and brand work, shipped',
+    zh: 'Lareesa Hu — 产品、AI 与品牌，做出来并上线'
+  };
+  var DESC = {
+    en: 'Lareesa Hu — product, AI and brand operator. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct, Robotist.',
+    zh: 'Lareesa Hu — 产品 × AI × 品牌操盘手。由 AI Agent 流水线构建并上线的真实产品：Firefly Global、Pulse Branding、GramLingo、NeoLabCare、BrainyBaobei、Edenne、中国古代科技与思想、Pulse Instinct、Robotist。'
+  };
+  function apply(lang) {
+    if (lang !== 'zh') lang = 'en';
+    var i;
+    document.documentElement.lang = lang;
+    document.title = TITLE[lang];
+    var md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', DESC[lang]);
+
+    var nodes = document.querySelectorAll('[data-en]');
+    for (i = 0; i < nodes.length; i++) {
+      var v = nodes[i].getAttribute('data-' + lang);
+      if (v == null) v = nodes[i].getAttribute('data-en');
+      if (v != null) nodes[i].innerHTML = v;
+    }
+    var imgs = document.querySelectorAll('[data-en-alt]');
+    for (i = 0; i < imgs.length; i++) {
+      var a = imgs[i].getAttribute('data-' + lang + '-alt');
+      if (a != null) imgs[i].setAttribute('alt', a);
+    }
+    var btns = document.querySelectorAll('[data-lang-btn]');
+    for (i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute('data-lang-btn') === lang;
+      btns[i].classList.toggle('on', on);
+      btns[i].setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  var btns = document.querySelectorAll('[data-lang-btn]');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function () {
+      apply(this.getAttribute('data-lang-btn'));
+    });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === 'zh' ? 'zh' : 'en');
+})();
+</script>
 </body>
 </html>
