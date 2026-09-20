@@ -27,6 +27,10 @@
     --serif:'Tenor Sans','Times New Roman',Georgia,serif;
     --sans:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     --cjk:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC','Source Han Sans SC','Heiti SC',sans-serif;
+    /* Latin first, then Chinese: a Latin word inside a Chinese line keeps its own face
+       and only the CJK glyphs fall through to PingFang. */
+    --sans-mixed:'Geist','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;
+    --serif-mixed:'Tenor Sans','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif;
     --pad:clamp(20px,5vw,72px);
     --gap:clamp(20px,3vw,40px);
   }
@@ -104,7 +108,7 @@
   }
   h1{
     font-family:var(--serif);font-weight:400;margin:0;
-    font-size:clamp(2.5rem,8.4vw,6.1rem);line-height:.98;letter-spacing:-.01em;
+    font-size:clamp(2.5rem,7.2vw,4.75rem);line-height:1.06;letter-spacing:-.01em;
     text-wrap:balance;
   }
   .lede{
@@ -119,6 +123,7 @@
   .meta > *{white-space:nowrap}
   .meta > *:not(:last-child)::after{content:'·';display:inline-block;padding:0 11px;color:#6d6577}
   .meta a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .nb{white-space:nowrap}
   @media (max-width:900px){
     .meta{flex-direction:column;align-items:flex-start;gap:3px}
     .meta > *:not(:last-child)::after{display:none}
@@ -192,7 +197,7 @@
 
   /* Chinese typography — clear and contemporary, never decorative */
   html[lang="zh"] body{
-    font-family:var(--cjk);
+    font-family:var(--sans-mixed);
     line-height:1.82;letter-spacing:.012em;font-size:16.5px;
   }
   html[lang="zh"] h1,
@@ -201,12 +206,12 @@
   html[lang="zh"] .card h3,
   html[lang="zh"] .setup h4,
   html[lang="zh"] footer .name{
-    font-family:var(--cjk);font-weight:500;letter-spacing:.02em;
+    font-family:var(--serif-mixed);font-weight:400;letter-spacing:0;
   }
-  html[lang="zh"] h1{font-size:clamp(2rem,5.6vw,3.7rem);line-height:1.2}
-  html[lang="zh"] h2{line-height:1.3;font-size:clamp(1.5rem,3.2vw,2.1rem)}
-  html[lang="zh"] .kicker{letter-spacing:.1em;font-size:.82rem}
-  html[lang="zh"] .label{letter-spacing:.24em}
+  html[lang="zh"] h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.18}
+  html[lang="zh"] h2{line-height:1.3;font-size:clamp(1.62rem,3.7vw,2.4rem)}
+  html[lang="zh"] .kicker{letter-spacing:.08em;font-size:.84rem}
+  html[lang="zh"] .label{letter-spacing:.16em}
   html[lang="zh"] .card .where{letter-spacing:.12em}
   html[lang="zh"] .lede{line-height:1.9;max-width:26em}
   html[lang="zh"] .card p,
@@ -220,7 +225,7 @@
   html[lang="zh"] h2,
   html[lang="zh"] h3,
   html[lang="zh"] h4{line-break:strict}
-  html[lang="zh"] header.top nav a{letter-spacing:.14em}
+  html[lang="zh"] header.top nav a{letter-spacing:.1em}
 
   @media (max-width:560px){
     body{font-size:16px}
@@ -283,7 +288,7 @@
     <div class="hero-copy">
     <p class="kicker rise" data-en="Product · AI · Brand" data-zh="产品·AI·品牌">Product · AI · Brand</p>
     <h1 class="rise" data-en="I ship products&lt;br&gt;with AI agents."
-        data-zh="我指挥 AI Agent，&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
+        data-zh="我指挥 <span class='nb'>AI Agent</span>，&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
     <p class="lede rise"
        data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
        data-zh="十四年品牌、营销与产品经验，现在由 Agent 流水线<span style=&quot;white-space:nowrap&quot;>接管</span>：写代码、跑验证、<span style=&quot;white-space:nowrap&quot;>上线部署</span>。下面每个项目都在线上真实运行，不是<span style=&quot;white-space:nowrap&quot;>效果图</span>。">
