@@ -121,7 +121,7 @@
   .meta a{text-decoration:none;border-bottom:1px solid var(--line)}
   @media (max-width:900px){
     .meta{flex-direction:column;align-items:flex-start;gap:3px}
-    .meta > *::after{display:none}
+    .meta > *:not(:last-child)::after{display:none}
   }
 
   section{padding:clamp(44px,5.6vw,78px) 0;border-top:1px solid var(--line-soft)}
