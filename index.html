@@ -167,11 +167,18 @@
   html[lang="zh"] .kicker{letter-spacing:.2em}
   html[lang="zh"] .label{letter-spacing:.24em}
   html[lang="zh"] .card .where{letter-spacing:.12em}
-  html[lang="zh"] .lede{line-height:1.8;max-width:34ch}
+  html[lang="zh"] .lede{line-height:1.8;max-width:32ch}
   html[lang="zh"] .card p,
   html[lang="zh"] .setup article p,
   html[lang="zh"] .section-intro{line-height:1.85}
   html[lang="zh"] .card p{font-size:.95rem}
+  html[lang="zh"] .setup{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+  html[lang="zh"] body,
+  html[lang="zh"] p,
+  html[lang="zh"] h1,
+  html[lang="zh"] h2,
+  html[lang="zh"] h3,
+  html[lang="zh"] h4{line-break:strict}
   html[lang="zh"] header.top nav a{letter-spacing:.14em}
 
   @media (max-width:560px){
@@ -207,7 +214,7 @@
   <div class="hero">
     <p class="kicker" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
     <h1 data-en="I ship products&lt;br&gt;with AI agents."
-        data-zh="我带着 AI Agent&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
+        data-zh="我带着 AI Agent，&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
     <p class="lede"
        data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
        data-zh="十四年品牌、营销与产品经验，如今跑在能构建、验证、部署的 Agent 流水线上。下面每一个项目都在线上真实运行，不是效果图。">
@@ -415,7 +422,7 @@
     <h2 data-en="What we actually set up." data-zh="真正搭起来的东西。">What we actually set up.</h2>
     <p class="section-intro"
        data-en="The products above are the visible half. The other half is the operating system underneath them — the reason a one-person team ships at this rate without shipping junk."
-       data-zh="上面的作品是可见的一半。另一半是支撑它们的作业系统——一个人能保持这样的交付速度而不出垃圾，靠的就是这套东西。">
+       data-zh="上面的作品是可见的一半。另一半是支撑它们的操作系统——一个人能做到这样的交付速度、还保证东西不粗糙，靠的就是这套东西。">
       The products above are the visible half. The other half is the operating
       system underneath them — the reason a one-person team ships at this rate
       without shipping junk.
@@ -425,7 +432,7 @@
       <article>
         <h4><span>01</span><b data-en="Agent build pipelines" data-zh="Agent 构建流水线">Agent build pipelines</b></h4>
         <p data-en="Briefs go in, working builds come out. Agents write the code, run it, fix their own failures and hand back something I can inspect in a browser before it goes anywhere near a domain."
-           data-zh="需求进去，可运行的成品出来。Agent 写代码、跑起来、自己修错，最后交回一个我能在浏览器里亲自看过的东西，才允许它接近域名。">
+           data-zh="需求进去，可运行的成品出来。Agent 写代码、跑起来、自己修错，最后交回一个我能在浏览器里亲自看过的成品，才让它接近域名。">
           Briefs go in, working builds come out. Agents write the code, run it,
           fix their own failures and hand back something I can inspect in a
           browser before it goes anywhere near a domain.
@@ -485,7 +492,7 @@
         <div class="name">Lareesa Hu</div>
         <div style="margin-top:6px"
              data-en="Product, AI and brand — Hangzhou, China"
-             data-zh="产品 · AI · 品牌 — 中国，杭州">Product, AI and brand — Hangzhou, China</div>
+             data-zh="产品 · AI · 品牌 —— 中国，杭州">Product, AI and brand — Hangzhou, China</div>
       </div>
       <div>
         <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
