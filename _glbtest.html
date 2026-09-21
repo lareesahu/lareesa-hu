@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>glb test</title>
+<style>html,body{margin:0;height:100%;background:#0d0b12}canvas{display:block;width:100vw;height:100vh}</style>
+</head><body>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+renderer.setSize(innerWidth, innerHeight); document.body.appendChild(renderer.domElement);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene();
+const cam = new THREE.PerspectiveCamera(28, innerWidth/innerHeight, 0.01, 100);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x333344, 1.1));
+const d1 = new THREE.DirectionalLight(0xfff3e8, 1.5); d1.position.set(1,2,3); scene.add(d1);
+const d2 = new THREE.DirectionalLight(0xff9cfc, 0.8); d2.position.set(-2,1,-2); scene.add(d2);
+const MODEL = (new URLSearchParams(location.search).get('m') || 'character-from-her-reference');
+new GLTFLoader().load('./assets/models/' + MODEL + '.glb', g => {
+  const o = g.scene; scene.add(o);
+  const box = new THREE.Box3().setFromObject(o);
+  const size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
+  console.log('SIZE ' + JSON.stringify(size.toArray().map(v=>+v.toFixed(3))) + ' CENTER ' + JSON.stringify(c.toArray().map(v=>+v.toFixed(3))));
+  const r = Math.max(size.x, size.y, size.z); const q = new URLSearchParams(location.search);
+  cam.position.set(c.x, c.y + size.y*0.05, c.z + r*2.2);
+  cam.lookAt(c.x, c.y, c.z);
+  renderer.render(scene, cam);
+  window.__ready = true;
+}, undefined, e => { console.log('LOAD ERROR ' + e); window.__err = String(e); });
+</script></body></html>

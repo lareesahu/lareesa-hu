@@ -211,7 +211,13 @@
   html[lang="zh"] footer .name{
     font-family:var(--serif-mixed);font-weight:400;letter-spacing:0;
   }
-  html[lang="zh"] h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.18}
+  html[lang="zh"] h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.18;word-break:keep-all;overflow-wrap:normal}
+  @media (max-width:700px){ html[lang="zh"] h1 .h1b{display:block} }
+  html[lang="zh"] h1 .svc{
+    display:block;margin-top:.34em;font-family:var(--sans-mixed);
+    font-size:.42em;line-height:1.5;letter-spacing:.02em;color:var(--muted);
+    word-break:keep-all;
+  }
   html[lang="zh"] h2{line-height:1.3;font-size:clamp(1.62rem,3.7vw,2.4rem)}
   html[lang="zh"] .kicker{letter-spacing:.08em;font-size:.84rem}
   html[lang="zh"] .label{letter-spacing:.16em}
@@ -272,7 +278,7 @@
   <header class="top">
     <div class="sig">Lareesa Hu</div>
     <nav>
-      <a href="#work" data-en="Work" data-zh="作品">Work</a>
+      <a href="#work" data-en="Work" data-zh="案例">Work</a>
       <a href="#method" data-en="Method" data-zh="方法">Method</a>
       <a href="#contact" data-en="Contact" data-zh="联系我">Contact</a>
       <span class="lang" role="group" aria-label="Language / 语言">
@@ -291,10 +297,10 @@
     <div class="hero-copy">
     <p class="kicker rise" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
     <h1 class="rise" data-en="I ship products&lt;br&gt;with AI agents."
-        data-zh="我带着 <span class='nb'>AI Agent</span>，&lt;br&gt;把产品做上线。">I ship products<br>with AI agents.</h1>
+        data-zh="协同<span class='nb'>AI Agent</span><span class='h1b'>从<span class='nb'>0-1</span>落地项目</span><span class='svc'>调研-策划-品牌-设计-开发-电商-增长</span>">I ship products<br>with AI agents.</h1>
     <p class="lede rise"
        data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
-       data-zh="十四年做品牌、营销和产品，现在这些活交给 Agent 流水线<span style=&quot;white-space:nowrap&quot;>接手</span>：写代码、跑验证、<span style=&quot;white-space:nowrap&quot;>上线部署</span>。下面每一个都在线上真实跑着，不是<span style=&quot;white-space:nowrap&quot;>效果图</span>。">
+       data-zh="十四年的品牌、营销与产品经验，凝结成 AI Agent 流水线 skill：从商业逻辑，到品牌全案，到开发部署。每一个项目都已真实落地。">
       Fourteen years of brand, marketing and product work — now run through
       agent pipelines that build, verify and deploy. Everything below is live in
       production, not a mockup.
@@ -315,12 +321,12 @@
 
 <div class="wrap">
   <section id="work">
-    <p class="label" data-en="Live products" data-zh="在跑的产品">Live products</p>
+    <p class="label" data-en="Live products" data-zh="已上线">Live products</p>
     <h2 data-en="Built end to end, shipped, still running."
-        data-zh="从零做起，上线之后还在跑。">Built end to end, shipped, still running.</h2>
+        data-zh="从0-1打造，上线后自动化运营">Built end to end, shipped, still running.</h2>
     <p class="section-intro"
        data-en="Each of these was taken from blank page to a live URL by me directing AI agents — briefing, art direction, code review, deployment and verification. The screenshots are the real sites."
-       data-zh="这些项目都是从一张白纸开始，我带着 AI Agent 一步步做出来的：拆需求、定<span style=&quot;white-space:nowrap&quot;>美术方向</span>、审代码、部署、验证。截图都来自真实站点。">
+       data-zh="这些项目都是我从 0 开始、带着 AI Agent 做出来的：调研、策划、设计、开发、上线、运营。截图都截自真实站点，点开就能看。">
       Each of these was taken from blank page to a live URL by me directing AI
       agents — briefing, art direction, code review, deployment and verification.
       The screenshots are the real sites.
@@ -337,9 +343,9 @@
                loading="lazy">
         </a>
         <h3>Firefly Global</h3>
-        <p class="where" data-en="Telehealth · site + booking" data-zh="远程医疗 · 官网 + 预约">Telehealth · site + booking</p>
+        <p class="where" data-en="Telehealth · site + booking" data-zh="远程医疗 · 独立站 + 预约">Telehealth · site + booking</p>
         <p data-en="A psychiatric telehealth practice's public site, rewritten and published live: the care journey, conditions we treat, provider bio, insurance and FAQ. The booking embed is the real widget loaded on the page, not a stand-in."
-           data-zh="一家精神科远程医疗机构的官网。整站重写后直接上线：就诊流程、能看哪些状况、医生是谁、保险怎么走、常见问题，都写清楚了。页面上的预约模块是真的在加载，不是摆样子。">
+           data-zh="精神科远程医疗机构的独立站：就诊流程、可诊疗范围、医生介绍、保险说明、常见问题，全部写清楚。预约模块是真的在跑，不是摆样子。">
           A psychiatric telehealth practice's public site, rewritten and published
           live: the care journey, conditions we treat, provider bio, insurance and
           FAQ. The booking embed is the real widget loaded on the page, not a
@@ -354,9 +360,9 @@
                data-en-alt="Pulse Branding agency homepage" data-zh-alt="Pulse Branding 品牌机构官网首页" loading="lazy">
         </a>
         <h3>Pulse Branding</h3>
-        <p class="where" data-en="Agency · 23 pages + CMS" data-zh="机构 · 23 个页面 + CMS">Agency · 23 pages + CMS</p>
+        <p class="where" data-en="Agency · 23 pages + CMS" data-zh="机构官网 · 23 个页面 + CMS">Agency · 23 pages + CMS</p>
         <p data-en="My agency's site and case archive. Twenty-six portfolio entries in the CMS, and a design system built from the original shader and interface components rather than lookalike copies."
-           data-zh="我们自己机构的官网和案例库，CMS 里存了 26 个作品。设计系统是从原来的着色器和界面组件里长出来的，不是照着描的。">
+           data-zh="我们机构自己的官网和案例库，26 个作品全在 CMS 里。设计系统从原有的着色器和界面组件里长出来，不是照着描的仿制品。">
           My agency's site and case archive. Twenty-six portfolio entries in the
           CMS, and a design system built from the original shader and interface
           components rather than lookalike copies.
@@ -370,9 +376,9 @@
                data-en-alt="GramLingo language learning site" data-zh-alt="GramLingo 英语学习产品页面" loading="lazy">
         </a>
         <h3>GramLingo</h3>
-        <p class="where" data-en="Edtech · trilingual app" data-zh="教育科技 · 三语产品">Edtech · trilingual app</p>
+        <p class="where" data-en="Edtech · trilingual app" data-zh="教育科技 · 三语学习产品">Edtech · trilingual app</p>
         <p data-en="An English-learning product in English, Chinese and Spanish. 282 questions, no placement tests — the app is the test. Locked art direction, a custom mascot, and a lessons pipeline that publishes rendered pages automatically."
-           data-zh="英语、中文、西班牙语三种语言的英语学习产品。282 道题，没有分级测试——用着用着就知道自己在哪一档。美术方向先锁死，吉祥物是原创的，课程页面由流水线自动渲染发布。">
+           data-zh="英语、中文、西班牙语三语学习产品，282 道题，没有分级测试——用着用着就知道自己在哪一档。美术方向先定死，吉祥物原创，课程页面自动渲染发布。">
           An English-learning product in English, Chinese and Spanish. 282
           questions, no placement tests — the app is the test. Locked art
           direction, a custom mascot, and a lessons pipeline that publishes
@@ -387,9 +393,9 @@
                data-en-alt="NeoLabCare skincare storefront" data-zh-alt="NeoLabCare 护肤品牌预售页面" loading="lazy">
         </a>
         <h3>NeoLabCare</h3>
-        <p class="where" data-en="Commerce · pre-order DTC" data-zh="电商 · 预售 DTC">Commerce · pre-order DTC</p>
+        <p class="where" data-en="Commerce · pre-order DTC" data-zh="跨境电商 · 高端护肤">Commerce · pre-order DTC</p>
         <p data-en="A pre-order skincare brand running zero inventory with seven-day dispatch. Brand system, evidence-anchored science content, a creator programme and a weekly outreach pipeline."
-           data-zh="预售制护肤品牌，零库存，七天发货。品牌体系、有文献支撑的成分内容、达人合作计划，每周还有一轮自动跑起来的邀约。">
+           data-zh="鲜制自研超高端护肤品牌，零库存，生产后七天内发货。科研驱动成分配方、全自动达人合作计划、全自动化 KOL 运营。">
           A pre-order skincare brand running zero inventory with seven-day
           dispatch. Brand system, evidence-anchored science content, a creator
           programme and a weekly outreach pipeline.
@@ -405,7 +411,7 @@
         <h3>BrainyBaobei</h3>
         <p class="where" data-en="Product · engine + checkout" data-zh="产品 · 推演引擎 + 支付">Product · engine + checkout</p>
         <p data-en="A Chinese four-pillars (BaZi) reading engine for parents, computed from real astronomy rather than lookup tables, with its own payment flow and a deploy pipeline that ships on push."
-           data-zh="给父母用的八字（四柱）推演引擎。按真实天文数据算，不查表。支付流程自带，代码一推就自动上线。">
+           data-zh="给父母用的八字（四柱）推演引擎，按真实天文数据算，不查表。支付流程自带，代码一推就自动上线。">
           A Chinese four-pillars (BaZi) reading engine for parents, computed from
           real astronomy rather than lookup tables, with its own payment flow and
           a deploy pipeline that ships on push.
@@ -421,7 +427,7 @@
         <h3>Edenne</h3>
         <p class="where" data-en="Brand + app prototype" data-zh="品牌 + App 原型">Brand + app prototype</p>
         <p data-en="A presence-first brand and a phone-only companion prototype. The domain is wired at the registrar, apex and app subdomain both TLS-verified, each served as its own deployment."
-           data-zh="以「陪伴感」为核心的品牌，加一个只在手机上用的伴侣原型。域名一条条配好，主域和 app 子域都过了 TLS，各自独立部署。">
+           data-zh="以「陪伴感」为核心的品牌，加一个只在手机上运行的伴侣原型。域名逐项配好，主域和 app 子域都过了 TLS，各自独立部署。">
           A presence-first brand and a phone-only companion prototype. The domain
           is wired at the registrar, apex and app subdomain both TLS-verified,
           each served as its own deployment.
@@ -437,7 +443,7 @@
         <h3>Ancient Science of China</h3>
         <p class="where" data-en="Publishing · research archive" data-zh="出版 · 研究档案">Publishing · research archive</p>
         <p data-en="A catalogue of Chinese intellectual heritage — long-form, source-tagged research built to be read by people and by AI answer engines alike."
-           data-zh="中国思想与科技遗产的目录站。长篇研究，每个说法都标了出处，给人读，也给 AI 问答引擎读。">
+           data-zh="中国思想与科技遗产的目录站。长篇研究，每个说法都标注出处——给人读，也给 AI 问答引擎读。">
           A catalogue of Chinese intellectual heritage — long-form, source-tagged
           research built to be read by people and by AI answer engines alike.
         </p>
