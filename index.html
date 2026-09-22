@@ -204,11 +204,11 @@
     grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
   }
   .setup article p{margin:0;color:#c9c2d1;font-size:.96rem;text-wrap:pretty}
-  .setup h4{
+  .setup h3{
     font-family:var(--serif);font-weight:400;font-size:1.06rem;margin:0 0 8px;text-wrap:balance;
   }
-  .setup h4 b{font-weight:400}
-  .setup h4 span{color:var(--accent);font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;margin-right:9px;vertical-align:2px}
+  .setup h3 b{font-weight:400}
+  .setup h3 span{color:var(--accent);font-family:var(--sans);font-size:.74rem;letter-spacing:.14em;margin-right:9px;vertical-align:2px}
 
   footer{
     border-top:1px solid var(--line);padding:clamp(34px,5vw,64px) 0 clamp(40px,6vw,80px);
@@ -231,7 +231,7 @@
   html[lang="zh"] h2,
   html[lang="zh"] .sig,
   html[lang="zh"] .card h3,
-  html[lang="zh"] .setup h4,
+  html[lang="zh"] .setup h3,
   html[lang="zh"] footer .name{
     font-family:var(--serif-mixed);font-weight:400;letter-spacing:0;
   }
@@ -561,7 +561,7 @@
 
     <div class="setup">
       <article>
-        <h4><span>01</span><b data-en="Agent build pipelines" data-zh="Agent 构建流水线">Agent build pipelines</b></h4>
+        <h3><span>01</span><b data-en="Agent build pipelines" data-zh="Agent 构建流水线">Agent build pipelines</b></h3>
         <p data-en="Briefs go in, working builds come out. Agents write the code, run it, fix their own failures and hand back something I can inspect in a browser before it goes anywhere near a domain."
            data-zh="需求丢进去，能跑的东西出来。Agent 自己写代码、自己跑、自己修错，交回来我先在浏览器里过一遍，没问题才让它碰域名。">
           Briefs go in, working builds come out. Agents write the code, run it,
@@ -570,7 +570,7 @@
         </p>
       </article>
       <article>
-        <h4><span>02</span><b data-en="Deploy and publish automation" data-zh="部署与发布自动化">Deploy and publish automation</b></h4>
+        <h3><span>02</span><b data-en="Deploy and publish automation" data-zh="部署与发布自动化">Deploy and publish automation</b></h3>
         <p data-en="Builds are committed, pushed and published without me clicking through dashboards, then re-read from the live URL to prove the change landed."
            data-zh="构建完自动提交、推送、发布，不用我一个个后台点。发完再从线上地址读一遍，确认改动真的生效了。">
           Builds are committed, pushed and published without me clicking through
@@ -578,7 +578,7 @@
         </p>
       </article>
       <article>
-        <h4><span>03</span><b data-en="Verification before claims" data-zh="先验证，再下结论">Verification before claims</b></h4>
+        <h3><span>03</span><b data-en="Verification before claims" data-zh="先验证，再下结论">Verification before claims</b></h3>
         <p data-en="Nothing is called finished on a green log. Every delivery passes an independent check against the original brief — one gate representing the client, one acting as a human visiting the page."
            data-zh="日志变绿不等于做完了。每次交付都拿最初的需求再独立核一遍：一道关卡站在客户的角度看，一道当作真人打开页面看。">
           Nothing is called finished on a green log. Every delivery passes an
@@ -587,7 +587,7 @@
         </p>
       </article>
       <article>
-        <h4><span>04</span><b data-en="Whole-site visual sweeps" data-zh="全站视觉巡检">Whole-site visual sweeps</b></h4>
+        <h3><span>04</span><b data-en="Whole-site visual sweeps" data-zh="全站视觉巡检">Whole-site visual sweeps</b></h3>
         <p data-en="Sites get swept page by page at real widths for broken images, dead links, overflow and illegible text — the defects that quietly sit on live sites for months."
            data-zh="按真实屏宽一页页扫过去：坏图、死链、错位、看不清的字。这些毛病最容易在线上悄悄躺几个月。">
           Sites get swept page by page at real widths for broken images, dead
@@ -596,7 +596,7 @@
         </p>
       </article>
       <article>
-        <h4><span>05</span><b data-en="Scheduled operations" data-zh="定时运营">Scheduled operations</b></h4>
+        <h3><span>05</span><b data-en="Scheduled operations" data-zh="定时运营">Scheduled operations</b></h3>
         <p data-en="Monitoring, content checks and delivery gates run on timers, so problems surface as alerts instead of as surprises."
            data-zh="监控、内容检查和交付关卡都挂在定时任务上，问题以提醒出现，而不是以惊吓出现。">
           Monitoring, content checks and delivery gates run on timers, so problems
@@ -604,7 +604,7 @@
         </p>
       </article>
       <article>
-        <h4><span>06</span><b data-en="Continuity that survives the session" data-zh="换个会话也接得上">Continuity that survives the session</b></h4>
+        <h3><span>06</span><b data-en="Continuity that survives the session" data-zh="换个会话也接得上">Continuity that survives the session</b></h3>
         <p data-en="State, decisions and gotchas are written down where the next session reads them first — so context compounds instead of resetting."
            data-zh="状态、决定、踩过的坑，都写在下一个会话第一眼会看到的地方。上下文越用越厚，不是每次清零。">
           State, decisions and gotchas are written down where the next session
