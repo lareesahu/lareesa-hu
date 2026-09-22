@@ -158,7 +158,7 @@
   }
   .card{display:flex;flex-direction:column}
   .shot{
-    display:block;overflow:hidden;border:1px solid var(--line);
+    display:block;position:relative;overflow:hidden;border:1px solid var(--line);
     background:#15121c;border-radius:3px;
   }
   .shot img{
@@ -166,6 +166,17 @@
     transition:transform .6s cubic-bezier(.2,.6,.2,1);
   }
   .card a.shot:hover img{transform:scale(1.024)}
+  /* Card covers: the still is the cover; the clip fades in over it only once the
+     card is on screen and the browser has actually started playing. */
+  .shot .clip{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:top;opacity:0;
+    transition:opacity .55s cubic-bezier(.2,.6,.2,1);
+    pointer-events:none;
+  }
+  .shot .clip.on{opacity:1}
+  .shot:hover .clip{transform:scale(1.024)}
+  .clip{transition:opacity .55s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
   .card h3{
     font-family:var(--serif);font-weight:400;font-size:1.22rem;
     margin:18px 0 4px;letter-spacing:.004em;
@@ -355,6 +366,7 @@
                data-en-alt="Firefly Global website with the live Tebra booking widget showing open appointment times"
                data-zh-alt="Firefly Global 官网，页面上真实加载的 Tebra 预约组件与可预约时段"
                loading="lazy">
+          <video class="clip" src="assets/clips/firefly-booking.mp4" poster="assets/shots/firefly-booking.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Firefly Global</h3>
         <p class="where" data-en="Telehealth · site + booking" data-zh="远程医疗 · 独立站 + 预约">Telehealth · site + booking</p>
@@ -372,6 +384,7 @@
         <a class="shot" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">
           <img src="assets/shots/pulse-branding.jpg" alt="Pulse Branding agency homepage"
                data-en-alt="Pulse Branding agency homepage" data-zh-alt="Pulse Branding 品牌机构官网首页" loading="lazy">
+          <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Pulse Branding</h3>
         <p class="where" data-en="Agency · 23 pages + CMS" data-zh="机构官网 · 23 个页面 + CMS">Agency · 23 pages + CMS</p>
@@ -390,6 +403,7 @@
                alt="Welaab brand identity system cover — the pulse-W lockup and serif headline"
                data-en-alt="Welaab brand identity system cover — the pulse-W lockup and serif headline"
                data-zh-alt="Welaab 品牌识别系统封面：脉冲 W 标志与衬线标题" loading="lazy">
+          <video class="clip" src="assets/clips/welaab.mp4" poster="assets/shots/welaab.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Welaab</h3>
         <p class="where" data-en="Brand identity · client system" data-zh="品牌识别 · 客户项目">Brand identity · client system</p>
@@ -408,6 +422,7 @@
         <a class="shot" href="https://gramlingo.online/" target="_blank" rel="noopener">
           <img src="assets/shots/gramlingo.jpg" alt="GramLingo language learning site"
                data-en-alt="GramLingo language learning site" data-zh-alt="GramLingo 英语学习产品页面" loading="lazy">
+          <video class="clip" src="assets/clips/gramlingo.mp4" poster="assets/shots/gramlingo.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>GramLingo</h3>
         <p class="where" data-en="Edtech · trilingual app" data-zh="教育科技 · 三语学习产品">Edtech · trilingual app</p>
@@ -425,6 +440,7 @@
         <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
           <img src="assets/shots/neolabcare.jpg" alt="NeoLabCare skincare storefront"
                data-en-alt="NeoLabCare skincare storefront" data-zh-alt="NeoLabCare 护肤品牌预售页面" loading="lazy">
+          <video class="clip" src="assets/clips/neolabcare.mp4" poster="assets/shots/neolabcare.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>NeoLabCare</h3>
         <p class="where" data-en="Commerce · pre-order DTC" data-zh="跨境电商 · 高端护肤">Commerce · pre-order DTC</p>
@@ -441,6 +457,7 @@
         <a class="shot" href="https://brainybaobei.com/" target="_blank" rel="noopener">
           <img src="assets/shots/brainybaobei.jpg" alt="BrainyBaobei chart reading site"
                data-en-alt="BrainyBaobei chart reading site" data-zh-alt="BrainyBaobei 八字推演产品页面" loading="lazy">
+          <video class="clip" src="assets/clips/brainybaobei.mp4" poster="assets/shots/brainybaobei.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>BrainyBaobei</h3>
         <p class="where" data-en="Product · engine + checkout" data-zh="产品 · 推演引擎 + 支付">Product · engine + checkout</p>
@@ -457,6 +474,7 @@
         <a class="shot" href="https://edenne.life/" target="_blank" rel="noopener">
           <img src="assets/shots/edenne.jpg" alt="Edenne brand landing page"
                data-en-alt="Edenne brand landing page" data-zh-alt="Edenne 品牌落地页" loading="lazy">
+          <video class="clip" src="assets/clips/edenne.mp4" poster="assets/shots/edenne.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Edenne</h3>
         <p class="where" data-en="Brand + app prototype" data-zh="品牌 + App 原型">Brand + app prototype</p>
@@ -473,6 +491,7 @@
         <a class="shot" href="https://ancientscienceofchina.com/" target="_blank" rel="noopener">
           <img src="assets/shots/asoc.jpg" alt="Ancient Science of China catalogue site"
                data-en-alt="Ancient Science of China catalogue site" data-zh-alt="中国古代科技与思想目录站页面" loading="lazy">
+          <video class="clip" src="assets/clips/asoc.mp4" poster="assets/shots/asoc.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Ancient Science of China</h3>
         <p class="where" data-en="Publishing · research archive" data-zh="出版 · 研究档案">Publishing · research archive</p>
@@ -488,6 +507,7 @@
         <a class="shot" href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener">
           <img src="assets/shots/pulse-instinct.jpg" alt="Pulse Instinct preference testing app"
                data-en-alt="Pulse Instinct preference testing app" data-zh-alt="Pulse Instinct 潜意识偏好测试应用" loading="lazy">
+          <video class="clip" src="assets/clips/pulse-instinct.mp4" poster="assets/shots/pulse-instinct.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Pulse Instinct</h3>
         <p class="where" data-en="Product · preference testing" data-zh="产品 · 潜意识偏好测试">Product · preference testing</p>
@@ -506,6 +526,7 @@
                alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
                data-en-alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
                data-zh-alt="Robotist 全球机器人平台官网首页" loading="lazy">
+          <video class="clip" src="assets/clips/robotist.mp4" poster="assets/shots/robotist.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Robotist</h3>
         <p class="where" data-en="Robotics · global platform" data-zh="机器人 · 全球平台">Robotics · global platform</p>
@@ -725,6 +746,35 @@
   }, { rootMargin: '0px 0px -6% 0px', threshold: 0.15 });
   requestAnimationFrame(function () {
     els.forEach(function (el) { io.observe(el); });
+  });
+})();
+</script>
+<script>
+/* Card covers. Nothing plays until a card is actually on screen, nothing plays if
+   the visitor has asked for reduced motion, and every clip stops when the tab is
+   hidden — so the grid costs the same as the stills until it is looked at. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var clips = [].slice.call(document.querySelectorAll('video.clip'));
+  if (reduce || !clips.length || !('IntersectionObserver' in window)) return;
+  var want = [];
+  function start(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  function stop(v) { v.pause(); v.classList.remove('on'); }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      var v = en.target, on = en.isIntersecting && en.intersectionRatio >= 0.5;
+      if (on) { if (want.indexOf(v) === -1) want.push(v); start(v); }
+      else { want = want.filter(function (o) { return o !== v; }); stop(v); }
+    });
+  }, { threshold: [0, 0.5, 0.9] });
+  clips.forEach(function (v) {
+    v.addEventListener('playing', function () { v.classList.add('on'); });
+    v.addEventListener('error', function () { stop(v); });
+    io.observe(v);
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { clips.forEach(stop); }
+    else { want.forEach(start); }
   });
 })();
 </script>
