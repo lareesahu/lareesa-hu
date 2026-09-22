@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welaab — Brand Identity</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+  <style>
+    /* ─────────────────────────────────────────────
+       WELAAB BRAND SYSTEM
+       Design Movement: Bauhaus-Scientific Brutalism
+       Anti-pattern: No rounded corners everywhere,
+         no SF Pro / Inter, no blue CTA buttons,
+         no card shadows, no gradient hero blobs.
+       Philosophy: The lab bench — raw, precise,
+         structured. Beauty through function.
+    ───────────────────────────────────────────── */
+
+    :root {
+      --ink:        #0D0D0D;
+      --ink-60:     #0D0D0D99;
+      --ink-20:     #0D0D0D33;
+      --paper:      #F5F2EC;
+      --paper-dark: #EAE6DC;
+      --acid:       #C8FF00;       /* signature accent — lab-green */
+      --acid-dim:   #A8D900;
+      --serum:      #E8D5C0;       /* warm skin tone */
+      --serum-dark: #C4A882;
+      --clinical:   #1A1A2E;       /* deep navy — scientific depth */
+      --rule:       1px solid #0D0D0D;
+      --rule-light: 1px solid #0D0D0D22;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-ui:      'Syne', system-ui, sans-serif;
+      --font-mono:    'DM Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .page { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    section {
+      padding: 5rem 0;
+      border-top: var(--rule);
+    }
+
+    section:first-of-type { border-top: none; }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--ink-20);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO — BRAND STATEMENT
+    ══════════════════════════════════════════ */
+    .hero {
+      background: var(--clinical);
+      color: var(--paper);
+      padding: 0;
+      border-top: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .hero-left {
+      padding: 4rem 3rem 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(245,242,236,0.12);
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--acid);
+      margin-bottom: 3rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--paper);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--acid);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: rgba(245,242,236,0.55);
+      max-width: 28ch;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: rgba(245,242,236,0.3);
+      display: flex;
+      gap: 2rem;
+    }
+
+    /* ── Primary Logo (Hero) ── */
+    .logo-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .logo-icon-large {
+      width: 96px;
+      height: 96px;
+    }
+
+    .logo-wordmark-large {
+      font-family: var(--font-ui);
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+      line-height: 1;
+    }
+
+    .logo-wordmark-large span {
+      color: var(--acid);
+    }
+
+    .logo-sub {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.4);
+      margin-top: 0.25rem;
+    }
+
+    /* Grid lines decoration */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,255,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,255,0,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: LOGO SYSTEM
+    ══════════════════════════════════════════ */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: var(--rule);
+    }
+
+    .logo-cell {
+      padding: 3rem 2.5rem;
+      border-right: var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .logo-cell:last-child { border-right: none; }
+
+    .logo-cell-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+    }
+
+    .logo-cell.dark {
+      background: var(--clinical);
+    }
+
+    .logo-cell.acid {
+      background: var(--acid);
+    }
+
+    /* Wordmark variants */
+    .wordmark {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .wordmark.size-lg { font-size: 2.8rem; }
+    .wordmark.size-md { font-size: 2rem; }
+
+    .wordmark.on-dark { color: var(--paper); }
+    .wordmark.on-dark span { color: var(--acid); }
+
+    .wordmark.on-light { color: var(--ink); }
+    .wordmark.on-light span { color: var(--clinical); }
+
+    .wordmark.on-acid { color: var(--clinical); }
+    .wordmark.on-acid span { color: var(--ink); }
+
+    /* ══════════════════════════════════════════
+       SECTION: ICON / APP ICON
+    ══════════════════════════════════════════ */
+    .icon-showcase {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: var(--rule);
+    }
+
+    .icon-cell {
+      padding: 2.5rem 1.5rem;
+      border-right: var(--rule);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon-cell:last-child { border-right: none; }
+
+    .icon-cell-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      text-align: center;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: COLOUR PALETTE
+    ══════════════════════════════════════════ */
+    .palette-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: var(--rule);
+    }
+
+    .swatch {
+      aspect-ratio: 1 / 1.4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.2rem;
+      border-right: var(--rule);
+      position: relative;
+    }
+
+    .swatch:last-child { border-right: none; }
+
+    .swatch-name {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      opacity: 0.65;
+    }
+
+    .swatch-role {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: 0.3rem;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: TYPOGRAPHY
+    ══════════════════════════════════════════ */
+    .type-specimen {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      border: var(--rule);
+      margin-bottom: 0;
+    }
+
+    .type-row {
+      display: contents;
+    }
+
+    .type-meta {
+      padding: 2rem 1.5rem;
+      border-right: var(--rule);
+      border-bottom: var(--rule-light);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .type-meta:last-of-type { border-bottom: none; }
+
+    .type-name {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+    }
+
+    .type-spec {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--ink-60);
+    }
+
+    .type-sample {
+      padding: 2rem 2rem;
+      border-bottom: var(--rule-light);
+      display: flex;
+      align-items: center;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: VOICE & TONE
+    ══════════════════════════════════════════ */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: var(--rule);
+    }
+
+    .voice-cell {
+      padding: 3rem;
+      border-right: var(--rule);
+    }
+
+    .voice-cell:last-child { border-right: none; }
+
+    .voice-cell h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .voice-example {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: var(--ink-60);
+      border-left: 3px solid var(--acid);
+      padding-left: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: USAGE RULES
+    ══════════════════════════════════════════ */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: var(--rule);
+    }
+
+    .rule-cell {
+      padding: 2.5rem 2rem;
+      border-right: var(--rule);
+    }
+
+    .rule-cell:last-child { border-right: none; }
+
+    .rule-num {
+      font-family: var(--font-mono);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--ink-20);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .rule-title {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .rule-desc {
+      font-size: 0.82rem;
+      color: var(--ink-60);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════════
+       SECTION: APP UI PREVIEW
+    ══════════════════════════════════════════ */
+    .ui-preview {
+      background: var(--clinical);
+      padding: 4rem 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .phone-frame {
+      width: 280px;
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .phone-status {
+      background: #0D0D0D;
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .phone-status span {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+    }
+
+    .phone-body { padding: 1.5rem 1.2rem; }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-logo-sm {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+    }
+
+    .app-logo-sm span { color: var(--acid); }
+
+    .app-avatar {
+      width: 28px;
+      height: 28px;
+      background: var(--serum);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .app-section-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,242,236,0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .app-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-card-title {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--paper);
+      margin-bottom: 0.4rem;
+    }
+
+    .app-card-sub {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: rgba(245,242,236,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    .app-pill {
+      display: inline-block;
+      background: var(--acid);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    .app-progress-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      margin-top: 0.75rem;
+      position: relative;
+    }
+
+    .app-progress-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: var(--acid);
+    }
+
+    .app-nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.75rem 0 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 1rem;
+    }
+
+    .app-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .app-nav-dot {
+      width: 4px;
+      height: 4px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+    }
+
+    .app-nav-dot.active { background: var(--acid); }
+
+    .app-nav-label {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: rgba(245,242,236,0.3);
+      text-transform: uppercase;
+    }
+
+    .app-nav-label.active { color: var(--acid); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .brand-footer {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: var(--rule);
+    }
+
+    .footer-wordmark {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+    }
+
+    .footer-wordmark span { color: var(--acid); }
+
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: rgba(245,242,236,0.3);
+      text-align: right;
+    }
+
+    /* ══════════════════════════════════════════
+       SVG ICON SYSTEM
+    ══════════════════════════════════════════ */
+
+    /* Utility */
+    .flex-col { display: flex; flex-direction: column; }
+    .gap-sm { gap: 0.5rem; }
+    .mt-2 { margin-top: 2rem; }
+    .text-mono {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-60);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div>
+        <div class="hero-eyebrow">Brand Identity System — v1.0</div>
+        <h1 class="hero-title">
+          Science<br>
+          meets <em>skin.</em>
+        </h1>
+        <p class="hero-tagline">
+          Welaab is a precision skincare tester platform — built for people who treat their skin like a lab experiment.
+        </p>
+      </div>
+      <div class="hero-meta">
+        <span>WELAAB.APP</span>
+        <span>EST. 2026</span>
+        <span>SKINCARE · SCIENCE · PRECISION</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-grid"></div>
+      <div class="logo-hero">
+        <!-- Primary Icon SVG — Option 08: Concentric Rings + W -->
+        <svg class="logo-icon-large" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="48" r="44" stroke="#F5F2EC" stroke-width="0.7" opacity="0.15"/>
+          <circle cx="48" cy="48" r="36" stroke="#F5F2EC" stroke-width="0.7" opacity="0.25"/>
+          <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="0.7" opacity="0.4"/>
+          <circle cx="48" cy="48" r="20" stroke="#C8FF00" stroke-width="0.7" opacity="0.35"/>
+          <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div>
+          <div class="logo-wordmark-large">Wel<span>aab</span></div>
+          <div class="logo-sub">Precision Skincare Platform</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     LOGO SYSTEM
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">01 — Logo System</div>
+  <div class="logo-grid">
+
+    <!-- Dark bg -->
+    <div class="logo-cell dark">
+      <div class="logo-cell-label">Primary — Dark Background</div>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <svg width="44" height="44" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="48" r="44" stroke="#F5F2EC" stroke-width="0.8" opacity="0.15"/>
+          <circle cx="48" cy="48" r="36" stroke="#F5F2EC" stroke-width="0.8" opacity="0.25"/>
+          <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="0.8" opacity="0.4"/>
+          <circle cx="48" cy="48" r="20" stroke="#C8FF00" stroke-width="0.8" opacity="0.35"/>
+          <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="wordmark size-lg on-dark">Wel<span>aab</span></div>
+      </div>
+      <div class="text-mono" style="color:rgba(245,242,236,0.35);">Use on dark navy or black surfaces</div>
+    </div>
+
+    <!-- Light bg -->
+    <div class="logo-cell" style="background:var(--paper);">
+      <div class="logo-cell-label">Secondary — Light Background</div>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <svg width="44" height="44" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="48" r="44" stroke="#0D0D0D" stroke-width="0.8" opacity="0.12"/>
+          <circle cx="48" cy="48" r="36" stroke="#0D0D0D" stroke-width="0.8" opacity="0.2"/>
+          <circle cx="48" cy="48" r="28" stroke="#0D0D0D" stroke-width="0.8" opacity="0.35"/>
+          <circle cx="48" cy="48" r="20" stroke="#1A1A2E" stroke-width="0.8" opacity="0.4"/>
+          <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="wordmark size-lg on-light">Wel<span>aab</span></div>
+      </div>
+      <div class="text-mono">Use on paper or light cream surfaces</div>
+    </div>
+
+    <!-- Acid bg -->
+    <div class="logo-cell acid">
+      <div class="logo-cell-label" style="color:#0D0D0D99;">Tertiary — Acid Background</div>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <svg width="44" height="44" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="48" r="44" stroke="#0D0D0D" stroke-width="0.8" opacity="0.18"/>
+          <circle cx="48" cy="48" r="36" stroke="#0D0D0D" stroke-width="0.8" opacity="0.28"/>
+          <circle cx="48" cy="48" r="28" stroke="#0D0D0D" stroke-width="0.8" opacity="0.45"/>
+          <circle cx="48" cy="48" r="20" stroke="#0D0D0D" stroke-width="0.8" opacity="0.55"/>
+          <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="wordmark size-lg on-acid">Wel<span>aab</span></div>
+      </div>
+      <div class="text-mono" style="color:#0D0D0D66;">Use sparingly — high-impact moments only</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     APP ICON
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">02 — App Icon</div>
+  <div class="icon-showcase">
+
+    <!-- 1024px (App Store) -->
+    <div class="icon-cell" style="background:var(--paper);">
+      <svg width="80" height="80" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#1A1A2E; padding:4px;">
+        <rect x="0" y="0" width="96" height="96" fill="#1A1A2E"/>
+        <circle cx="48" cy="48" r="44" stroke="#F5F2EC" stroke-width="0.7" opacity="0.12"/>
+        <circle cx="48" cy="48" r="36" stroke="#F5F2EC" stroke-width="0.7" opacity="0.22"/>
+        <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="0.7" opacity="0.38"/>
+        <circle cx="48" cy="48" r="20" stroke="#C8FF00" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="icon-cell-label">1024 × 1024<br>App Store</div>
+    </div>
+
+    <!-- 512px -->
+    <div class="icon-cell" style="background:var(--paper-dark);">
+      <svg width="60" height="60" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#1A1A2E; padding:3px;">
+        <rect x="0" y="0" width="96" height="96" fill="#1A1A2E"/>
+        <circle cx="48" cy="48" r="44" stroke="#F5F2EC" stroke-width="0.7" opacity="0.12"/>
+        <circle cx="48" cy="48" r="36" stroke="#F5F2EC" stroke-width="0.7" opacity="0.22"/>
+        <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="0.7" opacity="0.38"/>
+        <circle cx="48" cy="48" r="20" stroke="#C8FF00" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="icon-cell-label">512 × 512<br>Standard</div>
+    </div>
+
+    <!-- 180px (iOS home) -->
+    <div class="icon-cell" style="background:var(--clinical);">
+      <svg width="44" height="44" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#1A1A2E; padding:2px;">
+        <rect x="0" y="0" width="96" height="96" fill="#1A1A2E"/>
+        <circle cx="48" cy="48" r="44" stroke="#F5F2EC" stroke-width="0.8" opacity="0.12"/>
+        <circle cx="48" cy="48" r="36" stroke="#F5F2EC" stroke-width="0.8" opacity="0.22"/>
+        <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="0.8" opacity="0.38"/>
+        <circle cx="48" cy="48" r="20" stroke="#C8FF00" stroke-width="1" opacity="0.4"/>
+        <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="icon-cell-label" style="color:rgba(245,242,236,0.5);">180 × 180<br>iOS Home</div>
+    </div>
+
+    <!-- 32px favicon -->
+    <div class="icon-cell" style="background:var(--paper);">
+      <svg width="32" height="32" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="background:#1A1A2E;">
+        <rect x="0" y="0" width="96" height="96" fill="#1A1A2E"/>
+        <circle cx="48" cy="48" r="38" stroke="#F5F2EC" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="48" cy="48" r="28" stroke="#F5F2EC" stroke-width="1.5" opacity="0.5"/>
+        <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#C8FF00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="icon-cell-label">32 × 32<br>Favicon</div>
+    </div>
+
+    <!-- Monochrome -->
+    <div class="icon-cell" style="background:#E0DDD6;">
+      <svg width="60" height="60" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="48" cy="48" r="44" stroke="#0D0D0D" stroke-width="0.7" opacity="0.12"/>
+        <circle cx="48" cy="48" r="36" stroke="#0D0D0D" stroke-width="0.7" opacity="0.22"/>
+        <circle cx="48" cy="48" r="28" stroke="#0D0D0D" stroke-width="0.7" opacity="0.38"/>
+        <circle cx="48" cy="48" r="20" stroke="#0D0D0D" stroke-width="0.7" opacity="0.5"/>
+        <polyline points="26,38 34,58 48,42 62,58 70,38" stroke="#0D0D0D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="icon-cell-label">Monochrome<br>Single Colour</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     COLOUR PALETTE
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">03 — Colour Palette</div>
+  <div class="palette-row">
+
+    <div class="swatch" style="background:#1A1A2E; color:#F5F2EC;">
+      <div class="swatch-name">Clinical</div>
+      <div class="swatch-hex">#1A1A2E</div>
+      <div class="swatch-role">Primary Dark</div>
+    </div>
+
+    <div class="swatch" style="background:#C8FF00; color:#0D0D0D;">
+      <div class="swatch-name">Acid</div>
+      <div class="swatch-hex">#C8FF00</div>
+      <div class="swatch-role">Signature Accent</div>
+    </div>
+
+    <div class="swatch" style="background:#F5F2EC; color:#0D0D0D; border-right:var(--rule);">
+      <div class="swatch-name">Paper</div>
+      <div class="swatch-hex">#F5F2EC</div>
+      <div class="swatch-role">Background</div>
+    </div>
+
+    <div class="swatch" style="background:#E8D5C0; color:#0D0D0D;">
+      <div class="swatch-name">Serum</div>
+      <div class="swatch-hex">#E8D5C0</div>
+      <div class="swatch-role">Warm Skin Tone</div>
+    </div>
+
+    <div class="swatch" style="background:#0D0D0D; color:#F5F2EC;">
+      <div class="swatch-name">Ink</div>
+      <div class="swatch-hex">#0D0D0D</div>
+      <div class="swatch-role">Type / Rule</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TYPOGRAPHY
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">04 — Typography</div>
+  <div class="type-specimen">
+
+    <div class="type-meta">
+      <div class="type-name">Display</div>
+      <div class="type-spec">DM Serif Display</div>
+      <div class="type-spec">Regular / Italic</div>
+      <div class="type-spec">Headlines, hero copy</div>
+    </div>
+    <div class="type-sample">
+      <span style="font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--ink);">
+        Your skin, <em>decoded.</em>
+      </span>
+    </div>
+
+    <div class="type-meta" style="border-bottom:none;">
+      <div class="type-name">UI / Body</div>
+      <div class="type-spec">Syne</div>
+      <div class="type-spec">400 / 600 / 800</div>
+      <div class="type-spec">Navigation, body, labels</div>
+    </div>
+    <div class="type-sample" style="border-bottom:none; flex-direction:column; align-items:flex-start; gap:0.75rem;">
+      <span style="font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; letter-spacing:-0.03em;">WELAAB — 28 DAY TRIAL</span>
+      <span style="font-family:'Syne',sans-serif; font-size:1rem; font-weight:400; color:var(--ink-60); max-width:50ch; line-height:1.7;">
+        Track your skin's response to each product across a structured 28-day cycle. Log reactions, rate texture, and build a data-driven skincare profile.
+      </span>
+    </div>
+
+  </div>
+
+  <div style="border:var(--rule); border-top:none; padding:2rem; background:var(--clinical);">
+    <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,242,236,0.35); margin-bottom:1rem;">Monospace — DM Mono · Data, codes, labels, timestamps</div>
+    <div style="font-family:'DM Mono',monospace; font-size:1.1rem; font-weight:400; color:var(--acid); letter-spacing:0.05em;">
+      DAY_14 · PRODUCT_REF: WL-0042 · STATUS: ACTIVE · REACTION: NONE · SCORE: 8.4/10
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VOICE & TONE
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">05 — Voice &amp; Tone</div>
+  <div class="voice-grid">
+
+    <div class="voice-cell">
+      <h3>Precise,<br>not cold.</h3>
+      <p style="font-size:0.85rem; color:var(--ink-60); line-height:1.8;">
+        Welaab speaks like a brilliant friend who happens to be a cosmetic chemist. Clinical accuracy without clinical distance. We use data to build trust, not to intimidate.
+      </p>
+      <div class="voice-example">
+        "Day 14. Your skin's hydration score is up 12% since you started the serum. Keep going."
+      </div>
+    </div>
+
+    <div class="voice-cell" style="border-right:none; background:var(--clinical); color:var(--paper);">
+      <h3 style="color:var(--paper);">Confident,<br><em style="color:var(--acid);">not arrogant.</em></h3>
+      <p style="font-size:0.85rem; color:rgba(245,242,236,0.55); line-height:1.8;">
+        We know our science. We don't need to shout about it. The brand communicates with the quiet confidence of a lab that has already done the work.
+      </p>
+      <div class="voice-example" style="border-left-color:var(--acid); color:rgba(245,242,236,0.5);">
+        "Not every product works for every skin. That's not failure — that's data."
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     USAGE RULES
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">06 — Usage Rules</div>
+  <div class="rules-grid">
+
+    <div class="rule-cell">
+      <div class="rule-num">01</div>
+      <div class="rule-title">Never round the icon corners</div>
+      <div class="rule-desc">The sharp, square geometry of the Welaab icon is intentional — it signals precision and structure. Rounded corners dilute the scientific identity. iOS will apply its own mask; do not pre-round.</div>
+    </div>
+
+    <div class="rule-cell">
+      <div class="rule-num">02</div>
+      <div class="rule-title">Acid is an accent, not a background</div>
+      <div class="rule-desc">#C8FF00 is reserved for single high-impact moments: a CTA, a data highlight, a status indicator. Never fill large surfaces with it. It loses power through overuse.</div>
+    </div>
+
+    <div class="rule-cell" style="border-right:none;">
+      <div class="rule-num">03</div>
+      <div class="rule-title">No decorative gradients</div>
+      <div class="rule-desc">Welaab does not use purple-to-pink gradients, aurora blobs, or mesh backgrounds. Depth is created through structure, contrast, and the grid — not atmospheric effects.</div>
+    </div>
+
+    <div class="rule-cell" style="border-top:var(--rule);">
+      <div class="rule-num">04</div>
+      <div class="rule-title">Mono for data, Syne for UI</div>
+      <div class="rule-desc">DM Mono is strictly for data strings, codes, timestamps, and labels. Never use it for body copy. Syne carries all navigation and interface text.</div>
+    </div>
+
+    <div class="rule-cell" style="border-top:var(--rule);">
+      <div class="rule-num">05</div>
+      <div class="rule-title">Rules are structural, not decorative</div>
+      <div class="rule-desc">1px borders in #0D0D0D define layout zones. They are functional dividers, not decorative flourishes. Use them to separate information, not to add visual texture.</div>
+    </div>
+
+    <div class="rule-cell" style="border-top:var(--rule); border-right:none;">
+      <div class="rule-num">06</div>
+      <div class="rule-title">The "W+flask" mark is sacred</div>
+      <div class="rule-desc">The combination of the geometric W and the erlenmeyer flask silhouette is the core of the icon. Neither element should be used in isolation or modified in proportion.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     APP UI PREVIEW
+══════════════════════════════════════════ -->
+<section style="padding-bottom:0;">
+  <div class="label">07 — App UI Preview</div>
+</section>
+
+<div class="ui-preview">
+
+  <!-- Phone 1: Dashboard -->
+  <div class="phone-frame">
+    <div class="phone-status">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+    <div class="phone-body">
+      <div class="app-header">
+        <div class="app-logo-sm">Wel<span>aab</span></div>
+        <div class="app-avatar">YK</div>
+      </div>
+
+      <div class="app-section-label">Current Trial</div>
+      <div class="app-card">
+        <div class="app-card-title">Barrier Repair Serum — WL-0042</div>
+        <div class="app-card-sub">STARTED: 25 FEB 2026 · BRAND: REDACTED</div>
+        <div class="app-pill">Day 14 of 28</div>
+        <div class="app-progress-bar">
+          <div class="app-progress-fill" style="width:50%;"></div>
+        </div>
+      </div>
+
+      <div class="app-section-label" style="margin-top:1rem;">Skin Score</div>
+      <div class="app-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div class="app-card-title" style="font-size:1.8rem; color:#C8FF00; font-family:'DM Mono',monospace; font-weight:300; letter-spacing:-0.02em;">8.4</div>
+            <div class="app-card-sub">+1.2 from last week</div>
+          </div>
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+            <circle cx="24" cy="24" r="20" stroke="#C8FF00" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="37.7" stroke-linecap="square" transform="rotate(-90 24 24)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="app-nav">
+        <div class="app-nav-item">
+          <div class="app-nav-dot active"></div>
+          <div class="app-nav-label active">Home</div>
+        </div>
+        <div class="app-nav-item">
+          <div class="app-nav-dot"></div>
+          <div class="app-nav-label">Log</div>
+        </div>
+        <div class="app-nav-item">
+          <div class="app-nav-dot"></div>
+          <div class="app-nav-label">Products</div>
+        </div>
+        <div class="app-nav-item">
+          <div class="app-nav-dot"></div>
+          <div class="app-nav-label">Profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone 2: Log entry -->
+  <div class="phone-frame">
+    <div class="phone-status">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+    <div class="phone-body">
+      <div class="app-header">
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; color:rgba(245,242,236,0.35); text-transform:uppercase;">Day 14 Log</div>
+        <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:#C8FF00; letter-spacing:0.08em;">11 MAR 2026</div>
+      </div>
+
+      <div class="app-section-label">Skin Condition Today</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:1rem;">
+        <div style="background:rgba(200,255,0,0.1); border:1px solid rgba(200,255,0,0.3); padding:0.75rem; text-align:center;">
+          <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:#C8FF00; letter-spacing:0.1em; text-transform:uppercase;">Hydration</div>
+          <div style="font-family:'DM Mono',monospace; font-size:1.3rem; color:#F5F2EC; margin-top:0.3rem;">72%</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); padding:0.75rem; text-align:center;">
+          <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(245,242,236,0.35); letter-spacing:0.1em; text-transform:uppercase;">Redness</div>
+          <div style="font-family:'DM Mono',monospace; font-size:1.3rem; color:#F5F2EC; margin-top:0.3rem;">Low</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); padding:0.75rem; text-align:center;">
+          <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(245,242,236,0.35); letter-spacing:0.1em; text-transform:uppercase;">Texture</div>
+          <div style="font-family:'DM Mono',monospace; font-size:1.3rem; color:#F5F2EC; margin-top:0.3rem;">Smooth</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); padding:0.75rem; text-align:center;">
+          <div style="font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(245,242,236,0.35); letter-spacing:0.1em; text-transform:uppercase;">Breakouts</div>
+          <div style="font-family:'DM Mono',monospace; font-size:1.3rem; color:#F5F2EC; margin-top:0.3rem;">None</div>
+        </div>
+      </div>
+
+      <div class="app-section-label">Notes</div>
+      <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); padding:0.75rem; font-family:'DM Mono',monospace; font-size:0.6rem; color:rgba(245,242,236,0.4); line-height:1.7;">
+        Skin feels noticeably plumper in the T-zone. No reaction to the niacinamide. Will continue.
+      </div>
+
+      <div style="margin-top:1rem; background:#C8FF00; padding:0.75rem; text-align:center; cursor:pointer;">
+        <span style="font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.08em; color:#0D0D0D; text-transform:uppercase;">Submit Log Entry</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAGLINE VARIANTS
+══════════════════════════════════════════ -->
+<section>
+  <div class="label">08 — Tagline Variants</div>
+  <div style="border:var(--rule);">
+    <div style="padding:3rem 2.5rem; border-bottom:var(--rule);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-60); margin-bottom:1rem; text-transform:uppercase;">Primary</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:clamp(2rem,4vw,3.5rem); line-height:1.1; color:var(--ink);">Your skin is a lab. <em>We give you the data.</em></div>
+    </div>
+    <div style="padding:2.5rem; border-bottom:var(--rule); background:var(--clinical);">
+      <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:rgba(245,242,236,0.3); margin-bottom:1rem; text-transform:uppercase;">Secondary</div>
+      <div style="font-family:'Syne',sans-serif; font-size:clamp(1.5rem,3vw,2.5rem); font-weight:700; letter-spacing:-0.02em; color:var(--acid);">TRIAL. TRACK. KNOW.</div>
+    </div>
+    <div style="padding:2.5rem;">
+      <div style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-60); margin-bottom:1rem; text-transform:uppercase;">Short Form</div>
+      <div style="font-family:'DM Mono',monospace; font-size:1.1rem; letter-spacing:0.08em; color:var(--ink);">PRECISION SKINCARE. WELAAB.APP</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page -->
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="brand-footer">
+  <div>
+    <div class="footer-wordmark">Wel<span>aab</span></div>
+    <div style="font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.12em; color:rgba(245,242,236,0.25); margin-top:0.4rem;">WELAAB.APP — PRECISION SKINCARE PLATFORM</div>
+  </div>
+  <div class="footer-meta">
+    <div>Brand Identity System v1.0</div>
+    <div style="margin-top:0.3rem;">© 2026 Welaab. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
