@@ -110,25 +110,8 @@
     -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
     mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
   }
-  .hero-grid{
-    display:grid;gap:clamp(24px,3.4vw,48px);align-items:end;
-    grid-template-columns:minmax(0,1fr) minmax(0,clamp(240px,30vw,420px));
-  }
-  /* No panel behind her: the character stands on the page itself. The framed
-     treatment now belongs only to the no-WebGL photograph fallback. */
-  figure.portrait{margin:0;position:relative}
-  figure.portrait img{
-    display:block;width:100%;height:auto;aspect-ratio:4/5;
-    object-fit:cover;object-position:50% 10%;
-  }
+  .hero-grid{display:block}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,196px);gap:clamp(16px,3vw,26px)}
-  }
-  @media (max-width:600px){
-    .hero-grid{grid-template-columns:1fr;gap:0}
-    figure.portrait{max-width:min(100%,330px);margin-top:clamp(24px,7vw,36px)}
-  }
   .kicker{
     margin:0 0 clamp(14px,2vw,22px);color:#ff8fd0;
     font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
@@ -221,6 +204,13 @@
   }
   footer .name{font-family:var(--serif);color:var(--ink);font-size:1.05rem}
   footer a{text-decoration:none;border-bottom:1px solid var(--line)}
+  /* the one thing a visitor came to this section to find, so it gets the accent */
+  footer .mail{
+    display:inline-block;margin-top:12px;font-family:var(--serif);
+    font-size:1.05rem;color:var(--accent);
+    border-bottom:1px solid rgba(255,143,208,.42);padding-bottom:1px;
+  }
+  footer .mail:hover{border-bottom-color:var(--accent)}
 
   /* Chinese typography — clear and contemporary, never decorative */
   html[lang="zh"] body{
@@ -275,7 +265,6 @@
     .hero-copy > .rise:nth-child(2){animation-delay:.10s}
     .hero-copy > .rise:nth-child(3){animation-delay:.20s}
     .hero-copy > .rise:nth-child(4){animation-delay:.30s}
-    .hero-grid > figure.rise{animation-delay:.24s}
     .js-reveal{
       opacity:0;transform:translateY(16px);
       transition:opacity .64s cubic-bezier(.22,.8,.24,1),transform .64s cubic-bezier(.22,.8,.24,1);
@@ -335,10 +324,9 @@
       <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
     </div>
     </div>
-    <figure class="portrait rise" id="avatar-slot">
-      <img src="assets/portrait-hero.jpg" alt="Lareesa Hu"
-           data-en-alt="Lareesa Hu" data-zh-alt="Lareesa Hu">
-    </figure>
+    <!-- Hero portrait removed on request; assets/portrait-hero.jpg is kept in the
+         repo, and the 3D-character hook (assets/avatar.js + three.js into an
+         #avatar-slot figure) can be dropped back in here if it is ever wanted. -->
     </div>
   </div>
 </div>
@@ -624,6 +612,7 @@
         <div style="margin-top:6px"
              data-en="Product, AI and brand — Hangzhou, China"
              data-zh="产品 · AI · 品牌 · 中国 杭州">Product, AI and brand — Hangzhou, China</div>
+        <a class="mail" href="mailto:lareesahu@gmail.com">lareesahu@gmail.com</a>
       </div>
       <div>
         <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
