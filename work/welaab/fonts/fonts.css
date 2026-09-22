@@ -1,14 +1,14 @@
 /* Welaab brand page — fonts self-hosted (no external CDN).
    DM Serif Display, Syne and DM Mono are SIL Open Font License 1.1. */
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/dm-mono-300-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/dm-mono-300-latin.woff2') format('woff2');}
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/dm-mono-400-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/dm-mono-400-latin.woff2') format('woff2');}
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/dm-mono-500-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/dm-mono-500-latin.woff2') format('woff2');}
-@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display-400-italic-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display-400-italic-latin.woff2') format('woff2');}
-@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display-400-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/dm-serif-display-400-latin.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-style:normal;font-weight:400 800;font-display:swap;src:url('fonts/syne-400-800-latin-ext.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-style:normal;font-weight:400 800;font-display:swap;src:url('fonts/syne-400-800-latin.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('dm-mono-300-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:300;font-display:swap;src:url('dm-mono-300-latin.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('dm-mono-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url('dm-mono-400-latin.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url('dm-mono-500-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url('dm-mono-500-latin.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('dm-serif-display-400-italic-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('dm-serif-display-400-italic-latin.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('dm-serif-display-400-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('dm-serif-display-400-latin.woff2') format('woff2');}
+@font-face{font-family:'Syne';font-style:normal;font-weight:400 800;font-display:swap;src:url('syne-400-800-latin-ext.woff2') format('woff2');}
+@font-face{font-family:'Syne';font-style:normal;font-weight:400 800;font-display:swap;src:url('syne-400-800-latin.woff2') format('woff2');}
