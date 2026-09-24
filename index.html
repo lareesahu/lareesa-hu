@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lareesa Hu — Product, AI and brand work, shipped</title>
-<meta name="description" content="Lareesa Hu — product, AI and brand operator. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, Welaab, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct, Robotist.">
+<title>Lareesa Hu — brand, product and AI systems, shipped</title>
+<meta name="description" content="Lareesa Hu — brand, product and AI systems. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, Welaab, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct, Robotist.">
 <link rel="canonical" href="https://lareesahu.github.io/lareesa-hu/">
 <meta name="theme-color" content="#0b0a10">
 <meta name="author" content="Lareesa Hu">
@@ -293,17 +293,182 @@
   .wrap{position:relative;z-index:1}
   .hero{isolation:auto}
   .hero::before{display:none}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
 </style>
 </head>
 <body>
-<canvas class="ridges" id="bg" aria-hidden="true"></canvas>
 
 <div class="wrap">
   <header class="top">
     <div class="sig">Lareesa Hu</div>
     <nav>
       <a href="#work" data-en="Work" data-zh="案例">Work</a>
-      <a href="#method" data-en="Method" data-zh="方法">Method</a>
+      <a href="#how" data-en="How I work" data-zh="工作方式">How I work</a>
+      <a href="#ways" data-en="Work together" data-zh="合作方式">Work together</a>
       <a href="resume.html" data-en="Résumé" data-zh="简历">Résumé</a>
       <a href="#contact" data-en="Contact" data-zh="联系我">Contact</a>
       <span class="lang" role="group" aria-label="Language / 语言">
@@ -320,308 +485,400 @@
   <div class="hero">
     <div class="hero-grid">
     <div class="hero-copy">
-    <p class="kicker rise" data-en="Product · AI · Brand" data-zh="产品 · AI · 品牌">Product · AI · Brand</p>
+    <p class="kicker rise" data-en="Brand · Product · AI systems" data-zh="品牌 · 产品 · AI 系统">Brand · Product · AI systems</p>
     <h1 class="rise" data-en="I ship products&lt;br&gt;with AI agents."
         data-zh="协同<span class='nb'>AI Agent</span><span class='h1b'>从<span class='nb'>0-1</span>落地项目</span><span class='svc'>调研-策划-品牌-设计-开发-电商-增长</span>">I ship products<br>with AI agents.</h1>
     <p class="lede rise"
-       data-en="Fourteen years of brand, marketing and product work — now run through agent pipelines that build, verify and deploy. Everything below is live in production, not a mockup."
-       data-zh="十四年的品牌、营销与产品经验，凝结成 AI Agent 流水线 skill：从商业逻辑，到品牌全案，到开发部署。每一个项目都已真实落地。">
-      Fourteen years of brand, marketing and product work — now run through
-      agent pipelines that build, verify and deploy. Everything below is live in
-      production, not a mockup.
+       data-en="Fourteen years of brand, product and marketing work. Today: partner at Robotist, founder of Pulse Branding, and eleven live products built with agent-directed development — every one of them linked below and open to inspection."
+       data-zh="十四年品牌、产品与营销经验。现在是 Robotist 合伙人、Pulse Branding 创始人；下面的 11 个上线产品，都是用 Agent 主导的开发方式做出来的，每一个都能点开检查。">
+      Fourteen years of brand, product and marketing work. Today: partner at Robotist,
+      founder of Pulse Branding, and eleven live products built with agent-directed
+      development — every one of them linked below and open to inspection.
     </p>
+    <div class="cta rise">
+      <a class="btn primary" href="#work" data-en="See the work" data-zh="看案例">See the work</a>
+      <a class="btn" href="mailto:Lareesahu@gmail.com?subject=Project%20enquiry" data-en="Discuss a project" data-zh="聊聊项目">Discuss a project</a>
+    </div>
     <div class="meta rise">
       <span data-en="Hangzhou, China" data-zh="中国 · 杭州">Hangzhou, China</span>
+      <span data-en="Partner, Robotist" data-zh="Robotist 合伙人">Partner, Robotist</span>
       <span data-en="Founder, Pulse Branding" data-zh="Pulse Branding 创始人">Founder, Pulse Branding</span>
-      <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
-      <a href="resume.html" data-en="Résumé" data-zh="简历">Résumé</a>
+      <a href="mailto:Lareesahu@gmail.com">Lareesahu@gmail.com</a>
     </div>
     </div>
-    <!-- Hero portrait removed on request; assets/portrait-hero.jpg is kept in the
-         repo, and the 3D-character hook (assets/avatar.js + three.js into an
-         #avatar-slot figure) can be dropped back in here if it is ever wanted. -->
     </div>
   </div>
 </div>
 
 <div class="wrap">
-  <section id="work">
-    <p class="label" data-en="Live products" data-zh="已上线">Live products</p>
-    <h2 data-en="Built end to end, shipped, still running."
-        data-zh="从0-1打造，上线后自动化运营">Built end to end, shipped, still running.</h2>
-    <p class="section-intro"
-       data-en="Each of these was taken from blank page to a live URL by me directing AI agents — briefing, art direction, code review, deployment and verification. The screenshots are the real sites."
-       data-zh="这些项目都是我从 0 开始、带着 AI Agent 做出来的：调研、策划、设计、开发、上线、运营。截图都截自真实站点，点开就能看。">
-      Each of these was taken from blank page to a live URL by me directing AI
-      agents — briefing, art direction, code review, deployment and verification.
-      The screenshots are the real sites.
-    </p>
+  <section class="strip" aria-label="Capabilities">
+    <ul>
+      <li data-en="Brand systems" data-zh="品牌系统">Brand systems</li>
+      <li data-en="Product strategy" data-zh="产品策略">Product strategy</li>
+      <li data-en="UX/UI" data-zh="交互/界面">UX/UI</li>
+      <li data-en="Web products" data-zh="Web 产品">Web products</li>
+      <li data-en="AI integration" data-zh="AI 集成">AI integration</li>
+      <li data-en="Agent-directed development" data-zh="Agent 主导的开发">Agent-directed development</li>
+    </ul>
+    <p class="fact" data-en="11 live projects · consumer, healthcare, education, robotics and B2B · strategy through deployment"
+       data-zh="11 个在线上运行的项目 · 覆盖消费、医疗、教育、机器人与 B2B · 从策略到上线">11 live projects · consumer, healthcare, education, robotics and B2B · strategy through deployment</p>
+  </section>
+</div>
 
+<div class="wrap">
+  <section id="work">
+    <p class="label" data-en="Selected work" data-zh="精选案例">Selected work</p>
+    <h2 data-en="Six that show the range." data-zh="六个能说明范围的案例。">Six that show the range.</h2>
+    <p class="section-intro"
+       data-en="Each card states what I owned, what the system does, where AI is used and where it is not, and where you can check it. The rest of the live projects follow underneath."
+       data-zh="每张卡片写清：我负责什么、系统做了什么、哪里用了 AI、哪里没有，以及你可以去哪儿验证。其余在线上运行的项目跟在下面。">
+      Each card states what I owned, what the system does, where AI is used and where it is
+      not, and where you can check it. The rest of the live projects follow underneath.
+    </p>
     <div class="grid">
 
       <article class="card">
-        <a class="shot" href="https://fireflyglobal.org/" target="_blank" rel="noopener">
-          <img src="assets/shots/firefly-booking.jpg"
-               alt="Firefly Global website with the live Tebra booking widget showing open appointment times"
-               data-en-alt="Firefly Global website with the live Tebra booking widget showing open appointment times"
-               data-zh-alt="Firefly Global 官网，页面上真实加载的 Tebra 预约组件与可预约时段"
-               loading="lazy">
-          <video class="clip" src="assets/clips/firefly-booking.mp4" poster="assets/shots/firefly-booking.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <a class="shot" href="https://robotist.com.au/" target="_blank" rel="noopener">
+          <img src="assets/shots/robotist.jpg" alt="robotist" data-en-alt="robotist" data-zh-alt="robotist" loading="lazy">
+          <video class="clip" src="assets/clips/robotist.mp4" poster="assets/shots/robotist.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
-        <h3>Firefly Global</h3>
-        <p class="where" data-en="Telehealth · site + booking" data-zh="远程医疗 · 独立站 + 预约">Telehealth · site + booking</p>
-        <p data-en="A psychiatric telehealth practice's public site, rewritten and published live: the care journey, conditions we treat, provider bio, insurance and FAQ. The booking embed is the real widget loaded on the page, not a stand-in."
-           data-zh="精神科远程医疗机构的独立站：就诊流程、可诊疗范围、医生介绍、保险说明、常见问题，全部写清楚。预约模块是真的在跑，不是摆样子。">
-          A psychiatric telehealth practice's public site, rewritten and published
-          live: the care journey, conditions we treat, provider bio, insurance and
-          FAQ. The booking embed is the real widget loaded on the page, not a
-          stand-in.
-        </p>
-        <a class="live" href="https://fireflyglobal.org/" target="_blank" rel="noopener">fireflyglobal.org →</a>
-      </article>
-
-      <article class="card">
-        <a class="shot" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-branding.jpg" alt="Pulse Branding agency homepage"
-               data-en-alt="Pulse Branding agency homepage" data-zh-alt="Pulse Branding 品牌机构官网首页" loading="lazy">
-          <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>Pulse Branding</h3>
-        <p class="where" data-en="Agency · 23 pages + CMS" data-zh="机构官网 · 23 个页面 + CMS">Agency · 23 pages + CMS</p>
-        <p data-en="My agency's site and case archive. Twenty-six portfolio entries in the CMS, and a design system built from the original shader and interface components rather than lookalike copies."
-           data-zh="我们机构自己的官网和案例库，26 个作品全在 CMS 里。设计系统从原有的着色器和界面组件里长出来，不是照着描的仿制品。">
-          My agency's site and case archive. Twenty-six portfolio entries in the
-          CMS, and a design system built from the original shader and interface
-          components rather than lookalike copies.
-        </p>
-        <a class="live" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">pulse-branding.com →</a>
-      </article>
-
-      <article class="card">
-        <a class="shot" href="work/welaab/" target="_blank" rel="noopener">
-          <img src="assets/shots/welaab.jpg"
-               alt="Welaab brand identity system cover — the pulse-W lockup and serif headline"
-               data-en-alt="Welaab brand identity system cover — the pulse-W lockup and serif headline"
-               data-zh-alt="Welaab 品牌识别系统封面：脉冲 W 标志与衬线标题" loading="lazy">
-          <video class="clip" src="assets/clips/welaab.mp4" poster="assets/shots/welaab.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>Welaab</h3>
-        <p class="where" data-en="Brand identity · client system" data-zh="品牌识别 · 客户项目">Brand identity · client system</p>
-        <p data-en="A complete identity system for a precision skincare platform — logo construction and usage, the app-icon set, colour and type systems, voice rules and app UI direction, delivered as one page that is live rather than a static PDF."
-           data-zh="为一家精准护肤平台做的整套品牌识别：标志结构与用法、应用图标、色彩与字体系统、语气规则、App 界面方向。做成一个在线页面，不是一份躺着的 PDF。">
-          A complete identity system for a precision skincare platform — logo
-          construction and usage, the app-icon set, colour and type systems,
-          voice rules and app UI direction, delivered as one page that is live
-          rather than a static PDF.
-        </p>
-        <a class="live" href="work/welaab/" target="_blank" rel="noopener"
-           data-en="full brand system →" data-zh="完整品牌系统 →">full brand system →</a>
-      </article>
-
-      <article class="card">
-        <a class="shot" href="https://gramlingo.online/" target="_blank" rel="noopener">
-          <img src="assets/shots/gramlingo.jpg" alt="GramLingo language learning site"
-               data-en-alt="GramLingo language learning site" data-zh-alt="GramLingo 英语学习产品页面" loading="lazy">
-          <video class="clip" src="assets/clips/gramlingo.mp4" poster="assets/shots/gramlingo.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>GramLingo</h3>
-        <p class="where" data-en="Edtech · trilingual app" data-zh="教育科技 · 三语学习产品">Edtech · trilingual app</p>
-        <p data-en="An English-learning product in English, Chinese and Spanish. 282 questions, no placement tests — the app is the test. Locked art direction, a custom mascot, and a lessons pipeline that publishes rendered pages automatically."
-           data-zh="英语、中文、西班牙语三语学习产品，282 道题，没有分级测试——用着用着就知道自己在哪一档。美术方向先定死，吉祥物原创，课程页面自动渲染发布。">
-          An English-learning product in English, Chinese and Spanish. 282
-          questions, no placement tests — the app is the test. Locked art
-          direction, a custom mascot, and a lessons pipeline that publishes
-          rendered pages automatically.
-        </p>
-        <a class="live" href="https://gramlingo.online/" target="_blank" rel="noopener">gramlingo.online →</a>
-      </article>
-
-      <article class="card">
-        <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/neolabcare.jpg" alt="NeoLabCare skincare storefront"
-               data-en-alt="NeoLabCare skincare storefront" data-zh-alt="NeoLabCare 护肤品牌预售页面" loading="lazy">
-          <video class="clip" src="assets/clips/neolabcare.mp4" poster="assets/shots/neolabcare.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>NeoLabCare</h3>
-        <p class="where" data-en="Commerce · pre-order DTC" data-zh="跨境电商 · 高端护肤">Commerce · pre-order DTC</p>
-        <p data-en="A pre-order skincare brand running zero inventory with seven-day dispatch. Brand system, evidence-anchored science content, a creator programme and a weekly outreach pipeline."
-           data-zh="鲜制自研超高端护肤品牌，零库存，生产后七天内发货。科研驱动成分配方、全自动达人合作计划、全自动化 KOL 运营。">
-          A pre-order skincare brand running zero inventory with seven-day
-          dispatch. Brand system, evidence-anchored science content, a creator
-          programme and a weekly outreach pipeline.
-        </p>
-        <a class="live" href="https://neolabcare.com/" target="_blank" rel="noopener">neolabcare.com →</a>
+        <h3>Robotist</h3>
+        <p class="where" data-en="Robotics · platform + AI assistant" data-zh="机器人 · 平台 + AI 助手">Robotics · platform + AI assistant</p>
+        <p class="one" data-en="Built the digital platform for a robotics company selling worldwide, including its on-site AI assistant." data-zh="为一家面向全球销售的机器人公司做数字平台，包含站内 AI 助手。">Built the digital platform for a robotics company selling worldwide, including its on-site AI assistant.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand · Product · UX/UI · Web development · AI integration" data-zh="品牌 · 产品 · 交互/界面 · 网站开发 · AI 集成">Brand · Product · UX/UI · Web development · AI integration</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Robot catalogue · subscription layer · Spline 3D homepage · assistant on the site" data-zh="机器人目录 · 订阅层 · Spline 3D 首屏 · 站内助手">Robot catalogue · subscription layer · Spline 3D homepage · assistant on the site</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="RobotMaxx answers enquiries through POST /api/assistant: key stays server-side, model pinned, 40 calls / 10 min per IP, foreign origins refused." data-zh="RobotMaxx 通过 POST /api/assistant 应答：密钥留在服务端、模型固定、每 IP 每 10 分钟 40 次、外站来源拒绝。">RobotMaxx answers enquiries through POST /api/assistant: key stays server-side, model pinned, 40 calls / 10 min per IP, foreign origins refused.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Node.js · Express · SQLite · Spline" data-zh="Node.js · Express · SQLite · Spline">Node.js · Express · SQLite · Spline</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://robotist.com.au/" target="_blank" rel="noopener" data-en="robotist.com.au" data-zh="robotist.com.au">robotist.com.au</a></dd>
+        </dl>
       </article>
 
       <article class="card">
         <a class="shot" href="https://brainybaobei.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/brainybaobei.jpg" alt="BrainyBaobei chart reading site"
-               data-en-alt="BrainyBaobei chart reading site" data-zh-alt="BrainyBaobei 八字推演产品页面" loading="lazy">
+          <img src="assets/shots/brainybaobei.jpg" alt="brainybaobei" data-en-alt="brainybaobei" data-zh-alt="brainybaobei" loading="lazy">
           <video class="clip" src="assets/clips/brainybaobei.mp4" poster="assets/shots/brainybaobei.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>BrainyBaobei</h3>
-        <p class="where" data-en="Product · engine + checkout" data-zh="产品 · 推演引擎 + 支付">Product · engine + checkout</p>
-        <p data-en="A Chinese four-pillars (BaZi) reading engine for parents, computed from real astronomy rather than lookup tables, with its own payment flow and a deploy pipeline that ships on push."
-           data-zh="给父母用的八字（四柱）推演引擎，按真实天文数据算，不查表。支付流程自带，代码一推就自动上线。">
-          A Chinese four-pillars (BaZi) reading engine for parents, computed from
-          real astronomy rather than lookup tables, with its own payment flow and
-          a deploy pipeline that ships on push.
-        </p>
-        <a class="live" href="https://brainybaobei.com/" target="_blank" rel="noopener">brainybaobei.com →</a>
+        <p class="where" data-en="Product · engine + payments" data-zh="产品 · 引擎 + 支付">Product · engine + payments</p>
+        <p class="one" data-en="Built a BaZi reading product for parents: charts computed from real astronomy, AI chat, live checkout." data-zh="为家长做了一款八字解读产品：真实天文计算排盘、AI 问答、线上支付。">Built a BaZi reading product for parents: charts computed from real astronomy, AI chat, live checkout.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Product · Engine integration · UX/UI · Backend · Payments" data-zh="产品 · 引擎集成 · 交互/界面 · 后端 · 支付">Product · Engine integration · UX/UI · Backend · Payments</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Chart computed from true solar time, not lookup tables · reading pages · health endpoint · deploy on push" data-zh="排盘基于真太阳时计算，不是查表 · 解读页面 · 健康检查接口 · 推送即自动部署">Chart computed from true solar time, not lookup tables · reading pages · health endpoint · deploy on push</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="&quot;Ask Baobei&quot; chat is answered by DeepSeek, grounded in the user's own computed chart; 20 free questions, then a quota." data-zh="「问问宝宝」由 DeepSeek 回答，内容锚定用户自己算出的盘；免费 20 问，之后按额度。">&quot;Ask Baobei&quot; chat is answered by DeepSeek, grounded in the user's own computed chart; 20 free questions, then a quota.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Next.js · Node · DeepSeek · PayPal (live)" data-zh="Next.js · Node · DeepSeek · PayPal（正式环境）">Next.js · Node · DeepSeek · PayPal (live)</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://brainybaobei.com/" target="_blank" rel="noopener" data-en="brainybaobei.com" data-zh="brainybaobei.com">brainybaobei.com</a></dd>
+        </dl>
       </article>
 
       <article class="card">
+        <a class="shot" href="#method" >
+          <img src="assets/agent-work/pulse-growth-engine.webp" alt="pulse-growth-engine" data-en-alt="pulse-growth-engine" data-zh-alt="pulse-growth-engine" loading="lazy">
+          
+        </a>
+        <h3>Pulse Growth Engine</h3>
+        <p class="where" data-en="Tooling · desktop application" data-zh="工具 · 桌面应用">Tooling · desktop application</p>
+        <p class="one" data-en="Built a desktop application that runs the agency's content and lead generation instead of buying it in." data-zh="做了一个桌面应用，把机构的内容与线索生产自己跑起来，而不是买现成服务。">Built a desktop application that runs the agency's content and lead generation instead of buying it in.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Product · Workflow design · UX/UI · Desktop build" data-zh="产品 · 工作流设计 · 交互/界面 · 桌面端构建">Product · Workflow design · UX/UI · Desktop build</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Briefs → generation → review queue → scheduling → publishing, with brand context held per client" data-zh="简报 → 生成 → 审核队列 → 排期 → 发布，每个客户保留品牌上下文">Briefs → generation → review queue → scheduling → publishing, with brand context held per client</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="DeepSeek writes the text, FAL generates the images; every publish passes a human review gate." data-zh="DeepSeek 生成文本，FAL 生成图像；每次发布都经过人工审核关卡。">DeepSeek writes the text, FAL generates the images; every publish passes a human review gate.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Electron · Node/Express · tRPC · React/Vite" data-zh="Electron · Node/Express · tRPC · React/Vite">Electron · Node/Express · tRPC · React/Vite</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="#contact" data-en="Internal build — walkthrough on request" data-zh="内部工具 · 可预约演示">Internal build — walkthrough on request</a></dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://gramlingo.online/" target="_blank" rel="noopener">
+          <img src="assets/shots/gramlingo.jpg" alt="gramlingo" data-en-alt="gramlingo" data-zh-alt="gramlingo" loading="lazy">
+          <video class="clip" src="assets/clips/gramlingo.mp4" poster="assets/shots/gramlingo.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>GramLingo</h3>
+        <p class="where" data-en="Edtech · trilingual product" data-zh="教育 · 三语产品">Edtech · trilingual product</p>
+        <p class="one" data-en="Built a trilingual English-learning product with 282 questions and lessons rendered from one dataset." data-zh="做了一款三语英语学习产品，282 道题，课程页由一份数据自动生成。">Built a trilingual English-learning product with 282 questions and lessons rendered from one dataset.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Product design · Art direction · UX/UI · Development · Deployment" data-zh="产品设计 · 艺术指导 · 交互/界面 · 开发 · 部署">Product design · Art direction · UX/UI · Development · Deployment</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="EN / 中文 / ES · Supabase auth · XP and streaks · lesson pages rendered from one JSON dataset · no placement test: the app is the test" data-zh="中/英/西三语 · Supabase 登录 · XP 与连续天数 · 课程页由单一 JSON 数据渲染 · 没有分级测试：做题本身就是测试">EN / 中文 / ES · Supabase auth · XP and streaks · lesson pages rendered from one JSON dataset · no placement test: the app is the test</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None on the product side — progression is computed from answers, not generated." data-zh="产品本身没有 AI：进度由答题结果计算，不由模型生成。">None on the product side — progression is computed from answers, not generated.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="React · Vite · Supabase · JSON content pipeline · static deploy" data-zh="React · Vite · Supabase · JSON 内容流水线 · 静态部署">React · Vite · Supabase · JSON content pipeline · static deploy</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://gramlingo.online/" target="_blank" rel="noopener" data-en="gramlingo.online" data-zh="gramlingo.online">gramlingo.online</a></dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="https://fireflyglobal.org/" target="_blank" rel="noopener">
+          <img src="assets/shots/firefly-booking.jpg" alt="firefly-booking" data-en-alt="firefly-booking" data-zh-alt="firefly-booking" loading="lazy">
+          <video class="clip" src="assets/clips/firefly-booking.mp4" poster="assets/shots/firefly-booking.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>Firefly Global</h3>
+        <p class="where" data-en="Healthcare · site + booking" data-zh="医疗 · 独立站 + 预约">Healthcare · site + booking</p>
+        <p class="one" data-en="Rebuilt and published a California psychiatric practice's site, from care journey to booking." data-zh="为加州精神科远程医疗诊所重建并上线官网：从就诊流程到在线预约。">Rebuilt and published a California psychiatric practice's site, from care journey to booking.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Content architecture · Copy · Web implementation · Deployment" data-zh="内容架构 · 文案 · 网页实现 · 部署">Content architecture · Copy · Web implementation · Deployment</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Care journey · conditions treated · provider bio · insurance · FAQ · live Tebra scheduler embedded on the page" data-zh="就诊流程 · 可诊疗范围 · 医生介绍 · 保险说明 · 常见问题 · 页面上真实运行的 Tebra 预约组件">Care journey · conditions treated · provider bio · insurance · FAQ · live Tebra scheduler embedded on the page</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None — booking is handled by Tebra's own scheduler." data-zh="无 AI。预约由 Tebra 第三方系统处理。">None — booking is handled by Tebra's own scheduler.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Static site · Tebra scheduling embed" data-zh="静态站点 · Tebra 预约嵌入">Static site · Tebra scheduling embed</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://fireflyglobal.org/" target="_blank" rel="noopener" data-en="fireflyglobal.org" data-zh="fireflyglobal.org">fireflyglobal.org</a></dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="work/welaab/" >
+          <img src="assets/shots/welaab.jpg" alt="welaab" data-en-alt="welaab" data-zh-alt="welaab" loading="lazy">
+          <video class="clip" src="assets/clips/welaab.mp4" poster="assets/shots/welaab.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>Welaab</h3>
+        <p class="where" data-en="Brand identity · client system" data-zh="品牌识别 · 客户系统">Brand identity · client system</p>
+        <p class="one" data-en="Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF." data-zh="为一个精准护肤平台搭建完整识别系统，交付形式是在线页面，不是 PDF。">Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand strategy · Identity · Design system · App UI direction" data-zh="品牌策略 · 视觉识别 · 设计系统 · App 界面方向">Brand strategy · Identity · Design system · App UI direction</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction" data-zh="Logo 制图与使用规范 · 导出尺寸齐全的 App 图标组 · 色彩分工 · 字体系统 · 文案语气规范 · 界面方向">Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None." data-zh="无。">None.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Hand-written HTML and CSS · self-hosted fonts" data-zh="手写 HTML/CSS · 字体自托管">Hand-written HTML and CSS · self-hosted fonts</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="work/welaab/" data-en="Live spec page" data-zh="在线规范页面">Live spec page</a></dd>
+        </dl>
+      </article>
+    </div>
+
+    <p class="label sub" data-en="More work" data-zh="更多案例">More work</p>
+    <div class="grid more">
+
+      <article class="card compact">
+        <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
+          <img src="assets/shots/neolabcare.jpg" alt="neolabcare" data-en-alt="neolabcare" data-zh-alt="neolabcare" loading="lazy">
+          <video class="clip" src="assets/clips/neolabcare.mp4" poster="assets/shots/neolabcare.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>NeoLabCare</h3>
+        <p class="where" data-en="Commerce · pre-order DTC" data-zh="电商 · 预购 DTC">Commerce · pre-order DTC</p>
+        <p class="one" data-en="Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch." data-zh="搭起一个零库存、7 天发货的预购护肤品牌。">Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand · Science content · E-commerce · Creator programme" data-zh="品牌 · 科学内容 · 电商 · 达人计划">Brand · Science content · E-commerce · Creator programme</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline" data-zh="Shopify 店铺 · 预购流程 · 有据可查的科学博客（已发 20 篇）· Shopify Collabs 达人计划（美国，20% 佣金）· 每周触达流水线">Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="Creator research and first drafts run as an agent pipeline; the storefront itself uses none." data-zh="达人调研与初稿由 Agent 流水线完成；店铺本身没有 AI。">Creator research and first drafts run as an agent pipeline; the storefront itself uses none.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Shopify · Shopify Collabs · automated outreach pipeline" data-zh="Shopify · Shopify Collabs · 自动化触达流水线">Shopify · Shopify Collabs · automated outreach pipeline</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://neolabcare.com/" target="_blank" rel="noopener" data-en="neolabcare.com" data-zh="neolabcare.com">neolabcare.com</a></dd>
+        </dl>
+      </article>
+
+      <article class="card compact">
+        <a class="shot" href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener">
+          <img src="assets/shots/pulse-instinct.jpg" alt="pulse-instinct" data-en-alt="pulse-instinct" data-zh-alt="pulse-instinct" loading="lazy">
+          <video class="clip" src="assets/clips/pulse-instinct.mp4" poster="assets/shots/pulse-instinct.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>Pulse Instinct</h3>
+        <p class="where" data-en="Product · preference testing" data-zh="产品 · 偏好测试">Product · preference testing</p>
+        <p class="one" data-en="Built a preference-testing web app that records choices instead of asking people to self-report." data-zh="做了一款偏好测试 Web 应用：记录选择，而不是让人自述。">Built a preference-testing web app that records choices instead of asking people to self-report.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Product · Brand · UX/UI · Backend · Film" data-zh="产品 · 品牌 · 交互/界面 · 后端 · 影片">Product · Brand · UX/UI · Backend · Film</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Pairwise choice tests · server-side aggregation into a preference profile · own brand, site and promo film" data-zh="成对选项测试 · 服务端聚合成偏好画像 · 自有品牌、官网与宣传片">Pairwise choice tests · server-side aggregation into a preference profile · own brand, site and promo film</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None in the product." data-zh="产品中没有 AI。">None in the product.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Angular 15 · Node/Express · PostgreSQL" data-zh="Angular 15 · Node/Express · PostgreSQL">Angular 15 · Node/Express · PostgreSQL</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener" data-en="app2.pulseinstinct.com" data-zh="app2.pulseinstinct.com">app2.pulseinstinct.com</a></dd>
+        </dl>
+      </article>
+
+      <article class="card compact">
         <a class="shot" href="https://edenne.life/" target="_blank" rel="noopener">
-          <img src="assets/shots/edenne.jpg" alt="Edenne brand landing page"
-               data-en-alt="Edenne brand landing page" data-zh-alt="Edenne 品牌落地页" loading="lazy">
+          <img src="assets/shots/edenne.jpg" alt="edenne" data-en-alt="edenne" data-zh-alt="edenne" loading="lazy">
           <video class="clip" src="assets/clips/edenne.mp4" poster="assets/shots/edenne.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Edenne</h3>
-        <p class="where" data-en="Brand + app prototype" data-zh="品牌 + App 原型">Brand + app prototype</p>
-        <p data-en="A presence-first brand and a phone-only companion prototype. The domain is wired at the registrar, apex and app subdomain both TLS-verified, each served as its own deployment."
-           data-zh="以「陪伴感」为核心的品牌，加一个只在手机上运行的伴侣原型。域名逐项配好，主域和 app 子域都过了 TLS，各自独立部署。">
-          A presence-first brand and a phone-only companion prototype. The domain
-          is wired at the registrar, apex and app subdomain both TLS-verified,
-          each served as its own deployment.
-        </p>
-        <a class="live" href="https://app.edenne.life/" target="_blank" rel="noopener">app.edenne.life →</a>
+        <p class="where" data-en="Brand + companion prototype" data-zh="品牌 + 陪伴原型">Brand + companion prototype</p>
+        <p class="one" data-en="Built the brand and a phone-only companion prototype, served on its own subdomain." data-zh="做了品牌与一个只在手机上运行的原型，跑在独立子域上。">Built the brand and a phone-only companion prototype, served on its own subdomain.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand strategy · Identity · Spatial UI · Deployment" data-zh="品牌策略 · 视觉识别 · 空间化界面 · 部署">Brand strategy · Identity · Spatial UI · Deployment</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Welcome site · prototype app with hash routes (world, environment, gallery) · separate world editor · apex and app subdomain, both TLS" data-zh="欢迎站 · 原型应用（世界 / 环境 / 画廊等 hash 路由）· 独立的世界编辑器 · 主域与 app 子域，均已完成 TLS">Welcome site · prototype app with hash routes (world, environment, gallery) · separate world editor · apex and app subdomain, both TLS</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None in the prototype." data-zh="原型中没有 AI。">None in the prototype.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Static pages · two Render services · own domains" data-zh="静态页面 · 两个 Render 服务 · 自有域名">Static pages · two Render services · own domains</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://edenne.life/" target="_blank" rel="noopener" data-en="edenne.life" data-zh="edenne.life">edenne.life</a> · <a href="https://app.edenne.life/" target="_blank" rel="noopener" data-en="app.edenne.life" data-zh="app.edenne.life">app.edenne.life</a></dd>
+        </dl>
       </article>
 
-      <article class="card">
+      <article class="card compact">
         <a class="shot" href="https://ancientscienceofchina.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/asoc.jpg" alt="Ancient Science of China catalogue site"
-               data-en-alt="Ancient Science of China catalogue site" data-zh-alt="中国古代科技与思想目录站页面" loading="lazy">
+          <img src="assets/shots/asoc.jpg" alt="asoc" data-en-alt="asoc" data-zh-alt="asoc" loading="lazy">
           <video class="clip" src="assets/clips/asoc.mp4" poster="assets/shots/asoc.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Ancient Science of China</h3>
         <p class="where" data-en="Publishing · research archive" data-zh="出版 · 研究档案">Publishing · research archive</p>
-        <p data-en="A catalogue of Chinese intellectual heritage — long-form, source-tagged research built to be read by people and by AI answer engines alike."
-           data-zh="中国思想与科技遗产的目录站。长篇研究，每个说法都标注出处——给人读，也给 AI 问答引擎读。">
-          A catalogue of Chinese intellectual heritage — long-form, source-tagged
-          research built to be read by people and by AI answer engines alike.
-        </p>
-        <a class="live" href="https://ancientscienceofchina.com/" target="_blank" rel="noopener">ancientscienceofchina.com →</a>
+        <p class="one" data-en="Published a source-tagged catalogue of Chinese intellectual heritage, readable by people and answer engines." data-zh="上线了一部带出处标注的中国古代科学思想目录，为人读，也为 AI 答引擎读。">Published a source-tagged catalogue of Chinese intellectual heritage, readable by people and answer engines.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Editorial · Information architecture · Web build" data-zh="编辑 · 信息架构 · 网站实现">Editorial · Information architecture · Web build</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Long-form entries with sources tagged · catalogue organised by masterpiece, scholar, institution and dynasty" data-zh="长篇条目带出处标注 · 按典籍、学者、机构与朝代组织目录">Long-form entries with sources tagged · catalogue organised by masterpiece, scholar, institution and dynasty</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None — the archive is structured for answer engines, not generated by them." data-zh="无 AI。内容为答引擎结构化，但不是 AI 生成。">None — the archive is structured for answer engines, not generated by them.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Next.js · static catalogue · own domain" data-zh="Next.js · 静态目录 · 自有域名">Next.js · static catalogue · own domain</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://ancientscienceofchina.com/" target="_blank" rel="noopener" data-en="ancientscienceofchina.com" data-zh="ancientscienceofchina.com">ancientscienceofchina.com</a></dd>
+        </dl>
       </article>
 
-      <article class="card">
-        <a class="shot" href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-instinct.jpg" alt="Pulse Instinct preference testing app"
-               data-en-alt="Pulse Instinct preference testing app" data-zh-alt="Pulse Instinct 潜意识偏好测试应用" loading="lazy">
-          <video class="clip" src="assets/clips/pulse-instinct.mp4" poster="assets/shots/pulse-instinct.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      <article class="card compact">
+        <a class="shot" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">
+          <img src="assets/shots/pulse-branding.jpg" alt="pulse-branding" data-en-alt="pulse-branding" data-zh-alt="pulse-branding" loading="lazy">
+          <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
-        <h3>Pulse Instinct</h3>
-        <p class="where" data-en="Product · preference testing" data-zh="产品 · 潜意识偏好测试">Product · preference testing</p>
-        <p data-en="People choose without being able to explain why — and that pattern is what they actually want. A web app that reads subconscious preference instead of asking people to self-report."
-           data-zh="人做选择的时候，常常说不清为什么。那个说不清的部分，才是他真正想要的。这个 Web 应用不去问，而是去读。">
-          People choose without being able to explain why — and that pattern is
-          what they actually want. A web app that reads subconscious preference
-          instead of asking people to self-report.
-        </p>
-        <a class="live" href="https://app2.pulseinstinct.com/" target="_blank" rel="noopener">app2.pulseinstinct.com →</a>
+        <h3>Pulse Branding</h3>
+        <p class="where" data-en="Agency · site + CMS" data-zh="品牌机构 · 官网 + CMS">Agency · site + CMS</p>
+        <p class="one" data-en="Run my own agency's site and case archive: Webflow CMS with 26 published portfolio entries." data-zh="运营自家机构官网与案例库：Webflow CMS，26 个已发布作品条目。">Run my own agency's site and case archive: Webflow CMS with 26 published portfolio entries.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand · Copy · Web design · CMS operations" data-zh="品牌 · 文案 · 网页设计 · CMS 运营">Brand · Copy · Web design · CMS operations</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="26 CMS portfolio entries · bilingual EN/CN pages · cases published through the Webflow API · captured case covers" data-zh="26 个 CMS 作品条目 · 中英双语页面 · 通过 Webflow API 发布案例 · 截图式案例封面">26 CMS portfolio entries · bilingual EN/CN pages · cases published through the Webflow API · captured case covers</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None on the public site." data-zh="公开站点没有 AI。">None on the public site.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Webflow · CMS · Webflow API" data-zh="Webflow · CMS · Webflow API">Webflow · CMS · Webflow API</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://www.pulse-branding.com/" target="_blank" rel="noopener" data-en="pulse-branding.com" data-zh="pulse-branding.com">pulse-branding.com</a></dd>
+        </dl>
       </article>
-
-      <article class="card">
-        <a class="shot" href="https://robotist.com.au/" target="_blank" rel="noopener">
-          <img src="assets/shots/robotist.jpg"
-               alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
-               data-en-alt="Robotist robotics platform site — Intelligent machines. Safely Tested."
-               data-zh-alt="Robotist 全球机器人平台官网首页" loading="lazy">
-          <video class="clip" src="assets/clips/robotist.mp4" poster="assets/shots/robotist.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>Robotist</h3>
-        <p class="where" data-en="Robotics · global platform" data-zh="机器人 · 全球平台">Robotics · global platform</p>
-        <p data-en="A robotics platform positioned globally — hardware, an on-device assistant and a subscription layer, with Shanghai, Hangzhou and Sydney operations and worldwide shipping."
-           data-zh="面向全球的机器人平台：硬件、设备上的助手，还有订阅。运营在上海、杭州和悉尼，发货到全球。">
-          A robotics platform positioned globally — hardware, an on-device
-          assistant and a subscription layer, with Shanghai, Hangzhou and Sydney
-          operations and worldwide shipping.
-        </p>
-        <a class="live" href="https://robotist.com.au/" target="_blank" rel="noopener">robotist.com.au →</a>
-      </article>
-
-      <article class="card">
-        <a class="shot" href="#method">
-          <img src="assets/agent-work/pulse-growth-engine.webp" alt="Pulse Growth Engine desktop application"
-               data-en-alt="Pulse Growth Engine desktop application" data-zh-alt="Pulse Growth Engine 桌面应用界面" loading="lazy">
-        </a>
-        <h3>Pulse Growth Engine</h3>
-        <p class="where" data-en="Tooling · desktop app" data-zh="工具 · 桌面应用">Tooling · desktop app</p>
-        <p data-en="An internal desktop application for content and lead generation, wired to language and image models, built to run the agency's own growth work rather than buy it in."
-           data-zh="内部在用的桌面应用，管内容生产和找线索，接了语言模型和图像模型。机构的增长自己做，不外包。">
-          An internal desktop application for content and lead generation, wired
-          to language and image models, built to run the agency's own growth work
-          rather than buy it in.
-        </p>
-      </article>
-
     </div>
   </section>
 </div>
 
 <div class="wrap">
-  <section id="method">
-    <p class="label" data-en="Method" data-zh="方法">Method</p>
-    <h2 data-en="What we actually set up." data-zh="看不见的另一半。">What we actually set up.</h2>
-    <p class="section-intro"
-       data-en="The products above are the visible half. The other half is the operating system underneath them — the reason a one-person team ships at this rate without shipping junk."
-       data-zh="上面那些是看得见的一半。另一半是它们底下这套系统——一个人能同时推进这么多项目，还不做烂东西，靠的就是它。">
-      The products above are the visible half. The other half is the operating
-      system underneath them — the reason a one-person team ships at this rate
-      without shipping junk.
+  <section id="how">
+    <p class="label" data-en="How I work" data-zh="工作方式">How I work</p>
+    <h2 data-en="One person, directed agents, verified output." data-zh="一个人，指挥 Agent，交付经过验证的结果。">One person, directed agents, verified output.</h2>
+    <div class="rows">
+      <div class="row">
+        <h4 data-en="You bring" data-zh="你带来">You bring</h4>
+        <p data-en="The business problem, the constraints, the internal knowledge nobody wrote down." data-zh="业务问题、约束条件、没人写下来的内部知识。">The business problem, the constraints, the internal knowledge nobody wrote down.</p>
+      </div>
+      <div class="row">
+        <h4 data-en="I lead" data-zh="我主导">I lead</h4>
+        <p data-en="Strategy, system design, art direction, and the implementation decisions that follow." data-zh="策略、系统设计、艺术指导，以及随之而来的实现决策。">Strategy, system design, art direction, and the implementation decisions that follow.</p>
+      </div>
+      <div class="row">
+        <h4 data-en="AI agents execute" data-zh="Agent 执行">AI agents execute</h4>
+        <p data-en="Code, tests, deployment and repetitive production, run as pipelines rather than one-off effort." data-zh="代码、测试、部署与重复性生产，以流水线方式运行，而不是一次性的体力活。">Code, tests, deployment and repetitive production, run as pipelines rather than one-off effort.</p>
+      </div>
+      <div class="row">
+        <h4 data-en="I verify" data-zh="我验证">I verify</h4>
+        <p data-en="Output, claims, live behaviour and the deploy itself — nothing is called done on a green log." data-zh="产出、说法、线上表现与部署结果本身 —— 不会因为日志是绿的就说做完了。">Output, claims, live behaviour and the deploy itself — nothing is called done on a green log.</p>
+      </div>
+    </div>
+    <p class="section-intro tight"
+       data-en="Nothing here is a demo: the sites are live, the repositories exist, and each card says where to check. If a claim cannot be checked, it is not on the page."
+       data-zh="这里没有演示稿：站点是在线的，仓库是存在的，每张卡片都写了去哪儿核对。无法核对的说法不会写在页面上。">
+      Nothing here is a demo: the sites are live, the repositories exist, and each card says
+      where to check. If a claim cannot be checked, it is not on the page.
     </p>
+  </section>
+</div>
 
-    <div class="setup">
-      <article>
-        <h3><span>01</span><b data-en="Agent build pipelines" data-zh="Agent 构建流水线">Agent build pipelines</b></h3>
-        <p data-en="Briefs go in, working builds come out. Agents write the code, run it, fix their own failures and hand back something I can inspect in a browser before it goes anywhere near a domain."
-           data-zh="需求丢进去，能跑的东西出来。Agent 自己写代码、自己跑、自己修错，交回来我先在浏览器里过一遍，没问题才让它碰域名。">
-          Briefs go in, working builds come out. Agents write the code, run it,
-          fix their own failures and hand back something I can inspect in a
-          browser before it goes anywhere near a domain.
-        </p>
+<div class="wrap">
+  <section id="ways">
+    <p class="label" data-en="Work together" data-zh="合作方式">Work together</p>
+    <h2 data-en="Six ways in. Pick the shape that fits the problem." data-zh="六种开口方式，按问题挑一种。">Six ways in. Pick the shape that fits the problem.</h2>
+    <div class="options">
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="Fixed-scope build" data-zh="固定范围交付">Fixed-scope build</h3>
+          <span class="opt-len" data-en="2–4 weeks" data-zh="2–4 周">2–4 weeks</span>
+        </div>
+        <p data-en="One product, feature or site from brief to a live URL. You get the running thing, the repository and the deploy pipeline." data-zh="一个产品、功能或站点，从简报做到线上地址。交付物是能跑的东西、代码仓库和部署流水线。">One product, feature or site from brief to a live URL. You get the running thing, the repository and the deploy pipeline.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="A decision-maker, your brand assets, feedback within two working days." data-zh="一个能拍板的人、品牌素材、两个工作日内给反馈。">A decision-maker, your brand assets, feedback within two working days.</span></p>
       </article>
-      <article>
-        <h3><span>02</span><b data-en="Deploy and publish automation" data-zh="部署与发布自动化">Deploy and publish automation</b></h3>
-        <p data-en="Builds are committed, pushed and published without me clicking through dashboards, then re-read from the live URL to prove the change landed."
-           data-zh="构建完自动提交、推送、发布，不用我一个个后台点。发完再从线上地址读一遍，确认改动真的生效了。">
-          Builds are committed, pushed and published without me clicking through
-          dashboards, then re-read from the live URL to prove the change landed.
-        </p>
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="Product launch" data-zh="新产品上线">Product launch</h3>
+          <span class="opt-len" data-en="6–10 weeks" data-zh="6–10 周">6–10 weeks</span>
+        </div>
+        <p data-en="A new product or line taken from positioning to launch: identity, site, launch assets, analytics." data-zh="一条新产品线，从定位做到上线：识别、站点、上市素材、数据统计。">A new product or line taken from positioning to launch: identity, site, launch assets, analytics.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="A product owner on your side plus the product data and constraints." data-zh="你们侧的产品负责人，加上产品数据与约束条件。">A product owner on your side plus the product data and constraints.</span></p>
       </article>
-      <article>
-        <h3><span>03</span><b data-en="Verification before claims" data-zh="先验证，再下结论">Verification before claims</b></h3>
-        <p data-en="Nothing is called finished on a green log. Every delivery passes an independent check against the original brief — one gate representing the client, one acting as a human visiting the page."
-           data-zh="日志变绿不等于做完了。每次交付都拿最初的需求再独立核一遍：一道关卡站在客户的角度看，一道当作真人打开页面看。">
-          Nothing is called finished on a green log. Every delivery passes an
-          independent check against the original brief — one gate representing
-          the client, one acting as a human visiting the page.
-        </p>
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="Embedded product or brand lead" data-zh="驻场产品 / 品牌负责人">Embedded product or brand lead</h3>
+          <span class="opt-len" data-en="Monthly, 2–3 days a week" data-zh="按月，每周 2–3 天">Monthly, 2–3 days a week</span>
+        </div>
+        <p data-en="I run product and brand delivery inside your team and report weekly against a written plan." data-zh="我在你们团队里负责产品与品牌的推进，按书面计划每周汇报。">I run product and brand delivery inside your team and report weekly against a written plan.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="A named counterpart, a shared backlog and a weekly review." data-zh="一位固定对接人、一份共享的任务清单、每周一次的复盘。">A named counterpart, a shared backlog and a weekly review.</span></p>
       </article>
-      <article>
-        <h3><span>04</span><b data-en="Whole-site visual sweeps" data-zh="全站视觉巡检">Whole-site visual sweeps</b></h3>
-        <p data-en="Sites get swept page by page at real widths for broken images, dead links, overflow and illegible text — the defects that quietly sit on live sites for months."
-           data-zh="按真实屏宽一页页扫过去：坏图、死链、错位、看不清的字。这些毛病最容易在线上悄悄躺几个月。">
-          Sites get swept page by page at real widths for broken images, dead
-          links, overflow and illegible text — the defects that quietly sit on
-          live sites for months.
-        </p>
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="AI delivery system" data-zh="AI 交付系统搭建">AI delivery system</h3>
+          <span class="opt-len" data-en="2–4 weeks" data-zh="2–4 周">2–4 weeks</span>
+        </div>
+        <p data-en="Install the way I ship into your company: agent workflows, review gates, deploy-on-push, monitoring, plus a runbook and a training session." data-zh="把我这套交付方式装进你们公司：Agent 工作流、审核关卡、推送即部署、监控，外加运行手册与一次培训。">Install the way I ship into your company: agent workflows, review gates, deploy-on-push, monitoring, plus a runbook and a training session.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="Git and cloud access, one engineer to pair with." data-zh="代码仓库与云服务权限，一位可以结对的前端或后端工程师。">Git and cloud access, one engineer to pair with.</span></p>
       </article>
-      <article>
-        <h3><span>05</span><b data-en="Scheduled operations" data-zh="定时运营">Scheduled operations</b></h3>
-        <p data-en="Monitoring, content checks and delivery gates run on timers, so problems surface as alerts instead of as surprises."
-           data-zh="监控、内容检查和交付关卡都挂在定时任务上，问题以提醒出现，而不是以惊吓出现。">
-          Monitoring, content checks and delivery gates run on timers, so problems
-          surface as alerts instead of as surprises.
-        </p>
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="Audit and second opinion" data-zh="审计与第二意见">Audit and second opinion</h3>
+          <span class="opt-len" data-en="1–2 weeks, fixed" data-zh="1–2 周，固定范围">1–2 weeks, fixed</span>
+        </div>
+        <p data-en="A written review of a live site, app or launch: what is broken, what is missing, what to fix first — each item with evidence." data-zh="对线上站点、应用或一次上市做书面评审：哪里坏了、缺了什么、先修什么，逐条附证据。">A written review of a live site, app or launch: what is broken, what is missing, what to fix first — each item with evidence.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="Access to the thing, or a login, and the original brief." data-zh="访问权限或账号，以及最初的简报。">Access to the thing, or a login, and the original brief.</span></p>
       </article>
-      <article>
-        <h3><span>06</span><b data-en="Continuity that survives the session" data-zh="换个会话也接得上">Continuity that survives the session</b></h3>
-        <p data-en="State, decisions and gotchas are written down where the next session reads them first — so context compounds instead of resetting."
-           data-zh="状态、决定、踩过的坑，都写在下一个会话第一眼会看到的地方。上下文越用越厚，不是每次清零。">
-          State, decisions and gotchas are written down where the next session
-          reads them first — so context compounds instead of resetting.
-        </p>
+      <article class="option">
+        <div class="opt-head">
+          <h3 data-en="Ongoing retainer" data-zh="长期维护">Ongoing retainer</h3>
+          <span class="opt-len" data-en="Monthly" data-zh="按月">Monthly</span>
+        </div>
+        <p data-en="Brand, content and product upkeep: identity work, site changes, content pipeline, publishing." data-zh="品牌、内容与产品的持续维护：识别工作、站点更新、内容流水线、发布。">Brand, content and product upkeep: identity work, site changes, content pipeline, publishing.</p>
+        <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="A monthly priority list." data-zh="每月的优先事项清单。">A monthly priority list.</span></p>
       </article>
+    </div>
+    <div class="start">
+      <h4 data-en="How a project starts" data-zh="项目怎么开始">How a project starts</h4>
+      <ol>
+        <li data-en="A 30-minute call: the problem, the constraint, the deadline." data-zh="30 分钟通话：问题、约束、时间点。">A 30-minute call: the problem, the constraint, the deadline.</li>
+        <li data-en="One page back from me: scope, what is out of scope, timeline, price." data-zh="我回一页纸：范围、不做什么、时间、价格。">One page back from me: scope, what is out of scope, timeline, price.</li>
+        <li data-en="Start within a week of agreement; first working version inside the first two weeks." data-zh="确认后一周内开始；两周内有第一个可运行版本。">Start within a week of agreement; first working version inside the first two weeks.</li>
+      </ol>
+      <p class="start-line" data-en="Hangzhou (UTC+8) · works with US, EU and AU hours · English and Chinese" data-zh="杭州（UTC+8）· 可配合美/欧/澳时区 · 中英文沟通">Hangzhou (UTC+8) · works with US, EU and AU hours · English and Chinese</p>
     </div>
   </section>
 </div>
@@ -633,9 +890,9 @@
       <div>
         <div class="name">Lareesa Hu</div>
         <div style="margin-top:6px"
-             data-en="Product, AI and brand — Hangzhou, China"
-             data-zh="产品 · AI · 品牌 · 中国 杭州">Product, AI and brand — Hangzhou, China</div>
-        <a class="mail" href="mailto:lareesahu@gmail.com">lareesahu@gmail.com</a>
+             data-en="Brand, product and AI systems — Hangzhou, China"
+             data-zh="品牌 · 产品 · AI 系统 · 中国 杭州">Brand, product and AI systems — Hangzhou, China</div>
+        <a class="mail" href="mailto:Lareesahu@gmail.com">Lareesahu@gmail.com</a>
       </div>
       <div>
         <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
@@ -653,8 +910,8 @@
 (function () {
   var KEY = 'lareesa-portfolio-lang';
   var TITLE = {
-    en: 'Lareesa Hu — Product, AI and brand work, shipped',
-    zh: 'Lareesa Hu — 产品、AI 和品牌，做出来，也上线了'
+    en: 'Lareesa Hu — brand, product and AI systems, shipped',
+    zh: 'Lareesa Hu — 品牌、产品与 AI 系统，做出来，也上线了'
   };
   var DESC = {
     en: 'Lareesa Hu — product, AI and brand operator. Live products built and shipped with AI agent pipelines: Firefly Global, Pulse Branding, Welaab, GramLingo, NeoLabCare, BrainyBaobei, Edenne, Ancient Science of China, Pulse Instinct, Robotist.',
