@@ -458,6 +458,226 @@
   .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
   .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
   .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -549,11 +769,11 @@
           <dt data-en="Scope" data-zh="我负责">Scope</dt>
           <dd data-en="Brand · Product · UX/UI · Web development · AI integration" data-zh="品牌 · 产品 · 交互/界面 · 网站开发 · AI 集成">Brand · Product · UX/UI · Web development · AI integration</dd>
           <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="Robot catalogue · subscription layer · Spline 3D homepage · assistant on the site" data-zh="机器人目录 · 订阅层 · Spline 3D 首屏 · 站内助手">Robot catalogue · subscription layer · Spline 3D homepage · assistant on the site</dd>
+          <dd data-en="Robot catalogue and compare pages · subscription layer · Spline 3D hero · 24 lead forms with a honeypot and submit guard · enquiries piped into Notion · founder register across three pages · RobotMaxx assistant" data-zh="机器人目录与对比页 · 订阅层 · Spline 3D 首屏 · 24 个表单带蜜罐与提交守卫 · 询盘自动进入 Notion · 三个页面上的创始人介绍 · RobotMaxx 助手">Robot catalogue and compare pages · subscription layer · Spline 3D hero · 24 lead forms with a honeypot and submit guard · enquiries piped into Notion · founder register across three pages · RobotMaxx assistant</dd>
           <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="RobotMaxx answers enquiries through POST /api/assistant: key stays server-side, model pinned, 40 calls / 10 min per IP, foreign origins refused." data-zh="RobotMaxx 通过 POST /api/assistant 应答：密钥留在服务端、模型固定、每 IP 每 10 分钟 40 次、外站来源拒绝。">RobotMaxx answers enquiries through POST /api/assistant: key stays server-side, model pinned, 40 calls / 10 min per IP, foreign origins refused.</dd>
+          <dd data-en="RobotMaxx answers enquiries through POST /api/assistant: the key stays server-side, the model is pinned, requests are limited to 40 per 10 minutes per IP and foreign origins are refused." data-zh="RobotMaxx 通过 POST /api/assistant 应答：密钥留在服务端、模型固定、每 IP 每 10 分钟 40 次，外站来源直接拒绝。">RobotMaxx answers enquiries through POST /api/assistant: the key stays server-side, the model is pinned, requests are limited to 40 per 10 minutes per IP and foreign origins are refused.</dd>
           <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Node.js · Express · SQLite · Spline" data-zh="Node.js · Express · SQLite · Spline">Node.js · Express · SQLite · Spline</dd>
+          <dd data-en="Node.js · Express · SQLite · Spline · Formspree" data-zh="Node.js · Express · SQLite · Spline · Formspree">Node.js · Express · SQLite · Spline · Formspree</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
           <dd class="proof"><a href="https://robotist.com.au/" target="_blank" rel="noopener" data-en="robotist.com.au" data-zh="robotist.com.au">robotist.com.au</a></dd>
         </dl>
@@ -565,17 +785,17 @@
           <video class="clip" src="assets/clips/brainybaobei.mp4" poster="assets/shots/brainybaobei.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>BrainyBaobei</h3>
-        <p class="where" data-en="Product · engine + payments" data-zh="产品 · 引擎 + 支付">Product · engine + payments</p>
-        <p class="one" data-en="Built a BaZi reading product for parents: charts computed from real astronomy, AI chat, live checkout." data-zh="为家长做了一款八字解读产品：真实天文计算排盘、AI 问答、线上支付。">Built a BaZi reading product for parents: charts computed from real astronomy, AI chat, live checkout.</p>
+        <p class="where" data-en="Product · engine, AI chat and payments" data-zh="产品 · 引擎、AI 问答与支付">Product · engine, AI chat and payments</p>
+        <p class="one" data-en="Built a BaZi reading product for parents: charts computed from real astronomy, chart-grounded AI chat, live checkout." data-zh="为家长做了一款八字解读产品：真实天文计算排盘、锚定命盘的 AI 问答、线上支付。">Built a BaZi reading product for parents: charts computed from real astronomy, chart-grounded AI chat, live checkout.</p>
         <dl class="spec">
           <dt data-en="Scope" data-zh="我负责">Scope</dt>
           <dd data-en="Product · Engine integration · UX/UI · Backend · Payments" data-zh="产品 · 引擎集成 · 交互/界面 · 后端 · 支付">Product · Engine integration · UX/UI · Backend · Payments</dd>
           <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="Chart computed from true solar time, not lookup tables · reading pages · health endpoint · deploy on push" data-zh="排盘基于真太阳时计算，不是查表 · 解读页面 · 健康检查接口 · 推送即自动部署">Chart computed from true solar time, not lookup tables · reading pages · health endpoint · deploy on push</dd>
+          <dd data-en="Free chart and personality reading · one-time $0.99 unlock (life patterns, roadmap, chat quota) · live PayPal checkout · robots.txt, sitemap and Open Graph built for indexing · 97 automated tests on every push" data-zh="免费排盘与性格解读 · 0.99 美元一次性解锁（人生模式、路线图、问答额度）· 已上线 PayPal 支付 · robots.txt、sitemap 与 Open Graph 为检索而做 · 每次推送跑 97 项自动化测试">Free chart and personality reading · one-time $0.99 unlock (life patterns, roadmap, chat quota) · live PayPal checkout · robots.txt, sitemap and Open Graph built for indexing · 97 automated tests on every push</dd>
           <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="&quot;Ask Baobei&quot; chat is answered by DeepSeek, grounded in the user's own computed chart; 20 free questions, then a quota." data-zh="「问问宝宝」由 DeepSeek 回答，内容锚定用户自己算出的盘；免费 20 问，之后按额度。">&quot;Ask Baobei&quot; chat is answered by DeepSeek, grounded in the user's own computed chart; 20 free questions, then a quota.</dd>
+          <dd data-en="Ask Baobei chat is answered by DeepSeek, grounded in the user's own computed chart, 20 free questions then a paid quota. The reading text itself is fixed, not generated." data-zh="「问问宝宝」由 DeepSeek 回答，锚定用户自己算出的命盘，免费 20 问后进入付费额度；解读正文是固定的，不由模型生成。">Ask Baobei chat is answered by DeepSeek, grounded in the user's own computed chart, 20 free questions then a paid quota. The reading text itself is fixed, not generated.</dd>
           <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Next.js · Node · DeepSeek · PayPal (live)" data-zh="Next.js · Node · DeepSeek · PayPal（正式环境）">Next.js · Node · DeepSeek · PayPal (live)</dd>
+          <dd data-en="Next.js · Node · DeepSeek · PayPal (live) · 97 node tests" data-zh="Next.js · Node · DeepSeek · PayPal（正式环境）· 97 项测试">Next.js · Node · DeepSeek · PayPal (live) · 97 node tests</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
           <dd class="proof"><a href="https://brainybaobei.com/" target="_blank" rel="noopener" data-en="brainybaobei.com" data-zh="brainybaobei.com">brainybaobei.com</a></dd>
         </dl>
@@ -723,17 +943,17 @@
           <video class="clip" src="assets/clips/edenne.mp4" poster="assets/shots/edenne.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Edenne</h3>
-        <p class="where" data-en="Brand + companion prototype" data-zh="品牌 + 陪伴原型">Brand + companion prototype</p>
-        <p class="one" data-en="Built the brand and a phone-only companion prototype, served on its own subdomain." data-zh="做了品牌与一个只在手机上运行的原型，跑在独立子域上。">Built the brand and a phone-only companion prototype, served on its own subdomain.</p>
+        <p class="where" data-en="Brand + app prototype" data-zh="品牌 + App 原型">Brand + app prototype</p>
+        <p class="one" data-en="Built the brand, a welcome site and a phone-only companion app prototype, each on its own subdomain." data-zh="做了品牌、欢迎站和一个只在手机上运行的陪伴 App 原型，各自跑在独立子域上。">Built the brand, a welcome site and a phone-only companion app prototype, each on its own subdomain.</p>
         <dl class="spec">
           <dt data-en="Scope" data-zh="我负责">Scope</dt>
-          <dd data-en="Brand strategy · Identity · Spatial UI · Deployment" data-zh="品牌策略 · 视觉识别 · 空间化界面 · 部署">Brand strategy · Identity · Spatial UI · Deployment</dd>
+          <dd data-en="Brand strategy · Identity · Spatial UI · App prototype · Deployment" data-zh="品牌策略 · 视觉识别 · 空间化界面 · App 原型 · 部署">Brand strategy · Identity · Spatial UI · App prototype · Deployment</dd>
           <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="Welcome site · prototype app with hash routes (world, environment, gallery) · separate world editor · apex and app subdomain, both TLS" data-zh="欢迎站 · 原型应用（世界 / 环境 / 画廊等 hash 路由）· 独立的世界编辑器 · 主域与 app 子域，均已完成 TLS">Welcome site · prototype app with hash routes (world, environment, gallery) · separate world editor · apex and app subdomain, both TLS</dd>
+          <dd data-en="Welcome site at the apex · app prototype with hash routes (world, environment, gallery) · a separate world editor · two deployments, apex and app subdomain, both with TLS" data-zh="主域上的欢迎站 · 带 hash 路由的 App 原型（世界 / 环境 / 画廊）· 独立的世界编辑器 · 两套部署，主域与 app 子域都已配置 TLS">Welcome site at the apex · app prototype with hash routes (world, environment, gallery) · a separate world editor · two deployments, apex and app subdomain, both with TLS</dd>
           <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="None in the prototype." data-zh="原型中没有 AI。">None in the prototype.</dd>
+          <dd data-en="None in the prototype: the companion AI is a separate product, not claimed here." data-zh="原型中没有 AI：陪伴型 AI 是另一个产品，不在这个案例里冒充。">None in the prototype: the companion AI is a separate product, not claimed here.</dd>
           <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Static pages · two Render services · own domains" data-zh="静态页面 · 两个 Render 服务 · 自有域名">Static pages · two Render services · own domains</dd>
+          <dd data-en="Static pages · two Render services · own domain and subdomain" data-zh="静态页面 · 两个 Render 服务 · 自有域名与子域">Static pages · two Render services · own domain and subdomain</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
           <dd class="proof"><a href="https://edenne.life/" target="_blank" rel="noopener" data-en="edenne.life" data-zh="edenne.life">edenne.life</a> · <a href="https://app.edenne.life/" target="_blank" rel="noopener" data-en="app.edenne.life" data-zh="app.edenne.life">app.edenne.life</a></dd>
         </dl>
@@ -762,24 +982,24 @@
       </article>
 
       <article class="card compact">
-        <a class="shot" href="https://www.pulse-branding.com/" target="_blank" rel="noopener">
+        <a class="shot" href="https://test.pulse-branding.com/" target="_blank" rel="noopener">
           <img src="assets/shots/pulse-branding.jpg" alt="pulse-branding" data-en-alt="pulse-branding" data-zh-alt="pulse-branding" loading="lazy">
           <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
         <h3>Pulse Branding</h3>
-        <p class="where" data-en="Agency · site + CMS" data-zh="品牌机构 · 官网 + CMS">Agency · site + CMS</p>
-        <p class="one" data-en="Run my own agency's site and case archive: Webflow CMS with 26 published portfolio entries." data-zh="运营自家机构官网与案例库：Webflow CMS，26 个已发布作品条目。">Run my own agency's site and case archive: Webflow CMS with 26 published portfolio entries.</p>
+        <p class="where" data-en="Agency · brand, digital and AI consulting" data-zh="品牌机构 · 品牌、数字与 AI 咨询">Agency · brand, digital and AI consulting</p>
+        <p class="one" data-en="Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive." data-zh="运营自家机构官网：品牌、数字与 AI 咨询页面、十个案例、以及一套 CMS 案例库。">Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive.</p>
         <dl class="spec">
           <dt data-en="Scope" data-zh="我负责">Scope</dt>
-          <dd data-en="Brand · Copy · Web design · CMS operations" data-zh="品牌 · 文案 · 网页设计 · CMS 运营">Brand · Copy · Web design · CMS operations</dd>
+          <dd data-en="Brand · Copy · Web design · AI service design · CMS operations" data-zh="品牌 · 文案 · 网页设计 · AI 服务设计 · CMS 运营">Brand · Copy · Web design · AI service design · CMS operations</dd>
           <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="26 CMS portfolio entries · bilingual EN/CN pages · cases published through the Webflow API · captured case covers" data-zh="26 个 CMS 作品条目 · 中英双语页面 · 通过 Webflow API 发布案例 · 截图式案例封面">26 CMS portfolio entries · bilingual EN/CN pages · cases published through the Webflow API · captured case covers</dd>
+          <dd data-en="23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API" data-zh="23 页站点，含 AI 咨询页与免费品牌与增长审计 · 十个案例页 · Webflow CMS 已发布 26 个作品条目 · 通过 Webflow API 发布案例">23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API</dd>
           <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="None on the public site." data-zh="公开站点没有 AI。">None on the public site.</dd>
+          <dd data-en="The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business." data-zh="机构自己的 AI 咨询服务在这套站点上讲清楚：上下文如何持久、哪些动作被允许、人在哪里把关、置信度低时怎么办、系统如何接进现有业务。">The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business.</dd>
           <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Webflow · CMS · Webflow API" data-zh="Webflow · CMS · Webflow API">Webflow · CMS · Webflow API</dd>
+          <dd data-en="Static multi-page build · build and verify scripts · Webflow CMS + API" data-zh="静态多页构建 · 构建与校验脚本 · Webflow CMS + API">Static multi-page build · build and verify scripts · Webflow CMS + API</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
-          <dd class="proof"><a href="https://www.pulse-branding.com/" target="_blank" rel="noopener" data-en="pulse-branding.com" data-zh="pulse-branding.com">pulse-branding.com</a></dd>
+          <dd class="proof"><a href="https://test.pulse-branding.com/" target="_blank" rel="noopener" data-en="New build (brand, digital & AI consulting)" data-zh="新版本（品牌 · 数字 · AI 咨询）">New build (brand, digital & AI consulting)</a> · <a href="https://test.pulse-branding.com/work.html" target="_blank" rel="noopener" data-en="Case archive" data-zh="案例库">Case archive</a></dd>
         </dl>
       </article>
     </div>
@@ -856,10 +1076,10 @@
       </article>
       <article class="option">
         <div class="opt-head">
-          <h3 data-en="Audit and second opinion" data-zh="审计与第二意见">Audit and second opinion</h3>
+          <h3 data-en="AI audit and second opinion" data-zh="AI 审计与第二意见">AI audit and second opinion</h3>
           <span class="opt-len" data-en="1–2 weeks, fixed" data-zh="1–2 周，固定范围">1–2 weeks, fixed</span>
         </div>
-        <p data-en="A written review of a live site, app or launch: what is broken, what is missing, what to fix first — each item with evidence." data-zh="对线上站点、应用或一次上市做书面评审：哪里坏了、缺了什么、先修什么，逐条附证据。">A written review of a live site, app or launch: what is broken, what is missing, what to fix first — each item with evidence.</p>
+        <p data-en="A written review of a live site, app or launch across positioning, trust, journey and AI opportunity: what is broken, what is missing, what to fix first — each item with evidence." data-zh="对线上站点、应用或一次上市做书面评审，看定位、信任、用户路径与 AI 机会：哪里坏了、缺了什么、先修什么，逐条附证据。">A written review of a live site, app or launch across positioning, trust, journey and AI opportunity: what is broken, what is missing, what to fix first — each item with evidence.</p>
         <p class="opt-need"><span data-en="You need" data-zh="需要你提供">You need</span>: <span data-en="Access to the thing, or a login, and the original brief." data-zh="访问权限或账号，以及最初的简报。">Access to the thing, or a login, and the original brief.</span></p>
       </article>
       <article class="option">
@@ -897,7 +1117,7 @@
       <div>
         <a href="https://github.com/lareesahu" target="_blank" rel="noopener">github.com/lareesahu</a>
         &nbsp;·&nbsp;
-        <a href="https://www.pulse-branding.com/" target="_blank" rel="noopener">pulse-branding.com</a>
+        <a href="https://test.pulse-branding.com/" target="_blank" rel="noopener">pulse-branding.com</a>
         &nbsp;·&nbsp;
         <a href="resume.html" data-en="Résumé" data-zh="简历">Résumé</a>
       </div>
