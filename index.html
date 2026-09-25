@@ -678,9 +678,175 @@
   .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
   .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
   .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
+
+  /* ---- Capability strip, spec rows and engagement options (2026-09-24) ---- */
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin:clamp(20px,2.6vw,28px) 0 0}
+  .btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.04em;text-decoration:none;
+    padding:12px 20px;border:1px solid var(--line);border-radius:999px;color:var(--ink);
+    transition:border-color .25s,color .25s,background .25s;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  .strip{padding:clamp(22px,3vw,30px) 0 clamp(26px,3.4vw,34px);border-top:1px solid var(--line-soft)}
+  .strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+  .strip li{
+    font-size:.82rem;letter-spacing:.04em;color:#dcd6e2;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  }
+  .strip .fact{margin:16px 0 0;color:var(--muted);font-size:.88rem}
+
+  .label.sub{margin-top:clamp(44px,5vw,64px)}
+  .card .one{margin:0 0 14px;font-size:.95rem;color:#dcd6e2}
+  .card .spec{margin:0;display:grid;grid-template-columns:76px minmax(0,1fr);gap:6px 14px}
+  .card .spec dt{
+    margin:0;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);padding-top:.35em;
+  }
+  .card .spec dd{margin:0;font-size:.88rem;line-height:1.6;color:#c9c2d1}
+  .card .spec .proof a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  .card .spec .proof a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .card .proof-zh{display:none}
+  .grid.more{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:var(--gap)}
+  .card.compact .spec{grid-template-columns:1fr;gap:2px}
+  .card.compact .spec dt{padding-top:.6em}
+
+  #how .rows,#ways .options{margin-top:clamp(26px,3.4vw,40px);display:grid;gap:var(--gap);
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+  #how .row{border-top:1px solid var(--line);padding-top:16px}
+  #how .row h4{margin:0 0 8px;font-family:var(--sans-mixed);font-size:.95rem;letter-spacing:.02em}
+  #how .row p{margin:0;font-size:.92rem;color:#c9c2d1}
+  .section-intro.tight{margin-top:clamp(24px,3vw,34px)}
+
+  #ways .option{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:4px;
+    padding:clamp(18px,2.2vw,24px);background:rgba(255,255,255,.015)}
+  .opt-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;justify-content:space-between}
+  .opt-head h3{margin:0;font-family:var(--sans-mixed);font-size:1rem;font-weight:600}
+  .opt-len{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+  #ways .option p{margin:12px 0 0;font-size:.92rem;color:#c9c2d1}
+  #ways .opt-need{margin-top:auto;padding-top:14px;color:var(--muted);font-size:.85rem}
+  #ways .opt-need span:first-child{color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
+  .start{margin-top:clamp(30px,4vw,48px);border-top:1px solid var(--line);padding-top:clamp(22px,3vw,30px)}
+  .start h4{margin:0 0 12px;font-family:var(--sans-mixed);font-size:1rem}
+  .start ol{margin:0;padding-left:1.15em;color:#c9c2d1;font-size:.93rem;line-height:1.8}
+  .start-line{margin:16px 0 0;color:var(--muted);font-size:.85rem}
+  .foot .mail{display:inline-block;margin-top:10px;font-size:.9rem;color:var(--ink)}
 </style>
 </head>
 <body>
+<canvas class="ridges" id="bg" aria-hidden="true"></canvas>
 
 <div class="wrap">
   <header class="top">
@@ -802,6 +968,28 @@
       </article>
 
       <article class="card">
+        <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
+          <img src="assets/shots/neolabcare.jpg" alt="neolabcare" data-en-alt="neolabcare" data-zh-alt="neolabcare" loading="lazy">
+          <video class="clip" src="assets/clips/neolabcare.mp4" poster="assets/shots/neolabcare.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>NeoLabCare</h3>
+        <p class="where" data-en="Commerce · pre-order DTC" data-zh="电商 · 预购 DTC">Commerce · pre-order DTC</p>
+        <p class="one" data-en="Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch." data-zh="搭起一个零库存、7 天发货的预购护肤品牌。">Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand · Science content · E-commerce · Creator programme" data-zh="品牌 · 科学内容 · 电商 · 达人计划">Brand · Science content · E-commerce · Creator programme</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline" data-zh="Shopify 店铺 · 预购流程 · 有据可查的科学博客（已发 20 篇）· Shopify Collabs 达人计划（美国，20% 佣金）· 每周触达流水线">Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="Creator research and first drafts run as an agent pipeline; the storefront itself uses none." data-zh="达人调研与初稿由 Agent 流水线完成；店铺本身没有 AI。">Creator research and first drafts run as an agent pipeline; the storefront itself uses none.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Shopify · Shopify Collabs · automated outreach pipeline" data-zh="Shopify · Shopify Collabs · 自动化触达流水线">Shopify · Shopify Collabs · automated outreach pipeline</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="https://neolabcare.com/" target="_blank" rel="noopener" data-en="neolabcare.com" data-zh="neolabcare.com">neolabcare.com</a></dd>
+        </dl>
+      </article>
+
+      <article class="card">
         <a class="shot" href="#method" >
           <img src="assets/agent-work/pulse-growth-engine.webp" alt="pulse-growth-engine" data-en-alt="pulse-growth-engine" data-zh-alt="pulse-growth-engine" loading="lazy">
           
@@ -866,52 +1054,30 @@
           <dd class="proof"><a href="https://fireflyglobal.org/" target="_blank" rel="noopener" data-en="fireflyglobal.org" data-zh="fireflyglobal.org">fireflyglobal.org</a></dd>
         </dl>
       </article>
-
-      <article class="card">
-        <a class="shot" href="work/welaab/" >
-          <img src="assets/shots/welaab.jpg" alt="welaab" data-en-alt="welaab" data-zh-alt="welaab" loading="lazy">
-          <video class="clip" src="assets/clips/welaab.mp4" poster="assets/shots/welaab.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>Welaab</h3>
-        <p class="where" data-en="Brand identity · client system" data-zh="品牌识别 · 客户系统">Brand identity · client system</p>
-        <p class="one" data-en="Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF." data-zh="为一个精准护肤平台搭建完整识别系统，交付形式是在线页面，不是 PDF。">Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF.</p>
-        <dl class="spec">
-          <dt data-en="Scope" data-zh="我负责">Scope</dt>
-          <dd data-en="Brand strategy · Identity · Design system · App UI direction" data-zh="品牌策略 · 视觉识别 · 设计系统 · App 界面方向">Brand strategy · Identity · Design system · App UI direction</dd>
-          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction" data-zh="Logo 制图与使用规范 · 导出尺寸齐全的 App 图标组 · 色彩分工 · 字体系统 · 文案语气规范 · 界面方向">Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction</dd>
-          <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="None." data-zh="无。">None.</dd>
-          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Hand-written HTML and CSS · self-hosted fonts" data-zh="手写 HTML/CSS · 字体自托管">Hand-written HTML and CSS · self-hosted fonts</dd>
-          <dt data-en="Verify" data-zh="可验证">Verify</dt>
-          <dd class="proof"><a href="work/welaab/" data-en="Live spec page" data-zh="在线规范页面">Live spec page</a></dd>
-        </dl>
-      </article>
     </div>
 
     <p class="label sub" data-en="More work" data-zh="更多案例">More work</p>
     <div class="grid more">
 
       <article class="card compact">
-        <a class="shot" href="https://neolabcare.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/neolabcare.jpg" alt="neolabcare" data-en-alt="neolabcare" data-zh-alt="neolabcare" loading="lazy">
-          <video class="clip" src="assets/clips/neolabcare.mp4" poster="assets/shots/neolabcare.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        <a class="shot" href="https://test.pulse-branding.com/" target="_blank" rel="noopener">
+          <img src="assets/shots/pulse-branding.jpg" alt="pulse-branding" data-en-alt="pulse-branding" data-zh-alt="pulse-branding" loading="lazy">
+          <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </a>
-        <h3>NeoLabCare</h3>
-        <p class="where" data-en="Commerce · pre-order DTC" data-zh="电商 · 预购 DTC">Commerce · pre-order DTC</p>
-        <p class="one" data-en="Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch." data-zh="搭起一个零库存、7 天发货的预购护肤品牌。">Set up a pre-order skincare brand that runs zero inventory with seven-day dispatch.</p>
+        <h3>Pulse Branding</h3>
+        <p class="where" data-en="Agency · brand, digital and AI consulting" data-zh="品牌机构 · 品牌、数字与 AI 咨询">Agency · brand, digital and AI consulting</p>
+        <p class="one" data-en="Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive." data-zh="运营自家机构官网：品牌、数字与 AI 咨询页面、十个案例、以及一套 CMS 案例库。">Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive.</p>
         <dl class="spec">
           <dt data-en="Scope" data-zh="我负责">Scope</dt>
-          <dd data-en="Brand · Science content · E-commerce · Creator programme" data-zh="品牌 · 科学内容 · 电商 · 达人计划">Brand · Science content · E-commerce · Creator programme</dd>
+          <dd data-en="Brand · Copy · Web design · AI service design · CMS operations" data-zh="品牌 · 文案 · 网页设计 · AI 服务设计 · CMS 运营">Brand · Copy · Web design · AI service design · CMS operations</dd>
           <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline" data-zh="Shopify 店铺 · 预购流程 · 有据可查的科学博客（已发 20 篇）· Shopify Collabs 达人计划（美国，20% 佣金）· 每周触达流水线">Shopify storefront · pre-order flow · evidence-anchored science blog (20 posts live) · Shopify Collabs creator programme (US, 20% commission) · weekly outreach pipeline</dd>
+          <dd data-en="23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API" data-zh="23 页站点，含 AI 咨询页与免费品牌与增长审计 · 十个案例页 · Webflow CMS 已发布 26 个作品条目 · 通过 Webflow API 发布案例">23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API</dd>
           <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="Creator research and first drafts run as an agent pipeline; the storefront itself uses none." data-zh="达人调研与初稿由 Agent 流水线完成；店铺本身没有 AI。">Creator research and first drafts run as an agent pipeline; the storefront itself uses none.</dd>
+          <dd data-en="The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business." data-zh="机构自己的 AI 咨询服务在这套站点上讲清楚：上下文如何持久、哪些动作被允许、人在哪里把关、置信度低时怎么办、系统如何接进现有业务。">The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business.</dd>
           <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Shopify · Shopify Collabs · automated outreach pipeline" data-zh="Shopify · Shopify Collabs · 自动化触达流水线">Shopify · Shopify Collabs · automated outreach pipeline</dd>
+          <dd data-en="Static multi-page build · build and verify scripts · Webflow CMS + API" data-zh="静态多页构建 · 构建与校验脚本 · Webflow CMS + API">Static multi-page build · build and verify scripts · Webflow CMS + API</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
-          <dd class="proof"><a href="https://neolabcare.com/" target="_blank" rel="noopener" data-en="neolabcare.com" data-zh="neolabcare.com">neolabcare.com</a></dd>
+          <dd class="proof"><a href="https://test.pulse-branding.com/" target="_blank" rel="noopener" data-en="New build (brand, digital & AI consulting)" data-zh="新版本（品牌 · 数字 · AI 咨询）">New build (brand, digital & AI consulting)</a> · <a href="https://test.pulse-branding.com/work.html" target="_blank" rel="noopener" data-en="Case archive" data-zh="案例库">Case archive</a></dd>
         </dl>
       </article>
 
@@ -960,6 +1126,28 @@
       </article>
 
       <article class="card compact">
+        <a class="shot" href="work/welaab/" >
+          <img src="assets/shots/welaab.jpg" alt="welaab" data-en-alt="welaab" data-zh-alt="welaab" loading="lazy">
+          <video class="clip" src="assets/clips/welaab.mp4" poster="assets/shots/welaab.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </a>
+        <h3>Welaab</h3>
+        <p class="where" data-en="Brand identity · client system" data-zh="品牌识别 · 客户系统">Brand identity · client system</p>
+        <p class="one" data-en="Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF." data-zh="为一个精准护肤平台搭建完整识别系统，交付形式是在线页面，不是 PDF。">Built a precision-skincare platform's identity system and delivered it as a live page, not a PDF.</p>
+        <dl class="spec">
+          <dt data-en="Scope" data-zh="我负责">Scope</dt>
+          <dd data-en="Brand strategy · Identity · Design system · App UI direction" data-zh="品牌策略 · 视觉识别 · 设计系统 · App 界面方向">Brand strategy · Identity · Design system · App UI direction</dd>
+          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
+          <dd data-en="Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction" data-zh="Logo 制图与使用规范 · 导出尺寸齐全的 App 图标组 · 色彩分工 · 字体系统 · 文案语气规范 · 界面方向">Logo construction and usage rules · app-icon set with export sizes · colour roles · type system · voice rules · interface direction</dd>
+          <dt data-en="AI" data-zh="AI">AI</dt>
+          <dd data-en="None." data-zh="无。">None.</dd>
+          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
+          <dd data-en="Hand-written HTML and CSS · self-hosted fonts" data-zh="手写 HTML/CSS · 字体自托管">Hand-written HTML and CSS · self-hosted fonts</dd>
+          <dt data-en="Verify" data-zh="可验证">Verify</dt>
+          <dd class="proof"><a href="work/welaab/" data-en="Live spec page" data-zh="在线规范页面">Live spec page</a></dd>
+        </dl>
+      </article>
+
+      <article class="card compact">
         <a class="shot" href="https://ancientscienceofchina.com/" target="_blank" rel="noopener">
           <img src="assets/shots/asoc.jpg" alt="asoc" data-en-alt="asoc" data-zh-alt="asoc" loading="lazy">
           <video class="clip" src="assets/clips/asoc.mp4" poster="assets/shots/asoc.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
@@ -978,28 +1166,6 @@
           <dd data-en="Next.js · static catalogue · own domain" data-zh="Next.js · 静态目录 · 自有域名">Next.js · static catalogue · own domain</dd>
           <dt data-en="Verify" data-zh="可验证">Verify</dt>
           <dd class="proof"><a href="https://ancientscienceofchina.com/" target="_blank" rel="noopener" data-en="ancientscienceofchina.com" data-zh="ancientscienceofchina.com">ancientscienceofchina.com</a></dd>
-        </dl>
-      </article>
-
-      <article class="card compact">
-        <a class="shot" href="https://test.pulse-branding.com/" target="_blank" rel="noopener">
-          <img src="assets/shots/pulse-branding.jpg" alt="pulse-branding" data-en-alt="pulse-branding" data-zh-alt="pulse-branding" loading="lazy">
-          <video class="clip" src="assets/clips/pulse-branding.mp4" poster="assets/shots/pulse-branding.jpg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
-        </a>
-        <h3>Pulse Branding</h3>
-        <p class="where" data-en="Agency · brand, digital and AI consulting" data-zh="品牌机构 · 品牌、数字与 AI 咨询">Agency · brand, digital and AI consulting</p>
-        <p class="one" data-en="Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive." data-zh="运营自家机构官网：品牌、数字与 AI 咨询页面、十个案例、以及一套 CMS 案例库。">Run the agency's own site: brand, digital and AI-consulting pages, ten case studies and a CMS archive.</p>
-        <dl class="spec">
-          <dt data-en="Scope" data-zh="我负责">Scope</dt>
-          <dd data-en="Brand · Copy · Web design · AI service design · CMS operations" data-zh="品牌 · 文案 · 网页设计 · AI 服务设计 · CMS 运营">Brand · Copy · Web design · AI service design · CMS operations</dd>
-          <dt data-en="Features" data-zh="系统 / 功能">Features</dt>
-          <dd data-en="23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API" data-zh="23 页站点，含 AI 咨询页与免费品牌与增长审计 · 十个案例页 · Webflow CMS 已发布 26 个作品条目 · 通过 Webflow API 发布案例">23-page build including an AI consulting page and a free brand &amp; growth audit · ten case-study pages · Webflow CMS with 26 published portfolio entries · cases published through the Webflow API</dd>
-          <dt data-en="AI" data-zh="AI">AI</dt>
-          <dd data-en="The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business." data-zh="机构自己的 AI 咨询服务在这套站点上讲清楚：上下文如何持久、哪些动作被允许、人在哪里把关、置信度低时怎么办、系统如何接进现有业务。">The agency's own AI consulting service is specified on this site: persistent context, permitted actions, where human judgement stays, what happens at low confidence, and how a system connects to the rest of the business.</dd>
-          <dt data-en="Stack" data-zh="技术栈">Stack</dt>
-          <dd data-en="Static multi-page build · build and verify scripts · Webflow CMS + API" data-zh="静态多页构建 · 构建与校验脚本 · Webflow CMS + API">Static multi-page build · build and verify scripts · Webflow CMS + API</dd>
-          <dt data-en="Verify" data-zh="可验证">Verify</dt>
-          <dd class="proof"><a href="https://test.pulse-branding.com/" target="_blank" rel="noopener" data-en="New build (brand, digital & AI consulting)" data-zh="新版本（品牌 · 数字 · AI 咨询）">New build (brand, digital & AI consulting)</a> · <a href="https://test.pulse-branding.com/work.html" target="_blank" rel="noopener" data-en="Case archive" data-zh="案例库">Case archive</a></dd>
         </dl>
       </article>
     </div>
