@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connections — Lareesa Hu (Phase 1 prototype)</title>
+<meta name="description" content="Six connections between seemingly unrelated projects. Phase 1 prototype, not published.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3Crect%20width='40'%20height='40'%20fill='%230b0a10'/%3E%3Ctext%20x='11'%20y='29'%20font-size='26'%20font-family='Georgia,serif'%20fill='%23ff8fd0'%3EL%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face{
+    font-family:'Tenor Sans';
+    src:url('../../assets/fonts/TenorSans-Regular.ttf') format('truetype');
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:'Geist';
+    src:url('../../assets/fonts/geist-latin.woff2') format('woff2');
+    font-weight:100 900;font-style:normal;font-display:swap;
+  }
+  :root{
+    --paper:#0b0a10;
+    --ink:#f4f2f7;
+    --muted:#b8b1c6;
+    --accent:#ff8fd0;
+    --line:rgba(255,255,255,.16);
+    --line-soft:rgba(255,255,255,.08);
+    --surface:#15121c;
+    --serif:'Tenor Sans','Times New Roman',Georgia,serif;
+    --sans:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --demo:#ff8fd0;
+    --first:#9ec1ff;
+    --interp:#ffd08f;
+    --unver:#8c8798;
+    --pad:clamp(20px,5vw,72px);
+    --gap:clamp(20px,3vw,40px);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+
+  /* prototype marker */
+  .proto{
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    background:rgba(255,143,208,.08);border-bottom:1px solid rgba(255,143,208,.28);
+    padding:9px var(--pad);
+  }
+  .proto b{color:var(--accent);font-weight:500}
+
+  header.top{
+    display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between;
+    padding:clamp(20px,3vw,34px) 0 clamp(16px,2.4vw,28px);
+  }
+  header.top .sig{font-family:var(--serif);font-size:1rem;letter-spacing:.06em}
+  header.top nav{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,26px);font-size:.82rem;align-items:center}
+  header.top nav a{
+    color:var(--muted);text-decoration:none;letter-spacing:.09em;text-transform:uppercase;
+  }
+  header.top nav a:hover,header.top nav a[aria-current]{color:var(--accent)}
+  hr.rule{border:0;border-top:1px solid var(--line-soft);margin:0}
+
+  .intro{padding:clamp(38px,7vw,84px) 0 clamp(22px,3vw,36px)}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(2.1rem,5.4vw,4.4rem);line-height:1.04;
+    letter-spacing:-.015em;margin:0 0 22px;max-width:16ch;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{
+    font-size:clamp(1.02rem,1.5vw,1.24rem);line-height:1.6;color:#dcd6e2;
+    max-width:56ch;margin:0;
+  }
+
+  /* provenance key */
+  .key{
+    display:grid;gap:10px 26px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    margin:clamp(26px,3.4vw,40px) 0 clamp(30px,5vw,54px);
+    padding:16px 0 0;border-top:1px solid var(--line-soft);
+  }
+  .key > span{grid-column:1/-1;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .key div{font-size:.82rem;line-height:1.5;color:var(--muted)}
+  .key .chip{display:flex;width:fit-content;margin-bottom:9px}
+  .pole .foot .chip{display:inline-flex}
+
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+    padding:4px 9px;border-radius:999px;border:1px solid currentColor;
+    white-space:nowrap;font-weight:500;
+  }
+  .chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+  .chip.demo{color:var(--demo)}
+  .chip.first{color:var(--first)}
+  .chip.interp{color:var(--interp)}
+  .chip.unver{color:var(--unver);border-style:dashed}
+  .chip.held{color:#8f96a3;border-style:dashed;background:rgba(255,255,255,.02)}
+
+  /* connection */
+  .conn{
+    display:grid;grid-template-columns:74px minmax(0,1fr);gap:0 clamp(16px,2.4vw,34px);
+    padding:clamp(32px,4.4vw,58px) 0;border-top:1px solid var(--line-soft);
+  }
+  .conn .num{
+    font-family:var(--serif);font-size:.92rem;letter-spacing:.1em;color:var(--muted);
+    padding-top:.55em;
+  }
+  .conn h2{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.16;letter-spacing:-.01em;
+    margin:0 0 18px;max-width:26ch;
+  }
+  .claim{max-width:62ch;margin:0 0 clamp(22px,3vw,32px);color:#e6e2ec;font-size:1.02rem}
+  .claim + .claim{margin-top:-6px}
+
+  .poles{
+    display:grid;grid-template-columns:minmax(0,1fr) 108px minmax(0,1fr);
+    align-items:stretch;gap:0;
+  }
+  .pole{
+    border:1px solid var(--line);border-radius:3px;padding:clamp(16px,2vw,24px);
+    background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.008));
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .pole .tag{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+  .pole h3{font-family:var(--serif);font-weight:400;font-size:1.12rem;margin:0;letter-spacing:.005em}
+  .pole p{margin:0;font-size:.9rem;line-height:1.55;color:var(--muted)}
+  .pole .foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding-top:8px}
+  .next{
+    font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+    text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px;
+  }
+  .next:hover{color:var(--accent)}
+  .link{display:flex;align-items:center;justify-content:center}
+  .link svg{width:100%;height:56px;overflow:visible}
+  .link path{
+    fill:none;stroke:var(--accent);stroke-width:1.5;opacity:.9;
+    stroke-dasharray:132;stroke-dashoffset:0;
+  }
+  .link circle{fill:var(--accent);opacity:.85}
+  .link text{
+    fill:#e6e2ec;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    font-family:var(--sans);
+  }
+  .conn.in .link path{animation:draw 1.1s ease forwards}
+  @keyframes draw{from{stroke-dashoffset:132}to{stroke-dashoffset:0}}
+  .aside{
+    margin:clamp(22px,2.8vw,30px) 0 0;padding:2px 0 2px clamp(14px,1.8vw,20px);
+    border-left:1px solid var(--accent);font-size:.95rem;color:#cfc9d9;
+    display:grid;gap:9px;justify-items:start;
+  }
+  .aside p{margin:0;max-width:82ch}
+  .aside .chip{margin:0}
+
+  /* closing */
+  .close{padding:clamp(40px,6vw,80px) 0}
+  .close h2{
+    font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.6rem);
+    line-height:1.14;margin:0 0 20px;max-width:22ch;
+  }
+  .close p{max-width:64ch;color:#dcd6e2}
+  footer{border-top:1px solid var(--line-soft);padding:clamp(24px,3vw,38px) 0 clamp(40px,5vw,60px)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;
+    font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--accent)}
+
+  /* alternate rhythm: 02, 04, 06 drop the card shells */
+  .conn.alt .poles{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3.4vw,48px)}
+  .conn.alt .link{display:none}
+  .conn.alt .pole{
+    border:0;border-top:1px solid rgba(255,255,255,.22);border-radius:0;
+    background:none;padding:18px 0 0;gap:8px;
+  }
+  .conn.alt .pole h3{font-size:clamp(1.16rem,1.7vw,1.4rem)}
+  .conn.alt .aside{
+    border-left:0;border-top:1px solid var(--accent);padding:14px 0 0;margin-top:clamp(24px,3vw,34px);
+    font-size:1.02rem;
+  }
+  /* closer: give the coda its own air */
+  .close{border-top:1px solid var(--line-soft)}
+  .close h2{margin-top:clamp(8px,1.4vw,18px)}
+
+  @media (max-width:820px){
+    .conn{grid-template-columns:1fr}
+    .conn .num{padding:0 0 10px}
+    .poles{grid-template-columns:1fr}
+    .link{height:56px}
+    .link svg{width:56px;height:56px}
+    .link svg line,.link svg text{display:none}
+    .link svg path{stroke-dasharray:0}
+    .link{align-items:center;justify-content:flex-start;padding:10px 0 10px 22px;height:auto}
+    .link::after{content:"";width:34px;height:1px;background:var(--accent);opacity:.7}
+    .link svg{display:none}
+  }
+  @media (max-width:520px){
+    header.top{gap:12px}
+    header.top nav{font-size:.72rem;letter-spacing:.06em;gap:12px 14px}
+    header.top nav a{letter-spacing:.06em}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .link path{stroke-dashoffset:0;animation:none}
+    .next{transition:none}
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<div class="proto">
+  <span><b>Phase 1 prototype</b> — narrative sample, not linked from the live site</span>
+  <span>Branch upgrade/phase-1-narrative</span>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <span class="sig">Lareesa Hu</span>
+    <nav aria-label="Primary">
+      <a href="../../index.html#work">Work</a>
+      <a href="connections-prototype.html" aria-current="page">Connections</a>
+      <a href="../../index.html#how">How I work</a>
+      <a href="../../index.html#ways">Ways</a>
+      <a href="../../resume.html">Résumé</a>
+    </nav>
+  </header>
+  <hr class="rule">
+</div>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow">Connections · six</p>
+      <h1>Six things that turned out to be <em>the&nbsp;same question</em>.</h1>
+      <p class="lead">A jewellery gala, a classical Chinese catalogue and an agent pipeline do not
+        belong to one career plan. They belong to a few recurring questions. Each connection below
+        names its two ends, says what I think links them, and labels how well I can prove it.</p>
+
+      <div class="key" role="list" aria-label="How to read the evidence labels">
+        <span aria-hidden="true">How to read the labels</span>
+        <div role="listitem">
+          <span class="chip demo">Demonstrated</span>
+          Shipped artefact or live system you can open and check.
+        </div>
+        <div role="listitem">
+          <span class="chip first">Firsthand</span>
+          My own record or experience, not independently documented.
+        </div>
+        <div role="listitem">
+          <span class="chip interp">Interpretation</span>
+          A reading I am offering, not a fact the work establishes.
+        </div>
+        <div role="listitem">
+          <span class="chip unver">Unverified</span>
+          Claimed somewhere, not yet proved. Flagged, not hidden.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <article class="conn">
+      <div class="num">01</div>
+      <div>
+        <h2>I stopped asking people what they like.</h2>
+        <p class="claim">Pulse Instinct never asks a respondent to explain their taste. It records what
+          they choose, what they reject, and how long they hesitate. GramLingo makes the same move with
+          language: there is no placement test. The app is the test — mistakes do the routing.</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>Pulse Instinct</h3>
+            <p>Subconscious preference signals for brand and design teams. One year from market
+              research to launch, then continuous iteration.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#work">Open case →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">same move</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>GramLingo</h3>
+            <p>Language learning with no score gate. The first lesson of every module is a sampler;
+              behaviour, not self-assessment, decides the route.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="" rel="noopener">Open site →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip first">Firsthand</span>
+          <p>I am a bad instrument for my own ability. My IELTS writing is a 6 and my reading is a 9 — same day, same room, same preparation. Asking me to place myself would have produced a 7.5.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="conn alt">
+      <div class="num">02</div>
+      <div>
+        <h2>Two ways to model a person.</h2>
+        <p class="claim">BrainyBaobei computes a BaZi chart from a date, a time and a place, then hands
+          that chart to a model as context. Pulse Instinct builds a preference profile from behaviour.
+          One model is centuries old and deterministic; the other is a database that changes weekly.
+          Both answer the same question: how much of a person can be described before they speak?</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>BrainyBaobei</h3>
+            <p>A real calendar engine, not free-text astrology: chart computed in code, interpretation
+              grounded on the chart, not on the model's imagination.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="" rel="noopener">Open case →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">same question</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>Pulse Instinct</h3>
+            <p>A behavioural profile that never claims to be a whole person, only a usable signal.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#work">Open case →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip interp">Interpretation</span>
+          <p>That these are the same question is my reading, not a claim the two products make. I built them years apart and did not notice the overlap until I put them side by side.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="conn">
+      <div class="num">03</div>
+      <div>
+        <h2>Ancient systems, modern interfaces.</h2>
+        <p class="claim">ASOC began as a catalogue of Chinese intellectual heritage: sources, dates,
+          attributions, cross-references. BrainyBaobei began as an annual almanac product. Neither is a
+          museum page. Both take knowledge transmitted by book, memory and apprenticeship and give it an
+          interface that can be searched, computed and answered.</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>ASOC</h3>
+            <p>A catalogue of Chinese intellectual heritage — classical scientific texts, indexed and
+              readable rather than sentimentalised.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="" rel="noopener">Open site →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">same task</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>BrainyBaobei</h3>
+            <p>The calendar system rebuilt as software: deterministic engine, then interpretation.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#work">Open case →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip held">Held for approval</span>
+          <p>The strongest version of this connection runs through my own training in these traditions. It stays out of the page until you decide whether it goes in, and in what words.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="conn alt">
+      <div class="num">04</div>
+      <div>
+        <h2>The studio built its own workforce.</h2>
+        <p class="claim">Pulse Branding stayed one person. It did not hire a delivery team; it built an
+          agent pipeline — orchestration, code generation and review, local-model memory, deployment
+          with independent checks — and then used that pipeline to ship the products on this site. The
+          studio was the prototype for the company.</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>Pulse Branding</h3>
+            <p>Founded 2019 as a brand and digital-product studio. Strategy, design and engineering
+              delivered as one package by one owner.</p>
+            <div class="foot">
+              <span class="chip first">Firsthand</span>
+              <a class="next" href="" rel="noopener">Studio →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">became</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>Eleven live products</h3>
+            <p>NeoLabCare, GramLingo, BrainyBaobei, Edenne, Pulse Instinct, Firefly Global, Robotist
+              and more, each on its own domain.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#work">See the work →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip demo">Demonstrated</span>
+          <p>Pulse Growth Engine is the clearest artefact: its own server, front end, test suite and database schema, wired to text and image models. It is the studio's own workflow, shipped.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="conn">
+      <div class="num">05</div>
+      <div>
+        <h2>Sell before you stock. Serve before you staff.</h2>
+        <p class="claim">Three recent builds share an operating shape. NeoLabCare takes pre-orders with
+          zero inventory and a seven-day dispatch. Firefly Global books appointments and takes payment
+          without an enquiry queue or a receptionist. The Robotist site answers inbound questions
+          itself. In each case the operational core is the smallest one that can still serve demand.</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>NeoLabCare</h3>
+            <p>Premium skincare, pre-order model, creator programme, no warehouse.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="" rel="noopener">Open store →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">same shape</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>Firefly Global · Robotist</h3>
+            <p>A practice that takes bookings directly; a robotics platform whose first responder is an
+              agent, not a sales team.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="" rel="noopener">Open site →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip interp">Interpretation</span>
+          <p>The shape is consistent. Whether it is a method or just the only affordable option for a one-person operation is a fair question I am not going to pretend to have settled.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="conn alt">
+      <div class="num">06</div>
+      <div>
+        <h2>Nothing counts until it is checked.</h2>
+        <p class="claim">Every project card on this site carries a label: live deployment, internal
+          system, brand system, prototype. Where public proof exists it is linked; where it does not,
+          the claim is left off — including numbers that would have made the résumé look stronger. The
+          same rule runs the agent pipeline: a build is not done because the log is green.</p>
+        <div class="poles">
+          <div class="pole">
+            <span class="tag">Pole A</span>
+            <h3>Evidence labels</h3>
+            <p>Four statuses, applied to my own work before anyone else applies them.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#work">See labels →</a>
+            </div>
+          </div>
+          <div class="link" aria-hidden="true">
+            <svg viewBox="0 0 108 56" role="presentation"><text x="54" y="18" text-anchor="middle">same rule</text><path d="M10 36 H98"/><circle cx="6" cy="36" r="2"/><circle cx="102" cy="36" r="2"/></svg>
+          </div>
+          <div class="pole">
+            <span class="tag">Pole B</span>
+            <h3>Delivery gates</h3>
+            <p>Independent verification before anything is called shipped — in client work and in my
+              own products.</p>
+            <div class="foot">
+              <span class="chip demo">Demonstrated</span>
+              <a class="next" href="../../index.html#how">How I work →</a>
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <span class="chip unver">Unverified</span>
+          <p>Claims I could not verify were cut rather than softened. That is why this page says "eleven products" and not a rounder number.</p>
+        </div>
+      </div>
+    </article>
+
+    <section class="close">
+      <h2>The line I am not going to draw.</h2>
+      <p>High jewellery in 2016, robotics export in 2026, classical Chinese texts in between. A tidy
+        version of this would say one interest led to the next. It didn't. The Bulgari gala and the
+        Robotist site are connected by a method — how people decide, how a claim gets verified — not by
+        a plan. Where a link is a fact it is labelled demonstrated. Where it is my reading of my own
+        life it is labelled interpretation. The page should show the difference instead of resolving it.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Phase 1 sample · Lareesa Hu</span>
+    <span><a href="../../index.html">Live site</a> · <a href="../../resume.html">Résumé</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=document.querySelectorAll('.conn');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){el.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -12% 0px',threshold:.15});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
